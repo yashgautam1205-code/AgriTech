@@ -1,0 +1,5921 @@
+[
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        "Mancozeb"
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.9,
+          "tempMax": 31.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22,
+          "tempMax": 33.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage.",
+    "imagePath": "uploads\\1779467273471.jpg",
+    "_id": "25aa1671-5317-47dd-a180-1dc086425571",
+    "createdAt": "2026-05-22T16:27:54.559Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        "Mancozeb"
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.9,
+          "tempMax": 31.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22,
+          "tempMax": 33.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage.",
+    "imagePath": "uploads\\1779467953212.jpg",
+    "_id": "e2411448-9666-4180-83a4-8c30b55bd317",
+    "createdAt": "2026-05-22T16:39:14.155Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Bacterial Spot",
+    "severity": "high",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide"
+      ],
+      "chemical": [
+        "Copper oxychloride"
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.9,
+          "tempMax": 31.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22,
+          "tempMax": 33.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is high. Suggested treatments: Remove affected areas, Use clean water.",
+    "imagePath": "uploads\\1779468426406.jpg",
+    "_id": "e06b3baa-f688-47e1-8372-063e9149fba9",
+    "createdAt": "2026-05-22T16:47:07.939Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide"
+      ],
+      "chemical": [
+        "Copper oxychloride"
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Slight rain",
+          "tempMin": 20.9,
+          "tempMax": 30.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 20.8,
+          "tempMax": 30.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water.",
+    "imagePath": "uploads\\1779468760500.jpg",
+    "_id": "69d9ddbc-eeb9-4dd0-b104-65199b4e49e0",
+    "createdAt": "2026-05-22T16:52:41.730Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide"
+      ],
+      "chemical": [
+        "Copper oxychloride"
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.9,
+          "tempMax": 31.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22,
+          "tempMax": 33.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water.",
+    "imagePath": "uploads\\1779468808336.jpg",
+    "_id": "faf172fe-8c8a-4e59-89f7-e1871832df1d",
+    "createdAt": "2026-05-22T16:53:30.506Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        "Mancozeb"
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Slight rain",
+          "tempMin": 20.9,
+          "tempMax": 30.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 20.8,
+          "tempMax": 30.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage.",
+    "imagePath": "uploads\\1779470931177.jpg",
+    "_id": "c7a1bec7-ad83-4f7c-a33f-dbd768f4d921",
+    "createdAt": "2026-05-22T17:28:52.570Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        "Sulfur"
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Slight rain",
+          "tempMin": 20.9,
+          "tempMax": 30.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 20.8,
+          "tempMax": 30.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil.",
+    "imagePath": "uploads\\1779471104768.jpg",
+    "_id": "36846be5-4c26-41e9-8d8a-d69528e5f748",
+    "createdAt": "2026-05-22T17:31:46.099Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779477391288.png",
+    "lang": "en",
+    "_id": "1de73716-c2fb-4e69-a61b-38ec12fa12ad",
+    "createdAt": "2026-05-22T19:16:32.698Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779477613115.jpg",
+    "lang": "en",
+    "_id": "aeb189f1-5dd2-41e8-978f-e516e9327d1a",
+    "createdAt": "2026-05-22T19:20:18.147Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "high",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Moderate drizzle",
+          "tempMin": 21.4,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 22.2,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.8,
+          "tempMax": 31.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Powdery Mildew का पता चला। गंभीरता उच्च है। सुझाए गए उपचार: Increase air flow, Use neem oil. सस्ती विकल्प: Apply baking soda solution.",
+    "imagePath": "uploads\\1779477674294.jpg",
+    "lang": "hi",
+    "_id": "876b5198-3b78-4ee5-814a-0bd20e592e2f",
+    "createdAt": "2026-05-22T19:21:15.203Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "high",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Late Blight सापडले. तीव्रता उच्च आहे. सुचविलेले उपचार: Remove infected leaves, Improve drainage. कमी किमतीचा पर्याय: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779477706992.jpg",
+    "lang": "mr",
+    "_id": "07bfcc97-4b66-47c6-a27f-13bdc6b3ea7a",
+    "createdAt": "2026-05-22T19:21:52.001Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "high",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Use turmeric-water spray",
+        "costEstimate": 5
+      },
+      {
+        "name": "Keep leaves dry and prune well",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is high. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "imagePath": "uploads\\1779477886118.png",
+    "lang": "en",
+    "_id": "3c2cdef2-d17d-4345-b679-e6cd02e9cf90",
+    "createdAt": "2026-05-22T19:24:47.048Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "high",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Use turmeric-water spray",
+        "costEstimate": 5
+      },
+      {
+        "name": "Keep leaves dry and prune well",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is high. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "imagePath": "uploads\\1779478391883.png",
+    "lang": "en",
+    "_id": "1c98b2f3-2cea-4b53-8937-91d93572948b",
+    "createdAt": "2026-05-22T19:33:16.901Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "high",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is high. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779478527529.png",
+    "lang": "en",
+    "_id": "ccbb4eae-b922-4118-8065-3a91d7098afd",
+    "createdAt": "2026-05-22T19:35:28.900Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779478787175.jpg",
+    "lang": "en",
+    "_id": "793a5ee3-0049-4e1b-a9ff-348535a91e10",
+    "createdAt": "2026-05-22T19:39:52.185Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779479242751.jpg",
+    "lang": "en",
+    "_id": "2e2fccc7-e3a1-48bb-8dd8-58bb6ac62327",
+    "createdAt": "2026-05-22T19:47:24.151Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Late Blight",
+    "severity": "high",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Moderate drizzle",
+          "tempMin": 21.4,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 22.2,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.8,
+          "tempMax": 31.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is high. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779479496260.jpg",
+    "lang": "en",
+    "_id": "8edec36f-85a6-486a-8356-a137c4cbf65b",
+    "createdAt": "2026-05-22T19:51:37.679Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Moderate drizzle",
+          "tempMin": 21.4,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 22.2,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.8,
+          "tempMax": 31.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779479601425.jpg",
+    "lang": "en",
+    "_id": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "createdAt": "2026-05-22T19:53:22.546Z"
+  },
+  {
+    "userId": "test",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779479962258.png",
+    "lang": "en",
+    "_id": "bbd8f3b7-ec5b-4dd9-84b6-d19416b48d74",
+    "createdAt": "2026-05-22T19:59:25.666Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Use turmeric-water spray",
+        "costEstimate": 5
+      },
+      {
+        "name": "Keep leaves dry and prune well",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "imagePath": "uploads\\1779479992475.png",
+    "lang": "en",
+    "_id": "5cb349a4-a2a5-4618-ac1b-f7dc7e99ddab",
+    "createdAt": "2026-05-22T19:59:57.495Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779480081289.jpg",
+    "lang": "en",
+    "_id": "9cb8effa-e47e-4a70-a40f-cc04a3a006a5",
+    "createdAt": "2026-05-22T20:01:26.298Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "high",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is high. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779480207146.jpg",
+    "lang": "en",
+    "_id": "18f860a7-4f2f-4437-a18b-99d831a12a41",
+    "createdAt": "2026-05-22T20:03:29.157Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Moderate drizzle",
+          "tempMin": 21.4,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 22.2,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.8,
+          "tempMax": 31.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779480461983.jpg",
+    "lang": "en",
+    "_id": "255d5145-164d-4215-b1a7-5a18b27720d3",
+    "createdAt": "2026-05-22T20:07:43.408Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.2,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.4,
+          "tempMax": 32,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.4,
+          "tempMax": 29.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779481718626.jpg",
+    "lang": "en",
+    "_id": "eb8d0bbe-2231-4875-adba-ce0d95182d77",
+    "createdAt": "2026-05-22T20:28:40.097Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779497446008.jpg",
+    "lang": "en",
+    "_id": "5af56b80-6ebf-4a66-b664-286312fffe52",
+    "createdAt": "2026-05-23T00:50:47.971Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779497482494.jpg",
+    "lang": "en",
+    "_id": "a37ccd25-7a6f-4f57-88c5-1d27143066ec",
+    "createdAt": "2026-05-23T00:51:24.078Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "high",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply baking soda solution",
+        "costEstimate": 20
+      },
+      {
+        "name": "Use diluted milk spray",
+        "costEstimate": 30
+      },
+      {
+        "name": "Spray garlic water",
+        "costEstimate": 10
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is high. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "imagePath": "uploads\\1779497963060.jpg",
+    "lang": "en",
+    "_id": "d3434af3-73c3-4257-9fa8-fec16e7f724f",
+    "createdAt": "2026-05-23T00:59:27.165Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Spray diluted cow urine",
+        "costEstimate": 0
+      },
+      {
+        "name": "Use compost tea as foliar feed",
+        "costEstimate": 0
+      },
+      {
+        "name": "Apply diluted baking soda spray",
+        "costEstimate": 25
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "imagePath": "uploads\\1779498264175.jpg",
+    "lang": "en",
+    "_id": "803c06be-8c54-47eb-b1c9-ee714519760d",
+    "createdAt": "2026-05-23T01:04:25.926Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Rust",
+    "severity": "medium",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply diluted milk spray",
+        "costEstimate": 25
+      },
+      {
+        "name": "Use neem oil weekly",
+        "costEstimate": 50
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is medium. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "imagePath": "uploads\\1779498476119.jpg",
+    "lang": "en",
+    "_id": "3b1e376e-9dbe-4f8a-9b2c-7da8de89c55b",
+    "createdAt": "2026-05-23T01:07:58.156Z"
+  },
+  {
+    "userId": "test",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Use turmeric-water spray",
+        "costEstimate": 5
+      },
+      {
+        "name": "Keep leaves dry and prune well",
+        "costEstimate": 0
+      },
+      {
+        "name": "Apply diluted honey solution",
+        "costEstimate": 10
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "imagePath": "uploads\\1779498861510.txt",
+    "lang": "en",
+    "_id": "4bf05219-fdb8-49d0-84b8-6d6f059308f2",
+    "createdAt": "2026-05-23T01:14:22.981Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Improve plant spacing",
+        "costEstimate": 0
+      },
+      {
+        "name": "Spray diluted milk solution",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is medium. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "imagePath": "uploads\\1779499072325.jpg",
+    "lang": "en",
+    "_id": "c0ce40b1-6674-4527-a0d5-6b0ec1ae5cfc",
+    "createdAt": "2026-05-23T01:17:53.964Z"
+  },
+  {
+    "userId": "test",
+    "disease": "Downy Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Improve plant spacing",
+        "costEstimate": 0
+      },
+      {
+        "name": "Spray diluted milk solution",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is medium. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "imagePath": "uploads\\1779499312542.txt",
+    "lang": "en",
+    "_id": "4e795248-dfaf-4306-b974-81e9f4c104a3",
+    "createdAt": "2026-05-23T01:21:53.969Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Rust",
+    "severity": "low",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply diluted milk spray",
+        "costEstimate": 25
+      },
+      {
+        "name": "Use neem oil weekly",
+        "costEstimate": 50
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is low. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "imagePath": "uploads\\1779499380534.jpg",
+    "lang": "en",
+    "_id": "398ee4f4-3997-447a-8e9b-bd766b1b4a4c",
+    "createdAt": "2026-05-23T01:23:02.402Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Rust",
+    "severity": "medium",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Apply diluted milk spray",
+        "costEstimate": 25
+      },
+      {
+        "name": "Use neem oil weekly",
+        "costEstimate": 50
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is medium. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "imagePath": "uploads\\1779499609349.jpg",
+    "lang": "en",
+    "_id": "d7a627f7-3cc8-4cb3-9956-400b796cd352",
+    "createdAt": "2026-05-23T01:26:50.752Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Downy Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Improve plant spacing",
+        "costEstimate": 0
+      },
+      {
+        "name": "Spray diluted milk solution",
+        "costEstimate": 30
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is medium. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "imagePath": "uploads\\1779500000469.jpg",
+    "lang": "en",
+    "_id": "60769f0b-a15c-4bd1-a59c-d4cbb3fc37f8",
+    "createdAt": "2026-05-23T01:33:22.390Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Bacterial Spot",
+    "severity": "high",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      {
+        "name": "Use turmeric-water spray",
+        "costEstimate": 5
+      },
+      {
+        "name": "Keep leaves dry and prune well",
+        "costEstimate": 0
+      },
+      {
+        "name": "Apply diluted honey solution",
+        "costEstimate": 10
+      }
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is high. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "imagePath": "uploads\\1779500282058.jpg",
+    "lang": "en",
+    "_id": "9249542f-945a-4755-84ca-34aae0eeb398",
+    "createdAt": "2026-05-23T01:38:03.630Z"
+  },
+  {
+    "userId": "test-user",
+    "disease": "Late Blight",
+    "severity": "high",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        "Mancozeb",
+        "Copper oxychloride",
+        "Chlorothalonil"
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is high. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.8199903065555086,
+    "imagePath": "uploads\\1779501635076.png",
+    "lang": "en",
+    "_id": "fe522c92-17bb-444c-8305-798283a94fe2",
+    "createdAt": "2026-05-23T02:00:38.472Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "medium",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        "Copper oxychloride",
+        "Streptomycin"
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is medium. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.7216036411739746,
+    "imagePath": "uploads\\1779501680176.jpg",
+    "lang": "en",
+    "_id": "f033291e-b012-4eca-89e6-b25469e39ec8",
+    "createdAt": "2026-05-23T02:01:22.100Z"
+  },
+  {
+    "userId": "test-user",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        "Sulfur",
+        "Propiconazole"
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.1491181602628513,
+    "imagePath": "uploads\\1779501750495.png",
+    "lang": "en",
+    "_id": "43ef2a7c-1f64-4910-9776-541a52a4f6f8",
+    "createdAt": "2026-05-23T02:02:31.707Z"
+  },
+  {
+    "userId": "test-user",
+    "disease": "Rust",
+    "severity": "low",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        "Myclobutanil",
+        "Trifloxystrobin"
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply diluted milk spray",
+      "Use neem oil weekly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is low. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "confidence": 0.26770801399488375,
+    "imagePath": "uploads\\1779501808733.png",
+    "lang": "en",
+    "_id": "65c7d0fc-3a7e-48d1-afc9-8d2b8df4a8e0",
+    "createdAt": "2026-05-23T02:03:29.563Z"
+  },
+  {
+    "userId": "test-user",
+    "disease": "Downy Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is medium. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.6517460409915815,
+    "imagePath": "uploads\\1779501892149.png",
+    "lang": "en",
+    "_id": "9c7fe634-0c6e-4020-8c30-b1e9387ddf26",
+    "createdAt": "2026-05-23T02:04:53.357Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.40641045418848776,
+    "imagePath": "uploads\\1779501955637.jpg",
+    "lang": "en",
+    "_id": "f068ce94-b700-4826-81ef-666c9b770e23",
+    "createdAt": "2026-05-23T02:05:56.541Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.008858864731012939,
+    "imagePath": "uploads\\1779510645751.png",
+    "lang": "en",
+    "_id": "47c18f47-6a94-4b44-aed2-9390b6b404ae",
+    "createdAt": "2026-05-23T04:30:46.876Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.539606221459394,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779510805293.png",
+    "lang": "en",
+    "_id": "b2127995-582c-4d93-b11a-495f947111f3",
+    "createdAt": "2026-05-23T04:33:26.596Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.0903325752793871,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779510858165.jpg",
+    "lang": "en",
+    "_id": "40bf1ae4-b707-4261-b820-2f67284eae33",
+    "createdAt": "2026-05-23T04:34:19.110Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.2913631293392386,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779511622792.jpg",
+    "lang": "en",
+    "_id": "711d4e95-7f7f-4fb1-912a-d02d8b25175e",
+    "createdAt": "2026-05-23T04:47:04.229Z"
+  },
+  {
+    "userId": "farmer",
+    "disease": "Rust",
+    "severity": "high",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply diluted milk spray",
+      "Use neem oil weekly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is high. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "confidence": 0.8385802851653104,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779512543165.jpg",
+    "lang": "en",
+    "_id": "0b319eb6-d58a-4e75-83a2-c6a92164c88e",
+    "createdAt": "2026-05-23T05:02:24.730Z"
+  },
+  {
+    "userId": "farmer",
+    "disease": "Anthracnose",
+    "severity": "low",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is low. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.0009385919578653867,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779512600577.jpg",
+    "lang": "en",
+    "_id": "b3796749-413f-48c3-85e0-22876ceb0e41",
+    "createdAt": "2026-05-23T05:03:22.553Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.4078437486435421,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779512834575.png",
+    "lang": "en",
+    "_id": "9af9fe80-7f57-40ad-a099-cba03def44bc",
+    "createdAt": "2026-05-23T05:07:15.821Z"
+  },
+  {
+    "userId": "Farmer",
+    "disease": "Anthracnose",
+    "severity": "medium",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is medium. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.6032270545030741,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779512928516.jpg",
+    "lang": "en",
+    "_id": "3f176b9d-b2a0-49c9-8b02-8f147594e516",
+    "createdAt": "2026-05-23T05:08:49.887Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.030646179673757934,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779516782347.jpg",
+    "lang": "en",
+    "_id": "b2f39dda-9cec-471e-92ab-2a8766bf8385",
+    "createdAt": "2026-05-23T06:13:04.531Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.08795421113108182,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779518393209.png",
+    "lang": "en",
+    "_id": "c4f9b34d-965b-4265-8a27-2bbc79f208e4",
+    "createdAt": "2026-05-23T06:39:54.605Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.3,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.1,
+          "tempMax": 31.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.5,
+          "tempMax": 29.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.5021040160258065,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779518492454.png",
+    "lang": "en",
+    "_id": "16c23f6a-343c-4f30-aa8a-c4ef71ec4663",
+    "createdAt": "2026-05-23T06:41:33.922Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "low",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.31, 76.77.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.6,
+          "tempMax": 33.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.9,
+          "tempMax": 34.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is low. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.16934812596937354,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779518574414.jpg",
+    "lang": "en",
+    "_id": "3841b927-73f0-4d33-a9d9-b93a395375e6",
+    "createdAt": "2026-05-23T06:42:55.932Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 32.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.8,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 22.6,
+          "tempMax": 31,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.5279050746512016,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779518751761.jpg",
+    "lang": "en",
+    "_id": "dfc9fb34-ed7d-4762-beda-4a505d3d720b",
+    "createdAt": "2026-05-23T06:45:53.391Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.5280098036804075,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779522406349.jpg",
+    "lang": "en",
+    "_id": "07cb8d47-909d-45c2-9dfa-ca9fe8ce10e1",
+    "createdAt": "2026-05-23T07:46:51.409Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Anthracnose",
+    "severity": "high",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Anthracnose. Severity is high. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.9411191769782196,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779522454276.jpg",
+    "lang": "en",
+    "_id": "2bc7c631-a7e2-4521-b391-e736a54b23ae",
+    "createdAt": "2026-05-23T07:47:39.295Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather service is currently unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.5297561113707545,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779522483967.jpg",
+    "lang": "en",
+    "_id": "a3bfbef4-4486-4a14-a0e9-a99eb636f934",
+    "createdAt": "2026-05-23T07:48:08.976Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.6,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.5,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.9,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.4752407879328945,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779522779442.png",
+    "lang": "en",
+    "_id": "cffd6f9d-140b-4cc1-998a-550db9e9dfb0",
+    "createdAt": "2026-05-23T07:53:01.492Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "low",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.6,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.5,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.9,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is low. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.007560355657781681,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779522839233.jpg",
+    "lang": "en",
+    "_id": "ed4853e3-5c9f-42ca-b08e-69412a972083",
+    "createdAt": "2026-05-23T07:54:00.195Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "low",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is low. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.2920570212623488,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779523369966.jpg",
+    "lang": "en",
+    "_id": "ba9edcfd-14c6-4d23-a2ec-3f63820534dc",
+    "createdAt": "2026-05-23T08:02:51.505Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.457996845650559,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779524160956.jpg",
+    "lang": "en",
+    "_id": "3ecfb300-6809-404b-99a7-3dfbd1a5283e",
+    "createdAt": "2026-05-23T08:16:02.124Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.31966545864090223,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779524197962.jpg",
+    "lang": "en",
+    "_id": "8e145a64-4e8f-4db5-9bc5-c349802e9b94",
+    "createdAt": "2026-05-23T08:16:39.338Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.4939656392661077,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779524731525.jpg",
+    "lang": "en",
+    "_id": "b847fdc0-36f1-4e05-b55d-66eeee4d8e1a",
+    "createdAt": "2026-05-23T08:25:32.440Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Anthracnose",
+    "severity": "low",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is low. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.05992815309103372,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779524754618.jpg",
+    "lang": "en",
+    "_id": "489aa042-e73a-4ec3-9648-746838662828",
+    "createdAt": "2026-05-23T08:25:55.844Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.7466651840699445,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779525239809.jpg",
+    "lang": "en",
+    "_id": "963049a3-492c-4cd3-bb9b-2371723ac1a4",
+    "createdAt": "2026-05-23T08:34:01.051Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "medium",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is medium. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.5555706343392985,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779525817090.jpg",
+    "lang": "en",
+    "_id": "721d3fe6-709c-49bc-a9ec-ccc36bc0271b",
+    "createdAt": "2026-05-23T08:43:38.199Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.1149816383082436,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779527055611.jpg",
+    "lang": "en",
+    "_id": "51c95609-f817-4dcd-95b6-ae5a936a49b6",
+    "createdAt": "2026-05-23T09:04:16.956Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Rust",
+    "severity": "low",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply diluted milk spray",
+      "Use neem oil weekly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 31.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Rain showers",
+          "tempMin": 22.1,
+          "tempMax": 32.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.9,
+          "tempMax": 32.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is low. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "confidence": 0.3665413414772861,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779527640813.jpg",
+    "lang": "en",
+    "_id": "5819919c-9434-4259-8bda-cc385783018f",
+    "createdAt": "2026-05-23T09:14:02.893Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Powdery Mildew",
+    "severity": "high",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.6,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.5,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.9,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is high. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.9485695139986146,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779528219616.png",
+    "lang": "en",
+    "_id": "dc1eb40c-87c4-415a-968b-7652e92cc0fc",
+    "createdAt": "2026-05-23T09:23:40.781Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Rust",
+    "severity": "high",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply diluted milk spray",
+      "Use neem oil weekly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.6,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.5,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.9,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is high. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "confidence": 0.7656433259142436,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779528504272.png",
+    "lang": "en",
+    "_id": "139c9211-2c50-4034-9dab-6f899723541e",
+    "createdAt": "2026-05-23T09:28:25.980Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.6,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.5,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.9,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.6282388401471319,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779528553249.jpeg",
+    "lang": "en",
+    "_id": "2c676483-0d2d-43af-8603-be2f5348a704",
+    "createdAt": "2026-05-23T09:29:14.785Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "high",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather service unavailable; using a general forecast for 12.52, 76.88.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Partly cloudy",
+          "tempMin": 20,
+          "tempMax": 28,
+          "advice": "Good day for treatment; spray in the morning if possible."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Light rain",
+          "tempMin": 21.5,
+          "tempMax": 29.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Sunny",
+          "tempMin": 23,
+          "tempMax": 31,
+          "advice": "Good day for treatment; spray in the morning if possible."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is high. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.9051729843533395,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779528602769.jpeg",
+    "lang": "en",
+    "_id": "ac77ba1a-2c61-4ff0-8444-67d088c302a9",
+    "createdAt": "2026-05-23T09:30:05.177Z"
+  },
+  {
+    "userId": "test",
+    "disease": "Downy Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is medium. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.5867715822511507,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779899462829.png",
+    "lang": "en",
+    "_id": "6e1822f6-7778-4e9b-8065-f8a12e802a4c",
+    "createdAt": "2026-05-27T16:31:04.236Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather service unavailable; using a general forecast for 12.31, 76.77.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Partly cloudy",
+          "tempMin": 20,
+          "tempMax": 28,
+          "advice": "Good day for treatment; spray in the morning if possible."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Light rain",
+          "tempMin": 21.5,
+          "tempMax": 29.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Sunny",
+          "tempMin": 23,
+          "tempMax": 31,
+          "advice": "Good day for treatment; spray in the morning if possible."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.5656978123084222,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779899723538.jpeg",
+    "lang": "en",
+    "_id": "0f66eed0-8ee9-4d09-a652-4a474c3f89be",
+    "createdAt": "2026-05-27T16:35:28.553Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Anthracnose",
+    "severity": "low",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is low. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.22932337475280928,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779900386195.png",
+    "lang": "en",
+    "_id": "b7668f14-f0c3-428d-86b8-67fbb1c56853",
+    "createdAt": "2026-05-27T16:46:27.353Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Bacterial Spot",
+    "severity": "low",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is low. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.19830457819401304,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779900670770.jpeg",
+    "lang": "en",
+    "_id": "909df96b-be2a-49ad-8726-14612e2e9e80",
+    "createdAt": "2026-05-27T16:51:11.602Z"
+  },
+  {
+    "userId": "testuser",
+    "disease": "Anthracnose",
+    "severity": "low",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is low. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.04627652964392204,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779901108890.jpg",
+    "lang": "en",
+    "_id": "3663a61a-f0dd-4722-b868-498c0976ee01",
+    "createdAt": "2026-05-27T16:58:29.822Z"
+  },
+  {
+    "userId": "testuser",
+    "disease": "Anthracnose",
+    "severity": "high",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is high. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.7880956875129919,
+    "imagePath": "c:\\codes\\backend\\uploads\\1779901433212.jpg",
+    "lang": "en",
+    "_id": "21f2e914-d103-497d-bb91-ea6e37ada8a2",
+    "createdAt": "2026-05-27T17:03:55.290Z"
+  },
+  {
+    "userId": "testuser",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.19331131878357732,
+    "imagePath": "c:\\codes\\backend\\uploads\\1779902648343.png",
+    "lang": "en",
+    "_id": "c662514f-17d4-46b3-a6c1-4b74f9361374",
+    "createdAt": "2026-05-27T17:24:09.137Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Late Blight",
+    "severity": "low",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is low. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.3062241548277088,
+    "imagePath": "c:\\codes\\backend\\uploads\\1779904243841.jpg",
+    "lang": "en",
+    "_id": "e053a838-a2e0-443e-b31b-3ead4c2f0280",
+    "createdAt": "2026-05-27T17:50:44.731Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.4296576308640606,
+    "imagePath": "c:\\codes\\backend\\uploads\\1779904540709.jpg",
+    "lang": "en",
+    "_id": "58ebb577-62bb-48cd-8a99-e1fe3d9ddc21",
+    "createdAt": "2026-05-27T17:55:41.437Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Bacterial Spot",
+    "severity": "medium",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is medium. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.49485376118834346,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779904870537.png",
+    "lang": "en",
+    "_id": "388ce17d-3dee-43b6-9575-9bed268bcd05",
+    "createdAt": "2026-05-27T18:01:13.043Z"
+  },
+  {
+    "userId": "test-user-123",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.6721090985853146,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779904965208.png",
+    "lang": "en",
+    "_id": "72d8d481-9097-424a-9709-6f569a6a2ffe",
+    "createdAt": "2026-05-27T18:02:46.145Z"
+  },
+  {
+    "userId": "test-user",
+    "disease": "Late Blight",
+    "severity": "high",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is high. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.8220482173710663,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779907698491.jpg",
+    "lang": "en",
+    "_id": "02d07bc7-4054-4706-aed3-b853d1371535",
+    "createdAt": "2026-05-27T18:48:19.498Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "low",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is low. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.04280487612364081,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779908002362.jpg",
+    "lang": "en",
+    "_id": "39bf4d60-f6ca-4621-90a3-d4a40d7a06a3",
+    "createdAt": "2026-05-27T18:53:23.286Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Light drizzle",
+          "tempMin": 20.3,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.14721052739648888,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779908141500.jpeg",
+    "lang": "en",
+    "_id": "ae227f8e-12da-44e2-afc5-11d5c33430fb",
+    "createdAt": "2026-05-27T18:55:42.607Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Anthracnose",
+    "severity": "medium",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.31, 76.77.",
+      "forecast": [
+        {
+          "day": "Thursday",
+          "condition": "Light drizzle",
+          "tempMin": 22.1,
+          "tempMax": 33.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Moderate drizzle",
+          "tempMin": 22.5,
+          "tempMax": 33.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Moderate drizzle",
+          "tempMin": 23,
+          "tempMax": 33.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is medium. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.49943828194412765,
+    "imagePath": "C:\\codes\\backend\\uploads\\1779908672430.jpeg",
+    "lang": "en",
+    "_id": "d3a7785c-93ff-48cc-a800-8ada135fcc9a",
+    "createdAt": "2026-05-27T19:04:33.489Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Bacterial Spot",
+    "severity": "high",
+    "treatments": [
+      "Remove affected areas",
+      "Use clean water",
+      "Sanitize tools",
+      "Improve air circulation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Bio-fungicide",
+        "Neem oil-based spray",
+        "Garlic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Streptomycin",
+          "cost": 1100
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Use turmeric-water spray",
+      "Keep leaves dry and prune well",
+      "Apply diluted honey solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.94, 77.63.",
+      "forecast": [
+        {
+          "day": "Saturday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.8,
+          "tempMax": 31.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.9,
+          "tempMax": 30.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.2,
+          "tempMax": 30.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Bacterial Spot. Severity is high. Suggested treatments: Remove affected areas, Use clean water. Low-cost alternative: Use turmeric-water spray.",
+    "confidence": 0.884802404177579,
+    "imagePath": "C:\\codes\\backend\\uploads\\1780137470272.jpg",
+    "lang": "en",
+    "_id": "ae179758-64db-4142-9725-9ef2d2c0617b",
+    "createdAt": "2026-05-30T10:37:51.307Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "high",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Friday",
+          "condition": "Moderate drizzle",
+          "tempMin": 20.9,
+          "tempMax": 27.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Moderate drizzle",
+          "tempMin": 20.7,
+          "tempMax": 27.7,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Sunday",
+          "condition": "Slight rain",
+          "tempMin": 20.9,
+          "tempMax": 25.3,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is high. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.9984824388871044,
+    "imagePath": "C:\\codes\\backend\\uploads\\1780679491400.jpg",
+    "lang": "en",
+    "_id": "a1b5fd86-0a47-4ab7-a849-8257d8a85c0e",
+    "createdAt": "2026-06-05T17:11:33.240Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "medium",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Sunday",
+          "condition": "Moderate drizzle",
+          "tempMin": 20.9,
+          "tempMax": 28.9,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Monday",
+          "condition": "Dense drizzle",
+          "tempMin": 20.8,
+          "tempMax": 27.7,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Tuesday",
+          "condition": "Rain showers",
+          "tempMin": 20.4,
+          "tempMax": 25.1,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is medium. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.6611812846480694,
+    "imagePath": "C:\\codes\\backend\\uploads\\1780855746144.jpg",
+    "lang": "en",
+    "_id": "7f0842a8-df78-49c1-8301-f6f6ada0fb5b",
+    "createdAt": "2026-06-07T18:09:07.458Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Anthracnose",
+    "severity": "low",
+    "treatments": [
+      "Prune infected tissue",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ],
+    "pesticides": {
+      "organic": [
+        "Compost tea",
+        "Sulfur spray",
+        "Copper-based organic spray"
+      ],
+      "chemical": [
+        {
+          "name": "Copper hydroxide",
+          "cost": 600
+        },
+        {
+          "name": "Captan",
+          "cost": 550
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Remove and burn infected debris",
+      "Apply neem oil regularly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 20.7,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.2,
+          "tempMax": 26.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Moderate rain",
+          "tempMin": 20.9,
+          "tempMax": 28.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Anthracnose. Severity is low. Suggested treatments: Prune infected tissue, Rotate crops. Low-cost alternative: Remove and burn infected debris.",
+    "confidence": 0.19255716952346635,
+    "imagePath": "C:\\codes\\backend\\uploads\\1781112247602.jpg",
+    "lang": "en",
+    "_id": "86a1e19a-6d16-49db-8be6-6cbcb4f4f765",
+    "createdAt": "2026-06-10T17:24:08.804Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Late Blight",
+    "severity": "medium",
+    "treatments": [
+      "Remove infected leaves",
+      "Improve drainage",
+      "Apply fungicide spray",
+      "Plant resistant varieties"
+    ],
+    "pesticides": {
+      "organic": [
+        "Copper spray",
+        "Bordeaux mixture",
+        "Neem oil"
+      ],
+      "chemical": [
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        },
+        {
+          "name": "Copper oxychloride",
+          "cost": 620
+        },
+        {
+          "name": "Chlorothalonil",
+          "cost": 700
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Spray diluted cow urine",
+      "Use compost tea as foliar feed",
+      "Apply diluted baking soda spray"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.31, 76.77.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Light drizzle",
+          "tempMin": 22.5,
+          "tempMax": 31.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.7,
+          "tempMax": 32.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Rain showers",
+          "tempMin": 21.8,
+          "tempMax": 28.7,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Late Blight. Severity is medium. Suggested treatments: Remove infected leaves, Improve drainage. Low-cost alternative: Spray diluted cow urine.",
+    "confidence": 0.43753712090806185,
+    "imagePath": "C:\\codes\\backend\\uploads\\1781112920385.jpg",
+    "lang": "en",
+    "_id": "cbdd0e7a-94c1-4026-b85c-b606d7ec47e1",
+    "createdAt": "2026-06-10T17:35:21.236Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Rust",
+    "severity": "low",
+    "treatments": [
+      "Remove affected leaves",
+      "Avoid overhead watering",
+      "Improve sunlight exposure"
+    ],
+    "pesticides": {
+      "organic": [
+        "Baking soda spray",
+        "Potassium bicarbonate",
+        "Sulfur soap spray"
+      ],
+      "chemical": [
+        {
+          "name": "Myclobutanil",
+          "cost": 650
+        },
+        {
+          "name": "Trifloxystrobin",
+          "cost": 750
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply diluted milk spray",
+      "Use neem oil weekly"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.31, 76.77.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Light drizzle",
+          "tempMin": 22.5,
+          "tempMax": 31.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 21.7,
+          "tempMax": 32.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Rain showers",
+          "tempMin": 21.8,
+          "tempMax": 28.7,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Rust. Severity is low. Suggested treatments: Remove affected leaves, Avoid overhead watering. Low-cost alternative: Apply diluted milk spray.",
+    "confidence": 0.1694794012341363,
+    "imagePath": "C:\\codes\\backend\\uploads\\1781113085405.jpg",
+    "lang": "en",
+    "_id": "1dc94228-63ac-4068-adb3-080b17c0c4c9",
+    "createdAt": "2026-06-10T17:38:06.248Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Powdery Mildew",
+    "severity": "low",
+    "treatments": [
+      "Increase air flow",
+      "Use neem oil",
+      "Remove infected shoots",
+      "Avoid overhead watering"
+    ],
+    "pesticides": {
+      "organic": [
+        "Neem oil",
+        "Baking soda spray",
+        "Milk spray"
+      ],
+      "chemical": [
+        {
+          "name": "Sulfur",
+          "cost": 380
+        },
+        {
+          "name": "Propiconazole",
+          "cost": 520
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Apply baking soda solution",
+      "Use diluted milk spray",
+      "Spray garlic water"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.97, 77.59.",
+      "forecast": [
+        {
+          "day": "Wednesday",
+          "condition": "Rain showers",
+          "tempMin": 20.7,
+          "tempMax": 30,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Heavy rain showers",
+          "tempMin": 20.2,
+          "tempMax": 26.6,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Moderate rain",
+          "tempMin": 20.9,
+          "tempMax": 28.2,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Powdery Mildew. Severity is low. Suggested treatments: Increase air flow, Use neem oil. Low-cost alternative: Apply baking soda solution.",
+    "confidence": 0.1435671254355425,
+    "imagePath": "C:\\codes\\backend\\uploads\\1781113341652.jpg",
+    "lang": "en",
+    "_id": "a96088ec-7f31-4ebd-a5c5-d434e0052a14",
+    "createdAt": "2026-06-10T17:42:22.449Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Downy Mildew",
+    "severity": "high",
+    "treatments": [
+      "Improve air circulation",
+      "Use resistant varieties",
+      "Avoid overhead irrigation"
+    ],
+    "pesticides": {
+      "organic": [
+        "Garlic spray",
+        "Neem oil",
+        "Baking soda spray"
+      ],
+      "chemical": [
+        {
+          "name": "Metalaxyl",
+          "cost": 520
+        },
+        {
+          "name": "Mancozeb",
+          "cost": 450
+        }
+      ]
+    },
+    "affordableAlternatives": [
+      "Improve plant spacing",
+      "Spray diluted milk solution"
+    ],
+    "weatherForecast": {
+      "summary": "Weather forecast loaded for 12.31, 76.77.",
+      "forecast": [
+        {
+          "day": "Thursday",
+          "condition": "Thunderstorm with hail",
+          "tempMin": 21.9,
+          "tempMax": 29.4,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Friday",
+          "condition": "Dense drizzle",
+          "tempMin": 21.6,
+          "tempMax": 31.5,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        },
+        {
+          "day": "Saturday",
+          "condition": "Rain showers",
+          "tempMin": 21.8,
+          "tempMax": 30.8,
+          "advice": "Avoid spraying during rain, wait for a dry window."
+        }
+      ]
+    },
+    "voiceText": "Detected Downy Mildew. Severity is high. Suggested treatments: Improve air circulation, Use resistant varieties. Low-cost alternative: Improve plant spacing.",
+    "confidence": 0.9302095048053718,
+    "imagePath": "C:\\codes\\backend\\uploads\\1782399520211.jpg",
+    "lang": "en",
+    "_id": "3282c639-405c-41f9-91b0-384bda10e207",
+    "createdAt": "2026-06-25T14:58:41.938Z"
+  }
+]

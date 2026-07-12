@@ -1,0 +1,212 @@
+[
+  {
+    "scanId": "e06b3baa-f688-47e1-8372-063e9149fba9",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "user",
+    "text": "When should I spray?",
+    "_id": "bef3f709-0c73-4380-aeb5-2876d56cbaa8",
+    "createdAt": "2026-05-22T16:47:16.069Z"
+  },
+  {
+    "scanId": "e06b3baa-f688-47e1-8372-063e9149fba9",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "bot",
+    "text": "Best time: early morning on Friday when it is dry. Immediate steps: Avoid spraying before rain or in strong wind.",
+    "_id": "15b69814-3b03-4ff2-beb1-6567330fa4bc",
+    "createdAt": "2026-05-22T16:47:16.071Z"
+  },
+  {
+    "scanId": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "user",
+    "text": "When should I spray?",
+    "_id": "1525a8da-1963-46f3-8a44-63e489b23f14",
+    "createdAt": "2026-05-22T19:53:33.378Z"
+  },
+  {
+    "scanId": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "bot",
+    "text": "Best time: early morning on Saturday when it is dry. Immediate steps: Avoid spraying before rain or in strong wind.",
+    "_id": "4a4317ec-38f8-4288-83e7-18231ba1a18a",
+    "createdAt": "2026-05-22T19:53:33.380Z"
+  },
+  {
+    "scanId": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "user",
+    "text": "hi",
+    "_id": "040ead74-4470-4b32-9351-f82afa71a579",
+    "createdAt": "2026-05-22T19:53:52.429Z"
+  },
+  {
+    "scanId": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: Remove infected leaves, Improve drainage. Organic options: Copper spray. Chemical options: Mancozeb, Copper oxychloride. Use according to label, safety and local regulations. Best time: early morning on Saturday when it is dry.",
+    "_id": "7561b114-fca4-40a8-9048-65dac24b141e",
+    "createdAt": "2026-05-22T19:53:52.430Z"
+  },
+  {
+    "scanId": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do now?",
+    "_id": "f28986af-2622-4fab-a3a2-3502f78a14d4",
+    "createdAt": "2026-05-22T19:53:59.803Z"
+  },
+  {
+    "scanId": "8486a9ca-69e2-4392-b63a-bab28923e447",
+    "userId": "Yash",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: Remove infected leaves, Improve drainage. Organic options: Copper spray. Chemical options: Mancozeb, Copper oxychloride. Use according to label, safety and local regulations.",
+    "_id": "57d2a98e-8060-4e45-84ed-46b9a6e1e3fe",
+    "createdAt": "2026-05-22T19:53:59.804Z"
+  },
+  {
+    "scanId": "9af9fe80-7f57-40ad-a099-cba03def44bc",
+    "userId": "test-user-123",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "b1ceed8c-9061-4139-bab6-f33534dcf332",
+    "createdAt": "2026-05-23T05:07:15.850Z"
+  },
+  {
+    "scanId": "9af9fe80-7f57-40ad-a099-cba03def44bc",
+    "userId": "test-user-123",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: Increase air flow, Use neem oil. Organic options: Neem oil, Baking soda spray, Milk spray. Chemical options: Sulfur, Propiconazole. Use according to label, safety and local regulations.",
+    "_id": "cec3bc8b-9d49-4083-ac0f-f1b29b9fb999",
+    "createdAt": "2026-05-23T05:07:15.851Z"
+  },
+  {
+    "userId": "test",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "d68ab959-acf7-4ee9-b4e8-2ad32da87668",
+    "createdAt": "2026-05-27T16:30:35.901Z"
+  },
+  {
+    "userId": "test",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: recommended treatment.  ",
+    "_id": "d9cf4b74-de43-4cf1-91b1-9119f49f9fcf",
+    "createdAt": "2026-05-27T16:30:35.902Z"
+  },
+  {
+    "scanId": "b7668f14-f0c3-428d-86b8-67fbb1c56853",
+    "userId": "test-user-123",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "a6a68813-cad1-4359-9e9c-bbdb52ca49ad",
+    "createdAt": "2026-05-27T16:46:27.378Z"
+  },
+  {
+    "scanId": "b7668f14-f0c3-428d-86b8-67fbb1c56853",
+    "userId": "test-user-123",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: Prune infected tissue, Rotate crops. Organic options: Compost tea, Sulfur spray, Copper-based organic spray. Chemical options: Copper hydroxide, Captan. Use according to label, safety and local regulations.",
+    "_id": "85a5a6a4-6a25-4064-a109-f4b23a59938c",
+    "createdAt": "2026-05-27T16:46:27.379Z"
+  },
+  {
+    "scanId": "testscanid",
+    "userId": "testuser",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "6ba4a30c-e026-4568-911e-ae105d456424",
+    "createdAt": "2026-05-27T16:59:02.752Z"
+  },
+  {
+    "scanId": "testscanid",
+    "userId": "testuser",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: recommended treatment.  ",
+    "_id": "0b3200f6-fe64-4dce-bbfb-cbde8aea51cd",
+    "createdAt": "2026-05-27T16:59:02.753Z"
+  },
+  {
+    "scanId": "c662514f-17d4-46b3-a6c1-4b74f9361374",
+    "userId": "testuser",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "f2c002f9-9122-4e3e-aadd-0f2c6e206f4f",
+    "createdAt": "2026-05-27T17:25:03.780Z"
+  },
+  {
+    "scanId": "c662514f-17d4-46b3-a6c1-4b74f9361374",
+    "userId": "testuser",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: Remove infected leaves, Improve drainage. Organic options: Copper spray, Bordeaux mixture, Neem oil. Chemical options: Mancozeb, Copper oxychloride, Chlorothalonil. Use according to label, safety and local regulations.",
+    "_id": "0af1b4b0-ea50-45a4-80ce-b504a765feb2",
+    "createdAt": "2026-05-27T17:25:03.781Z"
+  },
+  {
+    "scanId": "72d8d481-9097-424a-9709-6f569a6a2ffe",
+    "userId": "test-user-123",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "9325dcdd-ea9a-4901-aa77-17519b5aad19",
+    "createdAt": "2026-05-27T18:02:46.161Z"
+  },
+  {
+    "scanId": "72d8d481-9097-424a-9709-6f569a6a2ffe",
+    "userId": "test-user-123",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: Remove infected leaves, Improve drainage. Organic options: Copper spray, Bordeaux mixture, Neem oil. Chemical options: Mancozeb, Copper oxychloride, Chlorothalonil. Use according to label, safety and local regulations.",
+    "_id": "ddb7889e-9f8f-44a2-a2a8-7e63e0e71277",
+    "createdAt": "2026-05-27T18:02:46.162Z"
+  },
+  {
+    "userId": "test-user",
+    "lang": "en",
+    "from": "user",
+    "text": "What should I do?",
+    "_id": "12bcc0a0-b1af-4850-8ee5-0181e70033ab",
+    "createdAt": "2026-05-27T18:46:18.687Z"
+  },
+  {
+    "userId": "test-user",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: recommended treatment.  ",
+    "_id": "750a5064-646d-47c9-b454-c2af756e8f54",
+    "createdAt": "2026-05-27T18:46:18.688Z"
+  },
+  {
+    "userId": "anonymous",
+    "lang": "en",
+    "from": "user",
+    "text": "help",
+    "_id": "f2d31977-a9d7-48b9-a812-a05975495594",
+    "createdAt": "2026-06-05T17:09:44.338Z"
+  },
+  {
+    "userId": "anonymous",
+    "lang": "en",
+    "from": "bot",
+    "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: recommended treatment.   Best time: early morning when leaves are dry and wind is calm.",
+    "_id": "dd2b6a91-60e9-4d8b-aa20-4ada268f5abb",
+    "createdAt": "2026-06-05T17:09:44.339Z"
+  }
+]
