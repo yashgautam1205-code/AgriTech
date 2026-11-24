@@ -1,93 +1,7 @@
-// Mock AI service - replace with real model or external API integration
-const path = require('path');
+// Crop and disease scan services.
 const { fetchWeatherForecast } = require('./weatherService');
-
-const diseases = [
-  {
-    name: 'Late Blight',
-    treatments: ['Remove infected leaves', 'Improve drainage', 'Apply fungicide spray', 'Plant resistant varieties'],
-    organic: ['Copper spray', 'Bordeaux mixture', 'Neem oil'],
-    // chemical products with an estimated retail cost per litre/package
-    chemical: [
-      { name: 'Mancozeb', cost: 450 },
-      { name: 'Copper oxychloride', cost: 620 },
-      { name: 'Chlorothalonil', cost: 700 }
-    ],
-    // affordable alternatives with estimated smaller-scale cost or effort estimate
-    affordableAlternatives: [
-      { name: 'Spray diluted cow urine', costEstimate: 0 },
-      { name: 'Use compost tea as foliar feed', costEstimate: 0 },
-      { name: 'Apply diluted baking soda spray', costEstimate: 25 }
-    ]
-  },
-  {
-    name: 'Powdery Mildew',
-    treatments: ['Increase air flow', 'Use neem oil', 'Remove infected shoots', 'Avoid overhead watering'],
-    organic: ['Neem oil', 'Baking soda spray', 'Milk spray'],
-    chemical: [
-      { name: 'Sulfur', cost: 380 },
-      { name: 'Propiconazole', cost: 520 }
-    ],
-    affordableAlternatives: [
-      { name: 'Apply baking soda solution', costEstimate: 20 },
-      { name: 'Use diluted milk spray', costEstimate: 30 },
-      { name: 'Spray garlic water', costEstimate: 10 }
-    ]
-  },
-  {
-    name: 'Bacterial Spot',
-    treatments: ['Remove affected areas', 'Use clean water', 'Sanitize tools', 'Improve air circulation'],
-    organic: ['Bio-fungicide', 'Neem oil-based spray', 'Garlic spray'],
-    chemical: [
-      { name: 'Copper oxychloride', cost: 620 },
-      { name: 'Streptomycin', cost: 1100 }
-    ],
-    affordableAlternatives: [
-      { name: 'Use turmeric-water spray', costEstimate: 5 },
-      { name: 'Keep leaves dry and prune well', costEstimate: 0 },
-      { name: 'Apply diluted honey solution', costEstimate: 10 }
-    ]
-  },
-  {
-    name: 'Downy Mildew',
-    treatments: ['Improve air circulation', 'Use resistant varieties', 'Avoid overhead irrigation'],
-    organic: ['Garlic spray', 'Neem oil', 'Baking soda spray'],
-    chemical: [
-      { name: 'Metalaxyl', cost: 520 },
-      { name: 'Mancozeb', cost: 450 }
-    ],
-    affordableAlternatives: [
-      { name: 'Improve plant spacing', costEstimate: 0 },
-      { name: 'Spray diluted milk solution', costEstimate: 30 }
-    ]
-  },
-  {
-    name: 'Anthracnose',
-    treatments: ['Prune infected tissue', 'Rotate crops', 'Avoid wet foliage'],
-    organic: ['Compost tea', 'Sulfur spray', 'Copper-based organic spray'],
-    chemical: [
-      { name: 'Copper hydroxide', cost: 600 },
-      { name: 'Captan', cost: 550 }
-    ],
-    affordableAlternatives: [
-      { name: 'Remove and burn infected debris', costEstimate: 0 },
-      { name: 'Apply neem oil regularly', costEstimate: 50 }
-    ]
-  },
-  {
-    name: 'Rust',
-    treatments: ['Remove affected leaves', 'Avoid overhead watering', 'Improve sunlight exposure'],
-    organic: ['Baking soda spray', 'Potassium bicarbonate', 'Sulfur soap spray'],
-    chemical: [
-      { name: 'Myclobutanil', cost: 650 },
-      { name: 'Trifloxystrobin', cost: 750 }
-    ],
-    affordableAlternatives: [
-      { name: 'Apply diluted milk spray', costEstimate: 25 },
-      { name: 'Use neem oil weekly', costEstimate: 50 }
-    ]
-  }
-];
+const { predictDisease } = require('./diseaseInferenceService');
+const { getDiseaseGuidance } = require('./diseaseGuidance');
 
 const voiceTextTemplates = {
   en: 'Detected {disease}. Severity is {severity}. Suggested treatments: {treatments}.',
@@ -108,12 +22,6 @@ const voiceTextAlternatives = {
   te: 'తక్కువ ఖర్చు ప్రత్యామ్నాయం: {alternative}.',
   bn: 'সস্তা বিকল্প: {alternative}.',
 };
-
-function severityFromConfidence(conf) {
-  if (conf > 0.75) return 'high';
-  if (conf > 0.4) return 'medium';
-  return 'low';
-}
 
 function localizeVoiceText(disease, severity, treatments, affordableAlternatives, lang) {
   const template = voiceTextTemplates[lang] || voiceTextTemplates.en
@@ -145,53 +53,31 @@ function localizeSeverity(severity, lang) {
   return (map[lang] && map[lang][severity]) || severity
 }
 
-function buildWeatherForecast() {
-  const today = new Date();
-  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const conditions = [
-    { condition: 'Sunny', advice: 'Good for spraying in the early morning.' },
-    { condition: 'Light rain', advice: 'Avoid spraying and keep treated leaves dry.' },
-    { condition: 'Cloudy', advice: 'Check for humidity before applying treatment.' }
-  ];
-  const forecasts = [];
-  for (let i = 0; i < 3; i += 1) {
-    const date = new Date(today);
-    date.setDate(today.getDate() + i);
-    const choice = conditions[(today.getDay() + i) % conditions.length];
-    forecasts.push({
-      day: dayNames[date.getDay()],
-      condition: choice.condition,
-      tempMin: 20 + i * 2,
-      tempMax: 28 + i * 2,
-      advice: choice.advice
-    });
-  }
-  return {
-    summary: 'Local weather looks stable for the next few days. Plan treatment around dry windows.',
-    forecast: forecasts
-  };
-}
-
 async function analyzeImage(filePath, lat, lon, lang = 'en') {
-  // This is a mock - in production, load model or call external API
-  // Use file hash or name to pick deterministic output if desired
-  const idx = Math.floor(Math.random() * diseases.length);
-  const conf = Math.random();
-  const chosen = diseases[idx];
-  const severity = severityFromConfidence(conf);
+  const prediction = await predictDisease(filePath);
+  const className = prediction.top_prediction;
+  const guidance = getDiseaseGuidance(className, prediction.status);
   const weatherForecast = await fetchWeatherForecast(lat, lon);
-  const voiceText = localizeVoiceText(chosen.name, localizeSeverity(severity, lang), chosen.treatments, chosen.affordableAlternatives, lang);
+  const diseaseName = prediction.status === 'uncertain'
+    ? 'Uncertain'
+    : `${prediction.crop} — ${prediction.disease}`;
+  const voiceText = prediction.status === 'uncertain'
+    ? `The image result is uncertain. The closest class is ${prediction.crop} ${prediction.disease}. Please seek local confirmation.`
+    : `Image classification: ${diseaseName}. Confidence ${(prediction.confidence * 100).toFixed(1)} percent.`;
 
   return {
-    disease: chosen.name,
-    severity,
-    treatments: chosen.treatments,
-    // return pesticides with richer info (chemical items include cost)
-    pesticides: { organic: chosen.organic, chemical: chosen.chemical },
-    // keep affordable alternatives as objects with costEstimate
-    affordableAlternatives: chosen.affordableAlternatives,
+    disease: diseaseName,
+    crop: prediction.crop,
+    predictedClass: className,
+    detectionStatus: prediction.status,
+    topPrediction: prediction.top_prediction,
+    severity: 'unassessed',
+    treatments: guidance.treatments,
+    pesticides: { organic: [], chemical: [] },
+    affordableAlternatives: [],
     weatherForecast,
-    confidence: conf,
+    confidence: prediction.confidence,
+    diseaseInfo: guidance,
     voiceText,
     lang
   };
@@ -249,9 +135,7 @@ function buildCropCalendar(crop, weatherForecast) {
   };
 
   const fertilizerSchedule = [
-    'At planting: apply balanced compost or well-rotted manure near roots.',
-    'Vegetative stage: apply nitrogen-rich feed once plants have established.',
-    'Before flowering/fruiting: apply potassium-rich feed to support yield.'
+    'A fertilizer schedule cannot be determined from an image scan. Use a current soil test and crop-specific local extension guidance; no rate is prescribed.'
   ];
 
   return {
@@ -366,6 +250,22 @@ function getTranslations(lang) {
 }
 
 async function generateAssistantResponse({ disease, severity, treatments, pesticides, affordableAlternatives, weatherForecast, confidence, scanId, crop, lat, lon, userId, lang }, question) {
+  if (severity === 'unassessed' || disease === 'Uncertain') {
+    const answer = 'The image model cannot assess disease severity. Do not treat this result as a confirmed diagnosis; consult a local agricultural extension specialist.';
+    return {
+      question: question || 'general advice',
+      answer,
+      cause: 'Not determined by image classification.',
+      risk: 'Not assessed.',
+      immediateSteps: ['Seek local confirmation before taking treatment action.'],
+      organicAdvice: '',
+      chemicalAdvice: '',
+      calendar: null,
+      scanId,
+      confidence
+    };
+  }
+
   // Produce simple, farmer-friendly answers for common questions.
   const cause = simpleCauseFor(disease, lang);
   const translations = getTranslations(lang)

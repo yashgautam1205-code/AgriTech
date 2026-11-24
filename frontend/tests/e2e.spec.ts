@@ -37,3 +37,57 @@ test.describe('Language -> TTS', () => {
     expect(String(first.lang || '').toLowerCase()).toContain('hi');
   });
 });
+
+test('crop recommendation submits real model features', async ({ page }) => {
+  await page.goto(APP_URL);
+
+  await page.getByLabel('Nitrogen (N)', { exact: true }).fill('90');
+  await page.getByLabel('Phosphorus (P)', { exact: true }).fill('42');
+  await page.getByLabel('Potassium (K)', { exact: true }).fill('43');
+  await page.getByLabel('Temperature (°C)', { exact: true }).fill('20.88');
+  await page.getByLabel('Humidity (%)', { exact: true }).fill('82');
+  await page.getByLabel('Soil pH', { exact: true }).fill('6.5');
+  await page.getByLabel('Rainfall (mm)', { exact: true }).fill('202.94');
+
+  const predictionResponse = page.waitForResponse(response =>
+    response.url().includes('/api/crop/predict') && response.request().method() === 'POST'
+  );
+  await page.getByRole('button', { name: 'Recommend suitable crops' }).click();
+  const response = await predictionResponse;
+  expect(response.status()).toBe(200);
+  await expect(page.getByText('rice', { exact: true }).first()).toBeVisible({ timeout: 15000 });
+  await expect(page.getByText(/Model confidence:/)).toBeVisible();
+});
+
+test('irrigation guidance uses field inputs and shows their source', async ({ page }) => {
+  const modelInfoPromise = page.waitForResponse(response =>
+    response.url().includes('/api/crop/model-info') &&
+    response.request().method() === 'GET'
+  );
+  await page.goto(APP_URL);
+  expect((await modelInfoPromise).status()).toBe(200);
+
+  await page.getByLabel('Crop', { exact: true }).selectOption('maize');
+  await page.getByLabel('Growth stage').selectOption('fruiting');
+  await page.getByLabel('Soil moisture condition').selectOption('dry');
+  await page.getByLabel('Soil moisture reading (%)').fill('18');
+  await page.getByLabel(/Forecast rainfall, next 3 days/).fill('0');
+  await page.getByLabel('Nitrogen (N) — soil test').fill('90');
+  await page.getByLabel('Phosphorus (P) — soil test').fill('42');
+  await page.getByLabel('Potassium (K) — soil test').fill('43');
+
+  const responsePromise = page.waitForResponse(response =>
+    response.url().includes('/api/agriculture/irrigation/recommend') &&
+    response.request().method() === 'POST'
+  );
+  await page.getByTestId('irrigation-submit').click();
+  const response = await responsePromise;
+  expect(response.status()).toBe(200);
+  const body = await response.json();
+  expect(body.inputs.moistureCondition).toBe('dry');
+  expect(body.inputs.moistureSource).toBe('user-entered observation');
+  expect(body.weather.forecastRainfallSource).toBe('user-entered');
+  expect(body.management.nutrientAssessment.suppliedValues.N).toBe(90);
+  await expect(page.getByTestId('irrigation-result')).toContainText('user reports dry soil');
+  await expect(page.getByTestId('irrigation-result')).toContainText('no fertilizer rate is prescribed');
+});

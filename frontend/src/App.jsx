@@ -3,15 +3,10 @@ import CameraUpload from './components/CameraUpload'
 import ResultCard from './components/ResultCard'
 import AssistantChat from './components/AssistantChat'
 import UserHistory from './components/UserHistory'
+import CropRecommendation from './components/CropRecommendation'
+import CropManagementRecommendation from './components/CropManagementRecommendation'
 import { t } from './i18n'
 import axios from 'axios'
-
-// Fallback shops if API fails
-const fallbackShops = [
-  { name: 'Green Farm Store', address: 'Market Road, Village', lat: 12.9716, lon: 77.5946, phone: '080-1234-5678', sellsChemical: true, sellsOrganic: true },
-  { name: 'Rural Pesticide Mart', address: 'Main Bazar', lat: 12.9750, lon: 77.6050, phone: '080-9876-5432', sellsChemical: true, sellsOrganic: false },
-  { name: 'Organic Agri Center', address: 'Station Road', lat: 12.9680, lon: 77.5850, phone: '080-5566-7788', sellsChemical: false, sellsOrganic: true }
-]
 
 // Calculate distance between two coordinates using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -42,17 +37,6 @@ function getChemicalShopsWithinRadius(shops, coords, maxKm = 15) {
   return getChemicalShopsByDistance(shops, coords).filter(shop => shop.distance <= maxKm)
 }
 
-function getNearestChemicalShop(shops, coords) {
-  const chemicalShops = shops
-    .filter(shop => shop.sellsChemical)
-    .map(shop => ({
-      ...shop,
-      distance: calculateDistance(coords.lat, coords.lon, shop.lat, shop.lon)
-    }))
-  chemicalShops.sort((a, b) => Number(a.distance) - Number(b.distance))
-  return chemicalShops[0] || shops[0] || fallbackShops[0]
-}
-
 export default function App() {
   const [lang, setLang] = useState('en')
   const [userId, setUserId] = useState('')
@@ -61,11 +45,11 @@ export default function App() {
   const [coords, setCoords] = useState(null)
   const [locationStatus, setLocationStatus] = useState('pending')
   const [permissionState, setPermissionState] = useState('prompt')
-  const [shops, setShops] = useState(fallbackShops)
+  const [shops, setShops] = useState([])
   const [shopsLoading, setShopsLoading] = useState(false)
+  const [shopsLoadError, setShopsLoadError] = useState(false)
   const [governmentSchemes, setGovernmentSchemes] = useState([])
   const [govSchemesLoading, setGovSchemesLoading] = useState(false)
-  const [govSchemesUpdatedAt, setGovSchemesUpdatedAt] = useState(null)
   const [searchRadius, setSearchRadius] = useState(15)
   const locationWatchId = useRef(null)
   const chemicalShops = coords ? getChemicalShopsByDistance(shops, coords) : []
@@ -172,6 +156,7 @@ export default function App() {
     if (coords) {
       setShopsLoading(true)
       const fetchShops = async () => {
+        setShopsLoadError(false)
         try {
           const API_BASE = import.meta.env.VITE_API_BASE || ''
           const url = `${API_BASE}/api/nearby-shops`
@@ -188,12 +173,12 @@ export default function App() {
           if (response.data && response.data.length > 0) {
             setShops(response.data)
           } else {
-            console.log('⚠️ No shops returned from API, using fallback')
-            setShops(fallbackShops)
+            setShops([])
           }
         } catch (err) {
           console.error('❌ Failed to fetch shops from API:', err.message)
-          setShops(fallbackShops)
+          setShops([])
+          setShopsLoadError(true)
         } finally {
           setShopsLoading(false)
         }
@@ -210,7 +195,6 @@ export default function App() {
         const response = await axios.get(`${API_BASE}/api/government-schemes`)
         if (response.data?.schemes) {
           setGovernmentSchemes(response.data.schemes)
-          setGovSchemesUpdatedAt(response.data.updatedAt || null)
         } else {
           setGovernmentSchemes([])
         }
@@ -502,7 +486,6 @@ export default function App() {
                       .then(response => {
                         if (response.data?.schemes) {
                           setGovernmentSchemes(response.data.schemes)
-                          setGovSchemesUpdatedAt(response.data.updatedAt || null)
                         } else {
                           setGovernmentSchemes([])
                         }
@@ -518,7 +501,7 @@ export default function App() {
                   {langStrings.refreshSchemes || 'Refresh'}
                 </button>
               </div>
-              <p className={`mt-2 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{langStrings.governmentSchemesDescription || 'Daily updated government support programs for crop insurance, irrigation, and farmer income.'}</p>
+              <p className={`mt-2 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Curated reference links only—not a live government feed. Confirm current eligibility, availability, and application details on the official portal.</p>
               <div className="mt-4 space-y-3">
                 {govSchemesLoading ? (
                   <p className={`text-sm ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>Loading schemes…</p>
@@ -537,9 +520,6 @@ export default function App() {
                     </div>
                   ))
                 )}
-                {govSchemesUpdatedAt && (
-                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Updated: {govSchemesUpdatedAt}</p>
-                )}
               </div>
             </div>
             <div className="space-y-4">
@@ -553,6 +533,9 @@ export default function App() {
           </aside>
 
           <main className="space-y-6">
+            <CropRecommendation isDark={isDark} />
+            <CropManagementRecommendation isDark={isDark} coords={coords} />
+
             <section className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/90 border-slate-200'} rounded-[32px] border p-6 shadow-xl`}>
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div>
@@ -615,7 +598,11 @@ export default function App() {
                     </div>
                   )}
                 {coords ? (
-                  nearbyChemicalShops && nearbyChemicalShops.length > 0 ? (
+                  shopsLoading ? (
+                    <p className="mb-4 text-sm" role="status">Loading verified shop listings…</p>
+                  ) : shopsLoadError ? (
+                    <p className="mb-4 text-sm" role="status">Verified shop listings are unavailable. No sample locations are shown.</p>
+                  ) : nearbyChemicalShops.length > 0 ? (
                     <div className={`mb-4 rounded-3xl p-4 ${isDark ? 'bg-slate-800 border-slate-700 text-slate-200 border' : 'bg-emerald-50 border-emerald-200 text-slate-900 border'}`}>
                       <p className="text-sm font-medium">Nearest chemical pesticide shop (within {searchRadius} km):</p>
                       <p className="mt-2 text-lg font-semibold">{nearbyChemicalShops[0].name}</p>
@@ -636,8 +623,9 @@ export default function App() {
                     </div>
                   )
                 ) : null}
+                {!coords && <p className="mb-4 text-sm">Allow location access to search for verified shop listings. No sample locations are shown.</p>}
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {((coords ? (nearbyChemicalShops.length > 0 ? nearbyChemicalShops : chemicalShops) : fallbackShops)).map((shop, index) => {
+                  {(coords ? (nearbyChemicalShops.length > 0 ? nearbyChemicalShops : chemicalShops) : []).map((shop, index) => {
                     const hasCoords = coords && typeof coords.lat === 'number' && typeof coords.lon === 'number'
                     const distance = hasCoords
                       ? `${shop.distance != null ? shop.distance.toFixed(1) : calculateDistance(coords.lat, coords.lon, shop.lat, shop.lon)} km`

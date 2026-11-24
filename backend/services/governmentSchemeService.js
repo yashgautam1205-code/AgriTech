@@ -49,24 +49,12 @@ const schemes = [
   }
 ]
 
-function getDailyGovernmentSchemes() {
-  const today = new Date()
-  const dateKey = today.toISOString().slice(0, 10)
-  const seed = Number(dateKey.replace(/-/g, ''))
-  const count = Math.min(3, schemes.length)
-  const start = seed % schemes.length
-  const selected = Array.from({ length: count }, (_, index) => schemes[(start + index) % schemes.length])
-
-  const nextUpdateDate = new Date(today)
-  nextUpdateDate.setDate(today.getDate() + 1)
-  const validUntil = nextUpdateDate.toISOString().slice(0, 10)
-
+function getGovernmentSchemeReferences() {
   return {
-    updatedAt: dateKey,
-    validUntil,
-    message: 'Updated daily for farmers with the latest government schemes.',
-    schemes: selected
+    source: 'curated static references',
+    message: 'This list is not a live government feed. Confirm current eligibility, availability, and application details on the official portal.',
+    schemes
   }
 }
 
-module.exports = { getDailyGovernmentSchemes }
+module.exports = { getGovernmentSchemeReferences }

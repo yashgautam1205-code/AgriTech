@@ -3,3 +3,14 @@ frontend/node_modules/
 backend/node_modules/
 .env
 uploads/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+ml_service/data/plantvillage/
+!ml_service/data/plantvillage/
+ml_service/data/plantvillage/*
+!ml_service/data/plantvillage/source.json
+ml_service/data/crop/Crop_recommendation.csv
+ml_service/data/crop/*.zip
+ml_service/models/crop_suitability.joblib
+ml_service/models/plant_disease_mobilenetv2.keras

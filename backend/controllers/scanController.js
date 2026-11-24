@@ -3,6 +3,58 @@ const { analyzeImage, generateAssistantResponse } = require('../services/aiServi
 const persistence = require('../services/persistence');
 const govSchemeService = require('../services/governmentSchemeService');
 const Shop = require('../models/Shop');
+const cropPredictionService = require('../services/cropPredictionService');
+
+function validateCropFeatures(body) {
+  const ranges = {
+    N: [0, 300],
+    P: [0, 300],
+    K: [0, 300],
+    temperature: [-20, 60],
+    humidity: [0, 100],
+    ph: [0, 14],
+    rainfall: [0, 5000]
+  };
+  const features = {};
+
+  for (const [name, [minimum, maximum]] of Object.entries(ranges)) {
+    const value = typeof body[name] === 'string' ? Number(body[name]) : body[name];
+    if (!Number.isFinite(value) || value < minimum || value > maximum) {
+      return { error: `Invalid ${name}: expected a number from ${minimum} to ${maximum}` };
+    }
+    features[name] = value;
+  }
+
+  return { features };
+}
+
+async function predictCrop(req, res) {
+  const { features, error } = validateCropFeatures(req.body || {});
+  if (error) {
+    return res.status(400).json({ message: error });
+  }
+
+  try {
+    const prediction = await cropPredictionService.predictCrop(features);
+    return res.json(prediction);
+  } catch (err) {
+    console.error('Crop prediction service error:', err.message);
+    if (err.message === 'ML_CROP_TIMEOUT') {
+      return res.status(504).json({ message: 'Crop recommendation service timed out. Please try again.' });
+    }
+    return res.status(503).json({ message: 'Crop recommendation is temporarily unavailable. Please try again later.' });
+  }
+}
+
+async function getCropModelInfo(req, res) {
+  try {
+    const info = await cropPredictionService.getCropModelInfo();
+    return res.json(info);
+  } catch (err) {
+    console.error('Crop model-info service error:', err.message);
+    return res.status(503).json({ message: 'Model information is temporarily unavailable.' });
+  }
+}
 
 async function uploadCropImage(req, res) {
   try {
@@ -11,11 +63,24 @@ async function uploadCropImage(req, res) {
       return res.status(400).json({ message: 'No image provided or upload failed' });
     }
 
-    const uploadDir = process.env.UPLOAD_DIR || 'uploads';
     const filePath = file.path;
     const lat = parseFloat(req.body.lat);
     const lon = parseFloat(req.body.lon);
-    const aiResult = await analyzeImage(filePath, lat, lon, String(req.body.lang || 'en'));
+    let aiResult;
+    try {
+      aiResult = await analyzeImage(filePath, lat, lon, String(req.body.lang || 'en'));
+    } catch (err) {
+      if (err.message === 'INVALID_DISEASE_IMAGE') {
+        return res.status(415).json({ message: 'Upload a valid JPEG, PNG, or WebP leaf image (at least 64 × 64 pixels).' });
+      }
+      if (err.message === 'DISEASE_ML_TIMEOUT') {
+        return res.status(504).json({ message: 'Disease identification timed out. Please try again.' });
+      }
+      if (err.message === 'DISEASE_ML_UNAVAILABLE') {
+        return res.status(503).json({ message: 'Disease identification is temporarily unavailable.' });
+      }
+      throw err;
+    }
 
     // Normalize pesticides: keep cost info for chemical, extract names for organic
     const normalizePesticides = (pesticides) => {
@@ -50,12 +115,21 @@ async function uploadCropImage(req, res) {
       voiceText: aiResult.voiceText,
       confidence: aiResult.confidence,
       imagePath: filePath,
+      crop: aiResult.crop,
+      predictedClass: aiResult.predictedClass,
+      detectionStatus: aiResult.detectionStatus,
+      diseaseInfo: aiResult.diseaseInfo,
       lang: req.body.lang || 'en'
     });
 
     // Optimize response for rural users: simple short sentences
     const response = {
       disease: aiResult.disease,
+      crop: aiResult.crop,
+      predictedClass: aiResult.predictedClass,
+      detectionStatus: aiResult.detectionStatus,
+      topPrediction: aiResult.topPrediction,
+      diseaseInfo: aiResult.diseaseInfo,
       severity: aiResult.severity,
       treatments: aiResult.treatments,
       pesticides: normalizePesticides(aiResult.pesticides),
@@ -74,7 +148,7 @@ async function uploadCropImage(req, res) {
       name: err.name,
       errors: err.errors ? Object.keys(err.errors).map(k => `${k}: ${err.errors[k].message}`) : undefined
     });
-    res.status(500).json({ message: err.message || 'Server error', error: process.env.NODE_ENV === 'development' ? err.message : undefined });
+    res.status(500).json({ message: 'Image processing failed. Please try another image.' });
   }
 }
 
@@ -92,8 +166,13 @@ async function getHistory(req, res) {
     const out = items.map(it => ({
       id: it._id,
       disease: it.disease,
+      crop: it.crop,
+      predictedClass: it.predictedClass,
+      detectionStatus: it.detectionStatus,
+      diseaseInfo: it.diseaseInfo,
+      confidence: it.confidence,
       severity: it.severity,
-      treatments: it.treatments.slice(0,2),
+      treatments: (it.treatments || []).slice(0, 2),
       pesticides: it.pesticides,
       imagePath: it.imagePath,
       date: it.createdAt
@@ -233,6 +312,7 @@ async function getNearbyShops(req, res) {
     if (require('../config/db').state.connected) {
       try {
         const query = {
+          verified: true,
           location: {
             $near: {
               $geometry: {
@@ -289,7 +369,7 @@ async function getNearbyShops(req, res) {
 
 async function getGovernmentSchemes(req, res) {
   try {
-    const schemes = govSchemeService.getDailyGovernmentSchemes();
+    const schemes = govSchemeService.getGovernmentSchemeReferences();
     res.json(schemes);
   } catch (err) {
     console.error('getGovernmentSchemes error', err);
@@ -297,4 +377,4 @@ async function getGovernmentSchemes(req, res) {
   }
 }
 
-module.exports = { uploadCropImage, getHistory, health, assistantReply, getChatHistory, getUserChatHistory, getNearbyShops, getGovernmentSchemes };
+module.exports = { uploadCropImage, getHistory, health, assistantReply, getChatHistory, getUserChatHistory, getNearbyShops, getGovernmentSchemes, predictCrop, getCropModelInfo };
