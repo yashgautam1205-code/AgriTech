@@ -1,10 +1,47 @@
 import React, { useRef, useState } from 'react'
 import axios from 'axios'
 
-export default function CameraUpload({ onResult, langStrings, coords, userId, lang }) {
+const SUPPORTED_CROPS = [
+  'Apple',
+  'Blueberry',
+  'Cherry_(including_sour)',
+  'Corn_(maize)',
+  'Grape',
+  'Orange',
+  'Peach',
+  'Pepper,_bell',
+  'Potato',
+  'Raspberry',
+  'Soybean',
+  'Squash',
+  'Strawberry',
+  'Tomato'
+]
+
+export default function CameraUpload({ onResult, onScanStart, onError, langStrings, coords, userId, lang }) {
   const fileRef = useRef()
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [selectedCrop, setSelectedCrop] = useState('')
+  const [observations, setObservations] = useState({
+    symptomsSpreading: 'unsure',
+    affectedPlants: 'unsure',
+    visibleSymptoms: []
+  })
+
+  function toggleSymptom(symptom) {
+    setObservations(current => ({
+      ...current,
+      visibleSymptoms: current.visibleSymptoms.includes(symptom)
+        ? current.visibleSymptoms.filter(value => value !== symptom)
+        : [...current.visibleSymptoms, symptom]
+    }))
+  }
+
+  function reportError(message) {
+    setErrorMessage(message)
+    onError?.(message)
+  }
 
   async function handleFile(e) {
     const file = e.target.files[0]
@@ -18,12 +55,13 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
 
   async function uploadFile(file) {
     setErrorMessage('')
+    onScanStart?.()
     if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
-      setErrorMessage('Choose a JPEG, PNG, or WebP leaf image.')
+      reportError(langStrings.imageUploadError)
       return
     }
     if (file.size > 10 * 1024 * 1024) {
-      setErrorMessage('Image must be 10 MB or smaller.')
+      reportError(langStrings.imageTooLarge)
       return
     }
 
@@ -33,6 +71,8 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
       form.append('image', file)
       form.append('userId', userId || 'anonymous')
       form.append('lang', lang || 'en')
+      form.append('observations', JSON.stringify(observations))
+      if (selectedCrop) form.append('selectedCrop', selectedCrop)
       if (coords) {
         form.append('lat', String(coords.lat))
         form.append('lon', String(coords.lon))
@@ -54,12 +94,18 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
     } catch (err) {
       const status = err?.response?.status
       const data = err?.response?.data
-      setErrorMessage(
+      const message =
+        status === 413
+          ? langStrings.imageTooLarge
+          : status === 415
+          ? langStrings.imageUploadError
+          : (
         data?.message ||
         (status === 503 || status === 504
-          ? 'Disease identification is unavailable right now. Please try again later.'
-          : 'Upload failed. Check your connection and try a supported leaf image.')
+          ? langStrings.diseaseUnavailable
+          : langStrings.uploadFailed)
       )
+      reportError(message)
       if (fileRef.current) {
         fileRef.current.value = ''
       }
@@ -70,6 +116,72 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
 
   return (
     <div className="space-y-3">
+      <label className="block text-sm">
+        {langStrings.cropSelectionPrompt}
+        <select
+          value={selectedCrop}
+          onChange={event => setSelectedCrop(event.target.value)}
+          className="mt-1 block w-full rounded border p-2"
+          data-testid="crop-selection"
+        >
+          <option value="">{langStrings.notSelected}</option>
+          {SUPPORTED_CROPS.map(crop => <option key={crop} value={crop}>{crop.replace(/_/g, ' ')}</option>)}
+          <option value="__unsupported__">{langStrings.otherCrop}</option>
+        </select>
+      </label>
+      <fieldset className="rounded-lg border border-slate-200 p-3 space-y-3">
+        <legend className="px-1 font-semibold">{langStrings.optionalObservations}</legend>
+        <label className="block text-sm">
+          {langStrings.symptomsSpreading}
+          <select
+            value={observations.symptomsSpreading}
+            onChange={event => setObservations(current => ({ ...current, symptomsSpreading: event.target.value }))}
+            className="mt-1 block w-full rounded border p-2"
+            data-testid="symptoms-spreading"
+          >
+            <option value="unsure">{langStrings.unsure}</option>
+            <option value="yes">{langStrings.yes}</option>
+            <option value="no">{langStrings.no}</option>
+          </select>
+        </label>
+        <label className="block text-sm">
+          {langStrings.affectedPlants}
+          <select
+            value={observations.affectedPlants}
+            onChange={event => setObservations(current => ({ ...current, affectedPlants: event.target.value }))}
+            className="mt-1 block w-full rounded border p-2"
+            data-testid="affected-plants"
+          >
+            <option value="unsure">Unsure</option>
+            <option value="less_10">Less than 10%</option>
+            <option value="10_30">10-30%</option>
+            <option value="more_30">More than 30%</option>
+          </select>
+        </label>
+        <div>
+          <p className="text-sm">{langStrings.visibleSymptoms}</p>
+          <div className="mt-1 flex flex-wrap gap-3">
+            {[
+              ['spots', langStrings.spots],
+              ['yellowing', langStrings.yellowing],
+              ['wilting', langStrings.wilting],
+              ['leaf_drying', langStrings.leafDrying],
+              ['mold', langStrings.mold],
+              ['other', langStrings.other]
+            ].map(([value, label]) => (
+              <label key={value} className="inline-flex items-center gap-1 text-sm">
+                <input
+                  type="checkbox"
+                  checked={observations.visibleSymptoms.includes(value)}
+                  onChange={() => toggleSymptom(value)}
+                />
+                {label}
+              </label>
+            ))}
+          </div>
+        </div>
+        <p className="text-xs text-slate-500">These reports support a simple triage only; they are not a validated diagnosis or severity scale.</p>
+      </fieldset>
       <label className="block">
         <span className="sr-only">{langStrings.uploadImage}</span>
         <input
@@ -90,7 +202,7 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
       >
         {langStrings.scanButton}
       </button>
-      {loading && <div className="text-center" role="status">Uploading and identifying the leaf image...</div>}
+      {loading && <div className="text-center" role="status">{langStrings.uploading}</div>}
       {errorMessage && <div className="rounded-lg border border-red-300 bg-red-50 p-3 text-sm text-red-800" role="alert">{errorMessage}</div>}
     </div>
   )

@@ -7,12 +7,21 @@ const {
   getHistory,
   health,
   assistantReply,
+  translateUserText,
+  transcribeSpeech,
+  synthesizeSpeech,
   getChatHistory,
   getUserChatHistory,
   getNearbyShops,
   getGovernmentSchemes,
   predictCrop,
-  getCropModelInfo
+  getCropModelInfo,
+  getPesticidePrices,
+  createPesticidePrice,
+  updatePesticidePrice,
+  listPesticideProducts,
+  createPesticideProduct,
+  updatePesticideProduct
 } = require('../controllers/scanController');
 const { recommendIrrigation } = require('../controllers/agricultureController');
 
@@ -38,6 +47,24 @@ const upload = multer({
     return cb(null, true);
   }
 });
+const audioUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    const supportedTypes = new Set([
+      'audio/wav', 'audio/x-wav', 'audio/wave', 'audio/mpeg', 'audio/mp3',
+      'audio/aac', 'audio/flac', 'audio/ogg', 'audio/opus', 'audio/mp4',
+      'audio/x-m4a', 'audio/amr', 'audio/x-ms-wma', 'audio/webm',
+      'video/webm', 'video/mp4'
+    ]);
+    if (!supportedTypes.has(file.mimetype)) {
+      const error = new Error('Unsupported audio type');
+      error.code = 'UNSUPPORTED_AUDIO_TYPE';
+      return cb(error);
+    }
+    return cb(null, true);
+  }
+});
 
 const asyncHandler = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
 
@@ -50,6 +77,9 @@ const handleImageUpload = (req, res, next) => {
 
 router.post('/upload-crop-image', handleImageUpload);
 router.post('/assistant', asyncHandler(assistantReply));
+router.post('/translate', asyncHandler(translateUserText));
+router.post('/speech/transcribe', audioUpload.single('audio'), asyncHandler(transcribeSpeech));
+router.post('/speech/synthesize', asyncHandler(synthesizeSpeech));
 router.get('/assistant/history/:scanId', asyncHandler(getChatHistory));
 router.get('/assistant/history/user/:userId', asyncHandler(getUserChatHistory));
 router.get('/history/:userId', asyncHandler(getHistory));
@@ -59,5 +89,11 @@ router.get('/health', asyncHandler(health));
 router.post('/crop/predict', asyncHandler(predictCrop));
 router.get('/crop/model-info', asyncHandler(getCropModelInfo));
 router.post('/agriculture/irrigation/recommend', asyncHandler(recommendIrrigation));
+router.get('/pesticide-prices', asyncHandler(getPesticidePrices));
+router.post('/admin/pesticide-prices', asyncHandler(createPesticidePrice));
+router.put('/admin/pesticide-prices/:id', asyncHandler(updatePesticidePrice));
+router.get('/admin/pesticide-products', asyncHandler(listPesticideProducts));
+router.post('/admin/pesticide-products', asyncHandler(createPesticideProduct));
+router.put('/admin/pesticide-products/:productId', asyncHandler(updatePesticideProduct));
 
 module.exports = router;

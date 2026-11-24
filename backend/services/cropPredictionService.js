@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const ML_SERVICE_URL = (process.env.ML_SERVICE_URL || 'http://localhost:8000').replace(/\/+$/, '');
+const ML_SERVICE_URL = (process.env.ML_SERVICE_URL || 'http://127.0.0.1:8000').replace(/\/+$/, '');
 const ML_SERVICE_TIMEOUT_MS = Number.parseInt(process.env.ML_SERVICE_TIMEOUT_MS || '10000', 10);
 
 async function predictCrop(features) {

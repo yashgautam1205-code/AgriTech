@@ -2,6 +2,12 @@
 const { fetchWeatherForecast } = require('./weatherService');
 const { predictDisease } = require('./diseaseInferenceService');
 const { getDiseaseGuidance } = require('./diseaseGuidance');
+const { assessDiseaseRisk } = require('./diseaseRiskService');
+const { getOrganicTreatments } = require('./organicTreatmentService');
+const { getChemicalRecommendations } = require('./pesticideRecommendationService');
+const { assessCropCompatibility } = require('./diseaseCropCompatibilityService');
+const { listPesticidePrices } = require('./pesticidePriceService');
+const { getDiseaseClassMetadata } = require('./diseaseClassRegistry');
 
 const voiceTextTemplates = {
   en: 'Detected {disease}. Severity is {severity}. Suggested treatments: {treatments}.',
@@ -53,22 +59,172 @@ function localizeSeverity(severity, lang) {
   return (map[lang] && map[lang][severity]) || severity
 }
 
-async function analyzeImage(filePath, lat, lon, lang = 'en') {
-  const prediction = await predictDisease(filePath);
+async function analyzeImage(
+  filePath,
+  lat,
+  lon,
+  lang = 'en',
+  contentType,
+  observations = null,
+  selectedCrop = null,
+  services = {}
+) {
+  const runPrediction = services.predictDisease || predictDisease;
+  const loadGuidance = services.getDiseaseGuidance || getDiseaseGuidance;
+  const loadOrganicGuidance = services.getOrganicTreatments || getOrganicTreatments;
+  const loadChemicalProducts = services.getChemicalRecommendations || getChemicalRecommendations;
+  const loadPrices = services.listPesticidePrices || listPesticidePrices;
+  const loadWeather = services.fetchWeatherForecast || fetchWeatherForecast;
+  const prediction = await runPrediction(filePath, contentType);
   const className = prediction.top_prediction;
-  const guidance = getDiseaseGuidance(className, prediction.status);
-  const weatherForecast = await fetchWeatherForecast(lat, lon);
-  const diseaseName = prediction.status === 'uncertain'
+  const [cropId, diseaseId] = String(className || '').split('___');
+  const classMetadata = getDiseaseClassMetadata(className);
+  const cropCompatibility = assessCropCompatibility(className, selectedCrop);
+  const recommendationBlocked = prediction.status === 'uncertain' ||
+    !cropCompatibility.disease_specific_recommendations_allowed;
+  const predictionStatus = cropCompatibility.status === 'unsupported_crop'
+    ? 'UNSUPPORTED_CROP'
+    : prediction.status === 'uncertain' || cropCompatibility.status === 'mismatch'
+    ? 'UNCERTAIN'
+    : 'CONFIRMED_BY_MODEL';
+  const safelyLoad = async (loader, fallback, ...args) => {
+    const useFallback = () => typeof fallback === 'function' ? fallback() : fallback;
+    try {
+      const result = await loader(...args);
+      return result == null ? useFallback() : result;
+    } catch (error) {
+      console.error('Crop doctor report lookup failed', {
+        service: loader.name || 'injected disease information service',
+        message: error.message
+      });
+      return useFallback();
+    }
+  };
+  const guidance = await safelyLoad(
+    loadGuidance,
+    () => getDiseaseGuidance(className, prediction.status, { sourceStatus: 'SOURCE_UNAVAILABLE' }),
+    className,
+    prediction.status,
+    { sourceStatus: services.diseaseSourceStatus }
+  );
+  const organicTreatmentsResult = await safelyLoad(
+    loadOrganicGuidance,
+    () => {
+      const cachedGuidance = getOrganicTreatments(className, true);
+      return {
+        ...cachedGuidance,
+        status: cachedGuidance.recommendations.length ? 'PARTIAL' : 'SOURCE_UNAVAILABLE',
+        message: 'Live guidance lookup failed; locally reviewed guidance is shown where available.'
+      };
+    },
+    className,
+    recommendationBlocked
+  );
+  const organicTreatments = {
+    ...organicTreatmentsResult,
+    status: organicTreatmentsResult.status || (organicTreatmentsResult.recommendations?.length ? 'AVAILABLE' : 'NOT_AVAILABLE'),
+    recommendations: Array.isArray(organicTreatmentsResult.recommendations)
+      ? organicTreatmentsResult.recommendations
+      : []
+  };
+  const riskAssessment = assessDiseaseRisk({
+    predictedClass: className,
+    confidence: prediction.confidence,
+    calibratedConfidence: prediction.calibrated_confidence,
+    isUncertain: recommendationBlocked,
+    confidenceThreshold: prediction.confidence_threshold,
+    observations
+  });
+  const chemicalRecommendationsResult = await safelyLoad(
+    loadChemicalProducts,
+    {
+      status: 'SOURCE_UNAVAILABLE',
+      applicationAllowed: false,
+      recommendations: [],
+      message: 'Verified pesticide records could not be loaded. Do not apply a pesticide based on this scan.'
+    },
+    {
+      crop: prediction.crop,
+      predictedClass: className,
+      isUncertain: recommendationBlocked,
+      riskLevel: riskAssessment.risk_level,
+      applicationAllowed: !recommendationBlocked
+    }
+  );
+  const chemicalRecommendations = {
+    ...chemicalRecommendationsResult,
+    recommendations: Array.isArray(chemicalRecommendationsResult.recommendations)
+      ? chemicalRecommendationsResult.recommendations
+      : [],
+    status: chemicalRecommendationsResult.status || 'NOT_AVAILABLE'
+  };
+  const matchingProductIds = chemicalRecommendations.recommendations.map(product => product.product_id);
+  const priceLookup = await safelyLoad(
+    loadPrices,
+    { status: 'SOURCE_UNAVAILABLE', listings: [] },
+    { productIds: matchingProductIds }
+  );
+  const pesticidePrices = Array.isArray(priceLookup) ? priceLookup : priceLookup.listings || [];
+  const pricedProductIds = new Set(pesticidePrices.map(listing => listing.product_id));
+  const unpricedProducts = chemicalRecommendations.recommendations.filter(product =>
+    !pricedProductIds.has(product.product_id)
+  );
+  const pesticidePriceStatus = priceLookup.status === 'SOURCE_UNAVAILABLE' ||
+      chemicalRecommendations.status === 'SOURCE_UNAVAILABLE'
+    ? 'SOURCE_UNAVAILABLE'
+    : pesticidePrices.length
+    ? unpricedProducts.length ? 'PARTIAL' : 'AVAILABLE'
+    : 'NOT_AVAILABLE';
+  const pesticidePriceMessage = pesticidePrices.length
+    ? unpricedProducts.length
+      ? `Informational reference prices are available for some matching products; no verified price record is available for ${unpricedProducts.map(product => product.brand_name).join(', ')}.`
+      : 'Informational price references only; not a recommendation to purchase or apply a product.'
+    : pesticidePriceStatus === 'SOURCE_UNAVAILABLE'
+    ? 'The price source could not be reached; no price was substituted.'
+    : chemicalRecommendations.recommendations.length
+    ? 'No verified price record is available for the matching verified product(s).'
+    : 'No matching verified pesticide product or price record is available.';
+  const weatherForecast = await safelyLoad(
+    loadWeather,
+    {
+      status: 'unavailable',
+      informationStatus: 'SOURCE_UNAVAILABLE',
+      source: 'Open-Meteo',
+      fetchedAt: null,
+      summary: 'Weather source is unavailable; no forecast was substituted.',
+      forecast: []
+    },
+    lat,
+    lon
+  );
+  const mappedCropName = classMetadata?.cropName || prediction.crop || 'Unknown crop';
+  const mappedDiseaseName = classMetadata?.diseaseName || prediction.disease || 'Unknown class';
+  const possibleDiseaseName = `${mappedCropName} — ${mappedDiseaseName}`;
+  const diseaseName = prediction.status === 'uncertain' || !classMetadata
     ? 'Uncertain'
-    : `${prediction.crop} — ${prediction.disease}`;
+    : classMetadata.condition === 'healthy'
+    ? `${mappedCropName} — Healthy`
+    : possibleDiseaseName;
   const voiceText = prediction.status === 'uncertain'
-    ? `The image result is uncertain. The closest class is ${prediction.crop} ${prediction.disease}. Please seek local confirmation.`
+    ? `Possible disease match — not confirmed: ${prediction.crop} ${prediction.disease}. Please seek local confirmation.`
     : `Image classification: ${diseaseName}. Confidence ${(prediction.confidence * 100).toFixed(1)} percent.`;
 
   return {
     disease: diseaseName,
     crop: prediction.crop,
+    cropId: cropId || null,
+    diseaseId: diseaseId || null,
+    canonicalCropId: classMetadata?.cropId || null,
+    canonicalDiseaseId: classMetadata?.diseaseId || null,
+    classMappingStatus: classMetadata ? 'AVAILABLE' : 'NOT_AVAILABLE',
+    classMetadata,
+    possibleDiseaseName,
+    cropSelection: {
+      ...cropCompatibility,
+      source: selectedCrop ? 'farmer' : 'model_class'
+    },
     predictedClass: className,
+    predictionStatus,
     detectionStatus: prediction.status,
     topPrediction: prediction.top_prediction,
     severity: 'unassessed',
@@ -77,7 +233,19 @@ async function analyzeImage(filePath, lat, lon, lang = 'en') {
     affordableAlternatives: [],
     weatherForecast,
     confidence: prediction.confidence,
+    calibratedConfidence: prediction.calibrated_confidence,
+    confidenceThreshold: prediction.confidence_threshold,
+    calibrationStatus: prediction.calibration_status,
     diseaseInfo: guidance,
+    riskAssessment,
+    organicTreatments,
+    chemicalRecommendations,
+    pesticidePrices: pesticidePrices.map(listing => ({
+      ...listing,
+      informational_only: recommendationBlocked
+    })),
+    pesticidePriceStatus,
+    pesticidePriceMessage,
     voiceText,
     lang
   };
@@ -249,7 +417,35 @@ function getTranslations(lang) {
   return map[lang] || map.en
 }
 
-async function generateAssistantResponse({ disease, severity, treatments, pesticides, affordableAlternatives, weatherForecast, confidence, scanId, crop, lat, lon, userId, lang }, question) {
+async function generateAssistantResponse({ disease, severity, treatments, pesticides, affordableAlternatives, weatherForecast, confidence, scanId, crop, lat, lon, userId, lang, riskAssessment, organicTreatments, chemicalRecommendations, pesticidePrices }, question) {
+  const normalizedQuestion = String(question || '').toLowerCase();
+  if (/(risk|why.*level|level.*why)/.test(normalizedQuestion)) {
+    const answer = riskAssessment?.risk_reason ||
+      'Disease risk is unavailable for this scan. Confidence and disease risk are separate, and local confirmation may be needed.';
+    return { question, answer, risk: riskAssessment?.risk_level || 'UNASSESSED', scanId, confidence };
+  }
+  if (/(organic|non.?chemical|natural treatment)/.test(normalizedQuestion)) {
+    const items = organicTreatments?.recommendations || [];
+    const answer = items.length
+      ? items.map(item => `${item.name}: ${item.description} Source: ${item.source_url}`).join('\n')
+      : organicTreatments?.message || 'No verified organic treatment recommendation is currently available for this disease.';
+    return { question, answer, scanId, confidence };
+  }
+  if (/(price|cost|market|seller|retailer|pack size)/.test(normalizedQuestion)) {
+    const listings = (pesticidePrices || []).filter(item => item && !item.stale && item.price);
+    const answer = listings.length
+      ? listings.map(item => `${item.brand_name}, ${item.pack_size.value} ${item.pack_size.unit}: ${item.price.currency} ${item.price.amount} at ${item.seller} (${item.price_type}; updated ${item.last_updated_at}). Source: ${item.source_url}`).join('\n')
+      : 'Current market price unavailable. Check with a licensed agricultural retailer.';
+    return { question, answer, scanId, confidence };
+  }
+  if (/(pesticide|chemical|product|spray product|dosage|dose|label|safety)/.test(normalizedQuestion)) {
+    const items = chemicalRecommendations?.recommendations || [];
+    const answer = items.length
+      ? items.map(item => `${item.brand_name} (${item.active_ingredient}, ${item.formulation}). Label guidance: ${item.application_dosage} Safety: ${item.safety_information} Label: ${item.label_source_url}`).join('\n')
+      : chemicalRecommendations?.message || 'No verified registered pesticide recommendation is available for this crop and disease.';
+    return { question, answer, scanId, confidence };
+  }
+
   if (severity === 'unassessed' || disease === 'Uncertain') {
     const answer = 'The image model cannot assess disease severity. Do not treat this result as a confirmed diagnosis; consult a local agricultural extension specialist.';
     return {

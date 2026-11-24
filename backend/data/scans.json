@@ -5917,5 +5917,3717 @@
     "lang": "en",
     "_id": "3282c639-405c-41f9-91b0-384bda10e207",
     "createdAt": "2026-06-25T14:58:41.938Z"
+  },
+  {
+    "userId": "e2e-diagnostic",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795501203582.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "938bf365-99ad-4312-b942-fddfabb69536",
+    "createdAt": "2026-11-24T06:20:03.660Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795501258456.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "08ba89cc-717f-4ec6-8fe5-9a95e30885b5",
+    "createdAt": "2026-11-24T06:20:58.627Z"
+  },
+  {
+    "userId": "restart-e2e",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795501473636.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "8d9dbe88-8263-4bc2-9476-fc5007fe7379",
+    "createdAt": "2026-11-24T06:24:35.627Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795501476157.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "455eb99b-9d65-430f-b38b-f7a87eace1ed",
+    "createdAt": "2026-11-24T06:24:36.405Z"
+  },
+  {
+    "userId": "clean-e2e",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795501691854.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "75dfb9dc-d947-447d-9cf1-301eb3bbfb1f",
+    "createdAt": "2026-11-24T06:28:12.009Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795501695087.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "8c683c06-5bed-480c-bf71-fa24396492bd",
+    "createdAt": "2026-11-24T06:28:15.257Z"
+  },
+  {
+    "userId": "startup-e2e",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795502472098.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "17bce756-cb9d-41b9-a209-fda6962b6e8e",
+    "createdAt": "2026-11-24T06:41:13.036Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Raspberry — healthy",
+    "severity": "unassessed",
+    "treatments": [
+      "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Raspberry — healthy. Confidence 100.0 percent.",
+    "confidence": 0.9997281432151794,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795502500925.JPG",
+    "crop": "Raspberry",
+    "predictedClass": "Raspberry___healthy",
+    "detectionStatus": "prediction",
+    "diseaseInfo": {
+      "description": "The model matched the Raspberry healthy class. This does not rule out problems not represented in PlantVillage.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "No disease treatment is indicated by the predicted healthy class; continue monitoring the plant."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "8c27e39b-2c82-4234-9a0a-769746d42ad7",
+    "createdAt": "2026-11-24T06:41:41.182Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795502857936.jpg",
+    "crop": "Strawberry",
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "detectionStatus": "uncertain",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "lang": "en",
+    "_id": "0b7553f1-8fc4-4bf4-9a96-47073f4da3f0",
+    "createdAt": "2026-11-24T06:47:39.429Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "source": "Open-Meteo",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795505134618.jpg",
+    "crop": "Strawberry",
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "detectionStatus": "uncertain",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "10_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "736f91a1-2b32-47f8-bf4f-5e995e1fd44e",
+    "createdAt": "2026-11-24T07:25:36.440Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "source": "Open-Meteo",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795505201325.jpg",
+    "crop": "Strawberry",
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "detectionStatus": "uncertain",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "10_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "146e648e-9495-4348-95ee-71c34866f711",
+    "createdAt": "2026-11-24T07:26:42.072Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "source": "Open-Meteo",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795507625628.jpg",
+    "crop": "Strawberry",
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "detectionStatus": "uncertain",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "8e7b973c-f448-401c-a718-348d0835dda1",
+    "createdAt": "2026-11-24T08:07:07.542Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T08:20:02.382Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795508400202.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "64ecf9d1-fd4c-4d94-8ead-4abdcfd7b9f5",
+    "createdAt": "2026-11-24T08:20:02.382Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T08:20:23.076Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795508422337.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "mismatch",
+      "selected_crop": "Apple",
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": false,
+      "explanation": "The selected crop (Apple) does not match the model class crop (Strawberry); disease-specific guidance is blocked.",
+      "source": "farmer"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "10_30",
+        "visibleSymptoms": [
+          "spots"
+        ]
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "e06ddb6b-c541-42cd-bb0f-45e03847f07b",
+    "createdAt": "2026-11-24T08:20:23.077Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T08:21:59.211Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795508518298.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Strawberry",
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "10_30",
+        "visibleSymptoms": [
+          "spots"
+        ]
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "fd5e0f30-8c97-4269-8c2a-61144fe4b1cc",
+    "createdAt": "2026-11-24T08:21:59.211Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795509268473.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Strawberry",
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "more_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "357c525b-3a88-4e06-893f-7daa6137ad20",
+    "createdAt": "2026-11-24T08:34:28.571Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Tomato Early blight. Please seek local confirmation.",
+    "confidence": 0.5171491503715515,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795509271078.JPG",
+    "crop": "Tomato",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Tomato",
+      "model_crop": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.626977264881134,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Tomato — Early blight, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.5171491503715515,
+      "calibrated_confidence": 0.626977264881134,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "more_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "03db7250-9d36-4586-a6c6-a1ee939754b7",
+    "createdAt": "2026-11-24T08:34:31.171Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795509348544.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Strawberry",
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "more_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "d3aa3bbd-6da9-4cea-b347-1def16195b37",
+    "createdAt": "2026-11-24T08:35:48.629Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Tomato Early blight. Please seek local confirmation.",
+    "confidence": 0.5171491503715515,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795509351353.JPG",
+    "crop": "Tomato",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Tomato",
+      "model_crop": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.626977264881134,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Tomato — Early blight, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.5171491503715515,
+      "calibrated_confidence": 0.626977264881134,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "more_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "eac74bb0-1816-48cc-84cc-3a7f9740f941",
+    "createdAt": "2026-11-24T08:35:51.424Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795509507675.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Strawberry",
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "more_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "dd94ca27-2ccf-4884-bf71-7e5789974db9",
+    "createdAt": "2026-11-24T08:38:27.855Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Uncertain",
+    "severity": "unassessed",
+    "treatments": [
+      "Do not apply pesticide based only on this model output.",
+      "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Location was not provided; live weather is unavailable.",
+      "forecast": []
+    },
+    "voiceText": "The image result is uncertain. The closest class is Strawberry Leaf scorch. Please seek local confirmation.",
+    "confidence": 0.43376341462135315,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795509924716.jpg",
+    "crop": "Strawberry",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Strawberry",
+      "model_crop": "Strawberry",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Strawberry___Leaf_scorch",
+    "predictionStatus": "UNCERTAIN",
+    "detectionStatus": "uncertain",
+    "calibratedConfidence": 0.49405843019485474,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "description": "The image model's top match is Strawberry — Leaf scorch, below its confidence threshold. This is not a diagnosis.",
+      "symptoms": [
+        "Symptoms are not independently assessed by this image classifier.",
+        "Compare the plant with an extension diagnostic guide and seek local confirmation, especially when symptoms are spreading."
+      ],
+      "treatments": [
+        "Do not apply pesticide based only on this model output.",
+        "Confirm the diagnosis with a local agricultural extension service before choosing treatment."
+      ],
+      "preventiveMeasures": [
+        "Use clean tools and avoid moving potentially infected plant material between plots.",
+        "Follow crop-specific sanitation and irrigation guidance from a local extension service."
+      ],
+      "references": [
+        {
+          "title": "PlantVillage dataset paper",
+          "url": "https://doi.org/10.3389/fpls.2016.01419"
+        },
+        {
+          "title": "University extension plant disease resources",
+          "url": "https://extension.umn.edu/plant-diseases"
+        }
+      ],
+      "guidanceDisclaimer": "No pesticide product or dosage is prescribed."
+    },
+    "riskAssessment": {
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 0.43376341462135315,
+      "calibrated_confidence": 0.49405843019485474,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": true,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The model confidence is below its configured threshold; the top class is not a confirmed diagnosis.",
+      "recommended_action": "Rescan a clear leaf image and seek local agricultural confirmation. Do not select disease-specific pesticides from this result.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "yes",
+        "affectedPlants": "more_30",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "recommendations": [],
+      "message": "Confirm the diagnosis before using disease-specific treatment guidance."
+    },
+    "chemicalRecommendations": {
+      "recommendations": [],
+      "message": "Confirm the disease before considering a disease-specific pesticide."
+    },
+    "pesticidePrices": [],
+    "lang": "en",
+    "_id": "3fee4a19-2785-4142-9cbc-44a63844af93",
+    "createdAt": "2026-11-24T08:45:24.867Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Late blight",
+    "severity": "unassessed",
+    "treatments": [],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T10:15:20.969Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Late blight. Confidence 80.2 percent.",
+    "confidence": 0.8015037775039673,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795515317239.jpeg",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Late_blight",
+    "possibleDiseaseName": "Tomato — Late blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Late_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.9142348766326904,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "cropId": "Tomato",
+      "diseaseId": "Late_blight",
+      "status": "NOT_AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "description": null,
+      "scientificName": null,
+      "symptoms": [],
+      "developmentConditions": [],
+      "preventiveMeasures": [],
+      "followUp": [],
+      "treatments": [],
+      "references": [],
+      "message": "No reviewed disease knowledge record is available for this possible match."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Late_blight",
+      "confidence": 0.8015037775039673,
+      "calibrated_confidence": 0.9142348766326904,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "NOT_AVAILABLE",
+      "recommendations": [],
+      "message": "No reviewed crop-disease-specific non-chemical record is available. General crop hygiene and local confirmation are still appropriate."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "85da7695-c926-4d68-ae7e-83bb480a6bf5",
+    "createdAt": "2026-11-24T10:15:20.970Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Late blight",
+    "severity": "unassessed",
+    "treatments": [],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T10:22:43.475Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Late blight. Confidence 80.2 percent.",
+    "confidence": 0.8015037775039673,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795515761590.jpeg",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Late_blight",
+    "possibleDiseaseName": "Tomato — Late blight",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Tomato",
+      "model_crop": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Tomato___Late_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.9142348766326904,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "cropId": "Tomato",
+      "diseaseId": "Late_blight",
+      "status": "NOT_AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "description": null,
+      "scientificName": null,
+      "symptoms": [],
+      "developmentConditions": [],
+      "preventiveMeasures": [],
+      "followUp": [],
+      "treatments": [],
+      "references": [],
+      "message": "No reviewed disease knowledge record is available for this possible match."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Late_blight",
+      "confidence": 0.8015037775039673,
+      "calibrated_confidence": 0.9142348766326904,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "no",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": [
+          "spots",
+          "yellowing"
+        ]
+      }
+    },
+    "organicTreatments": {
+      "status": "NOT_AVAILABLE",
+      "recommendations": [],
+      "message": "No reviewed crop-disease-specific non-chemical record is available. General crop hygiene and local confirmation are still appropriate."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "6ff9e2f4-5874-4825-97ac-14c03cc1f948",
+    "createdAt": "2026-11-24T10:22:43.475Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "unavailable",
+      "informationStatus": "SOURCE_UNAVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": null,
+      "summary": "Live weather is unavailable; no forecast was substituted.",
+      "forecast": []
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795516329192.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "status": "NOT_AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "description": null,
+      "scientificName": null,
+      "symptoms": [],
+      "developmentConditions": [],
+      "preventiveMeasures": [],
+      "followUp": [],
+      "treatments": [],
+      "references": [],
+      "message": "No reviewed disease knowledge record is available for this possible match."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "NOT_AVAILABLE",
+      "recommendations": [],
+      "message": "No reviewed crop-disease-specific non-chemical record is available. General crop hygiene and local confirmation are still appropriate."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "b5725f4c-2640-4fa4-8a0f-86544f1aa7c8",
+    "createdAt": "2026-11-24T10:32:14.396Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [
+      "Confirm the diagnosis locally before choosing disease-specific treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T10:46:31.911Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795517189701.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "early_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Early_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "early_blight",
+      "diseaseName": "Early blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Early_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "early_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Early blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "DISEASE_SPECIFIC",
+      "status": "AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "matchLabel": "Model match — not a field diagnosis.",
+      "description": "Tomato early blight is caused by Alternaria solani. Tamil Nadu Agricultural University describes brown spots with concentric rings and yellow margins on leaves, and concentric brown lesions on fruit.",
+      "scientificName": "Alternaria solani",
+      "causes": [
+        "The disease is caused by the fungus Alternaria solani."
+      ],
+      "symptoms": [
+        "Brown leaf spots may have concentric rings and a yellow margin.",
+        "Fruit may develop brown concentric lesions near the calyx or stem attachment."
+      ],
+      "developmentConditions": [
+        "TNAU reports warm, humid, rainy, and wet weather, around 24–29 °C, as favorable conditions."
+      ],
+      "spreadInformation": [
+        "The fungus survives in infected plant debris.",
+        "Infected seed is described as a primary spread route; conidia can be carried by rain and wind."
+      ],
+      "preventiveMeasures": [
+        "Remove and destroy infected crop debris using locally appropriate practices.",
+        "Use crop rotation as described by TNAU."
+      ],
+      "followUp": [
+        "Confirm the diagnosis locally; other leaf spots can look similar.",
+        "Consult local extension advice for practices suitable to the production area."
+      ],
+      "treatments": [
+        "Confirm the diagnosis locally before choosing disease-specific treatment."
+      ],
+      "references": [
+        {
+          "title": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        }
+      ],
+      "sourceName": "Tamil Nadu Agricultural University Agritech Portal",
+      "lastReviewedAt": "2026-11-24",
+      "verificationStatus": "source_verified",
+      "guidanceDisclaimer": "Educational information about a possible image-class match; not a diagnosis. TNAU guidance is regional and should be checked against local extension advice.",
+      "message": null
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "AVAILABLE",
+      "recommendations": [
+        {
+          "name": "Crop-debris sanitation and rotation",
+          "category": "cultural practice",
+          "description": "Tamil Nadu Agricultural University lists removal and destruction of crop debris and crop rotation as cultural practices for tomato early blight. These practices are not a cure for existing lesions.",
+          "relevant_ingredient_or_agent": null,
+          "how_it_works": "The cited guidance identifies infected crop debris as a survival source and crop rotation as a management practice.",
+          "target_crop": "Tomato",
+          "target_disease": "Early blight",
+          "application_guidance": "Use locally appropriate crop rotation and sanitation practices; seek local extension advice for timing and disposal.",
+          "prevention_practices": [
+            "Remove and destroy infected crop debris using locally appropriate practices.",
+            "Use crop rotation as recommended by local agricultural extension."
+          ],
+          "safety_information": "No pesticide application is recommended here. Follow local rules for handling and disposal of infected plant material.",
+          "limitations": "Cultural management is not a cure and does not confirm the model diagnosis. The cited guidance is regional and may not transfer directly to every production system.",
+          "source_name": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html",
+          "last_reviewed_at": "2026-11-24",
+          "verification_status": "source_verified",
+          "guidance_scope": "disease_mapped_cultural_guidance",
+          "application_allowed": false
+        }
+      ],
+      "message": "Verified source-linked cultural guidance; it is not a product application or cure."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "54472ceb-0189-4b62-af73-3c7e08f8092c",
+    "createdAt": "2026-11-24T10:46:31.911Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Late blight",
+    "severity": "unassessed",
+    "treatments": [],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T10:49:51.273Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Late blight. Confidence 80.2 percent.",
+    "confidence": 0.8015037775039673,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795517390167.jpeg",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Late_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "late_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Late_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "late_blight",
+      "diseaseName": "Late blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Late blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Late_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.9142348766326904,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Late_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Late_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "late_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Late blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "CLASS_MAPPING_ONLY",
+      "status": "NOT_AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "description": null,
+      "scientificName": null,
+      "causes": [],
+      "symptoms": [],
+      "developmentConditions": [],
+      "spreadInformation": [],
+      "preventiveMeasures": [
+        "No reviewed disease-specific prevention guidance is available for this model class."
+      ],
+      "followUp": [
+        "Record field symptoms and seek local agricultural confirmation before disease-specific action."
+      ],
+      "treatments": [],
+      "references": [],
+      "message": "The class maps to Tomato Late blight, but no reviewed disease-specific knowledge record is available. This possible image match is not a confirmed diagnosis."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Late_blight",
+      "confidence": 0.8015037775039673,
+      "calibrated_confidence": 0.9142348766326904,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "NOT_AVAILABLE",
+      "recommendations": [],
+      "message": "No reviewed disease-specific non-chemical management record is available for the possible Tomato Late blight match. The image class is not a diagnosis; document field symptoms and seek local KVK or agricultural-extension confirmation before disease-specific action."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "88bdb1ba-4b77-48b5-b733-8df1ec311b33",
+    "createdAt": "2026-11-24T10:49:51.273Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [
+      "Confirm the diagnosis locally before choosing disease-specific treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T10:50:05.290Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795517404477.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "early_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Early_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "early_blight",
+      "diseaseName": "Early blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Early_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "early_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Early blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "DISEASE_SPECIFIC",
+      "status": "AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "matchLabel": "Model match — not a field diagnosis.",
+      "description": "Tomato early blight is caused by Alternaria solani. Tamil Nadu Agricultural University describes brown spots with concentric rings and yellow margins on leaves, and concentric brown lesions on fruit.",
+      "scientificName": "Alternaria solani",
+      "causes": [
+        "The disease is caused by the fungus Alternaria solani."
+      ],
+      "symptoms": [
+        "Brown leaf spots may have concentric rings and a yellow margin.",
+        "Fruit may develop brown concentric lesions near the calyx or stem attachment."
+      ],
+      "developmentConditions": [
+        "TNAU reports warm, humid, rainy, and wet weather, around 24–29 °C, as favorable conditions."
+      ],
+      "spreadInformation": [
+        "The fungus survives in infected plant debris.",
+        "Infected seed is described as a primary spread route; conidia can be carried by rain and wind."
+      ],
+      "preventiveMeasures": [
+        "Remove and destroy infected crop debris using locally appropriate practices.",
+        "Use crop rotation as described by TNAU."
+      ],
+      "followUp": [
+        "Confirm the diagnosis locally; other leaf spots can look similar.",
+        "Consult local extension advice for practices suitable to the production area."
+      ],
+      "treatments": [
+        "Confirm the diagnosis locally before choosing disease-specific treatment."
+      ],
+      "references": [
+        {
+          "title": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        }
+      ],
+      "sourceName": "Tamil Nadu Agricultural University Agritech Portal",
+      "lastReviewedAt": "2026-11-24",
+      "verificationStatus": "source_verified",
+      "guidanceDisclaimer": "Educational information about a possible image-class match; not a diagnosis. TNAU guidance is regional and should be checked against local extension advice.",
+      "message": null
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "AVAILABLE",
+      "recommendations": [
+        {
+          "name": "Crop-debris sanitation and rotation",
+          "category": "cultural practice",
+          "description": "Tamil Nadu Agricultural University lists removal and destruction of crop debris and crop rotation as cultural practices for tomato early blight. These practices are not a cure for existing lesions.",
+          "relevant_ingredient_or_agent": null,
+          "how_it_works": "The cited guidance identifies infected crop debris as a survival source and crop rotation as a management practice.",
+          "target_crop": "Tomato",
+          "target_disease": "Early blight",
+          "application_guidance": "Use locally appropriate crop rotation and sanitation practices; seek local extension advice for timing and disposal.",
+          "prevention_practices": [
+            "Remove and destroy infected crop debris using locally appropriate practices.",
+            "Use crop rotation as recommended by local agricultural extension."
+          ],
+          "safety_information": "No pesticide application is recommended here. Follow local rules for handling and disposal of infected plant material.",
+          "limitations": "Cultural management is not a cure and does not confirm the model diagnosis. The cited guidance is regional and may not transfer directly to every production system.",
+          "source_name": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html",
+          "last_reviewed_at": "2026-11-24",
+          "verification_status": "source_verified",
+          "guidance_scope": "disease_mapped_cultural_guidance",
+          "application_allowed": false
+        }
+      ],
+      "message": "Verified source-linked cultural guidance; it is not a product application or cure."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "42bd1af6-f453-4a21-a4c0-9c4acc40889b",
+    "createdAt": "2026-11-24T10:50:05.290Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Tomato — Late blight",
+    "severity": "unassessed",
+    "treatments": [],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T11:10:34.016Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Late blight. Confidence 80.2 percent.",
+    "confidence": 0.8015037775039673,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795518633150.jpeg",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Late_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "late_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Late_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "late_blight",
+      "diseaseName": "Late blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Late blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Late_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.9142348766326904,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Late_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Late_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "late_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Late blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "CLASS_MAPPING_ONLY",
+      "status": "NOT_AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "description": null,
+      "scientificName": null,
+      "causes": [],
+      "symptoms": [],
+      "developmentConditions": [],
+      "spreadInformation": [],
+      "preventiveMeasures": [
+        "No reviewed disease-specific prevention guidance is available for this model class."
+      ],
+      "followUp": [
+        "Record field symptoms and seek local agricultural confirmation before disease-specific action."
+      ],
+      "treatments": [],
+      "references": [],
+      "message": "The class maps to Tomato Late blight, but no reviewed disease-specific knowledge record is available. This possible image match is not a confirmed diagnosis."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Late_blight",
+      "confidence": 0.8015037775039673,
+      "calibrated_confidence": 0.9142348766326904,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "NOT_AVAILABLE",
+      "recommendations": [],
+      "message": "No reviewed disease-specific non-chemical management record is available for the possible Tomato Late blight match. The image class is not a diagnosis; document field symptoms and seek local KVK or agricultural-extension confirmation before disease-specific action."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "bbe01e34-6b54-4818-919f-a6778455f22c",
+    "createdAt": "2026-11-24T11:10:34.016Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [
+      "Confirm the diagnosis locally before choosing disease-specific treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T11:10:46.224Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795518645402.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "early_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Early_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "early_blight",
+      "diseaseName": "Early blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Early_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "early_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Early blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "DISEASE_SPECIFIC",
+      "status": "AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "matchLabel": "Model match — not a field diagnosis.",
+      "description": "Tomato early blight is caused by Alternaria solani. Tamil Nadu Agricultural University describes brown spots with concentric rings and yellow margins on leaves, and concentric brown lesions on fruit.",
+      "scientificName": "Alternaria solani",
+      "causes": [
+        "The disease is caused by the fungus Alternaria solani."
+      ],
+      "symptoms": [
+        "Brown leaf spots may have concentric rings and a yellow margin.",
+        "Fruit may develop brown concentric lesions near the calyx or stem attachment."
+      ],
+      "developmentConditions": [
+        "TNAU reports warm, humid, rainy, and wet weather, around 24–29 °C, as favorable conditions."
+      ],
+      "spreadInformation": [
+        "The fungus survives in infected plant debris.",
+        "Infected seed is described as a primary spread route; conidia can be carried by rain and wind."
+      ],
+      "preventiveMeasures": [
+        "Remove and destroy infected crop debris using locally appropriate practices.",
+        "Use crop rotation as described by TNAU."
+      ],
+      "followUp": [
+        "Confirm the diagnosis locally; other leaf spots can look similar.",
+        "Consult local extension advice for practices suitable to the production area."
+      ],
+      "treatments": [
+        "Confirm the diagnosis locally before choosing disease-specific treatment."
+      ],
+      "references": [
+        {
+          "title": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        }
+      ],
+      "sourceName": "Tamil Nadu Agricultural University Agritech Portal",
+      "lastReviewedAt": "2026-11-24",
+      "verificationStatus": "source_verified",
+      "guidanceDisclaimer": "Educational information about a possible image-class match; not a diagnosis. TNAU guidance is regional and should be checked against local extension advice.",
+      "message": null
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "AVAILABLE",
+      "recommendations": [
+        {
+          "name": "Crop-debris sanitation and rotation",
+          "category": "cultural practice",
+          "description": "Tamil Nadu Agricultural University lists removal and destruction of crop debris and crop rotation as cultural practices for tomato early blight. These practices are not a cure for existing lesions.",
+          "relevant_ingredient_or_agent": null,
+          "how_it_works": "The cited guidance identifies infected crop debris as a survival source and crop rotation as a management practice.",
+          "target_crop": "Tomato",
+          "target_disease": "Early blight",
+          "application_guidance": "Use locally appropriate crop rotation and sanitation practices; seek local extension advice for timing and disposal.",
+          "prevention_practices": [
+            "Remove and destroy infected crop debris using locally appropriate practices.",
+            "Use crop rotation as recommended by local agricultural extension."
+          ],
+          "safety_information": "No pesticide application is recommended here. Follow local rules for handling and disposal of infected plant material.",
+          "limitations": "Cultural management is not a cure and does not confirm the model diagnosis. The cited guidance is regional and may not transfer directly to every production system.",
+          "source_name": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html",
+          "last_reviewed_at": "2026-11-24",
+          "verification_status": "source_verified",
+          "guidance_scope": "disease_mapped_cultural_guidance",
+          "application_allowed": false
+        }
+      ],
+      "message": "Verified source-linked cultural guidance; it is not a product application or cure."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "51f2d127-dfd7-48f2-83d1-cc45ef0ecfa8",
+    "createdAt": "2026-11-24T11:10:46.224Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [
+      "Confirm the diagnosis locally before choosing disease-specific treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T11:15:48.350Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795518947505.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "early_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Early_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "early_blight",
+      "diseaseName": "Early blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Early_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "early_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Early blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "DISEASE_SPECIFIC",
+      "status": "AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "matchLabel": "Model match — not a field diagnosis.",
+      "description": "Tomato early blight is caused by Alternaria solani. Tamil Nadu Agricultural University describes brown spots with concentric rings and yellow margins on leaves, and concentric brown lesions on fruit.",
+      "scientificName": "Alternaria solani",
+      "causes": [
+        "The disease is caused by the fungus Alternaria solani."
+      ],
+      "symptoms": [
+        "Brown leaf spots may have concentric rings and a yellow margin.",
+        "Fruit may develop brown concentric lesions near the calyx or stem attachment."
+      ],
+      "developmentConditions": [
+        "TNAU reports warm, humid, rainy, and wet weather, around 24–29 °C, as favorable conditions."
+      ],
+      "spreadInformation": [
+        "The fungus survives in infected plant debris.",
+        "Infected seed is described as a primary spread route; conidia can be carried by rain and wind."
+      ],
+      "preventiveMeasures": [
+        "Remove and destroy infected crop debris using locally appropriate practices.",
+        "Use crop rotation as described by TNAU."
+      ],
+      "followUp": [
+        "Confirm the diagnosis locally; other leaf spots can look similar.",
+        "Consult local extension advice for practices suitable to the production area."
+      ],
+      "treatments": [
+        "Confirm the diagnosis locally before choosing disease-specific treatment."
+      ],
+      "references": [
+        {
+          "title": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        }
+      ],
+      "sourceName": "Tamil Nadu Agricultural University Agritech Portal",
+      "lastReviewedAt": "2026-11-24",
+      "verificationStatus": "source_verified",
+      "guidanceDisclaimer": "Educational information about a possible image-class match; not a diagnosis. TNAU guidance is regional and should be checked against local extension advice.",
+      "message": null
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "AVAILABLE",
+      "recommendations": [
+        {
+          "name": "Crop-debris sanitation and rotation",
+          "category": "cultural practice",
+          "description": "Tamil Nadu Agricultural University lists removal and destruction of crop debris and crop rotation as cultural practices for tomato early blight. These practices are not a cure for existing lesions.",
+          "relevant_ingredient_or_agent": null,
+          "how_it_works": "The cited guidance identifies infected crop debris as a survival source and crop rotation as a management practice.",
+          "target_crop": "Tomato",
+          "target_disease": "Early blight",
+          "application_guidance": "Use locally appropriate crop rotation and sanitation practices; seek local extension advice for timing and disposal.",
+          "prevention_practices": [
+            "Remove and destroy infected crop debris using locally appropriate practices.",
+            "Use crop rotation as recommended by local agricultural extension."
+          ],
+          "safety_information": "No pesticide application is recommended here. Follow local rules for handling and disposal of infected plant material.",
+          "limitations": "Cultural management is not a cure and does not confirm the model diagnosis. The cited guidance is regional and may not transfer directly to every production system.",
+          "source_name": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html",
+          "last_reviewed_at": "2026-11-24",
+          "verification_status": "source_verified",
+          "guidance_scope": "disease_mapped_cultural_guidance",
+          "application_allowed": false
+        }
+      ],
+      "message": "Verified source-linked cultural guidance; it is not a product application or cure."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "8f166484-d8a4-4168-96a2-324e89e7501a",
+    "createdAt": "2026-11-24T11:15:48.351Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Late blight",
+    "severity": "unassessed",
+    "treatments": [],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T11:26:17.428Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Late blight. Confidence 80.2 percent.",
+    "confidence": 0.8015037775039673,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795519576365.jpeg",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Late_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "late_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Late_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "late_blight",
+      "diseaseName": "Late blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Late blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Late_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.9142348766326904,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Late_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Late_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "late_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Late blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "CLASS_MAPPING_ONLY",
+      "status": "NOT_AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "description": null,
+      "scientificName": null,
+      "causes": [],
+      "symptoms": [],
+      "developmentConditions": [],
+      "spreadInformation": [],
+      "preventiveMeasures": [
+        "No reviewed disease-specific prevention guidance is available for this model class."
+      ],
+      "followUp": [
+        "Record field symptoms and seek local agricultural confirmation before disease-specific action."
+      ],
+      "treatments": [],
+      "references": [],
+      "message": "The class maps to Tomato Late blight, but no reviewed disease-specific knowledge record is available. This possible image match is not a confirmed diagnosis."
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Late_blight",
+      "confidence": 0.8015037775039673,
+      "calibrated_confidence": 0.9142348766326904,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "NOT_AVAILABLE",
+      "recommendations": [],
+      "message": "No reviewed disease-specific non-chemical management record is available for the possible Tomato Late blight match. The image class is not a diagnosis; document field symptoms and seek local KVK or agricultural-extension confirmation before disease-specific action."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "958d5f4e-0e0b-43c3-8402-4ca9489d60b6",
+    "createdAt": "2026-11-24T11:26:17.428Z"
+  },
+  {
+    "userId": "anonymous",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [
+      "Confirm the diagnosis locally before choosing disease-specific treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T11:27:30.647Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795519649552.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "early_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Early_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "early_blight",
+      "diseaseName": "Early blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "not_selected",
+      "selected_crop": null,
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "No farmer crop selection was provided; the crop is taken from the model class.",
+      "source": "model_class"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Early_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "early_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Early blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "DISEASE_SPECIFIC",
+      "status": "AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "matchLabel": "Model match — not a field diagnosis.",
+      "description": "Tomato early blight is caused by Alternaria solani. Tamil Nadu Agricultural University describes brown spots with concentric rings and yellow margins on leaves, and concentric brown lesions on fruit.",
+      "scientificName": "Alternaria solani",
+      "causes": [
+        "The disease is caused by the fungus Alternaria solani."
+      ],
+      "symptoms": [
+        "Brown leaf spots may have concentric rings and a yellow margin.",
+        "Fruit may develop brown concentric lesions near the calyx or stem attachment."
+      ],
+      "developmentConditions": [
+        "TNAU reports warm, humid, rainy, and wet weather, around 24–29 °C, as favorable conditions."
+      ],
+      "spreadInformation": [
+        "The fungus survives in infected plant debris.",
+        "Infected seed is described as a primary spread route; conidia can be carried by rain and wind."
+      ],
+      "preventiveMeasures": [
+        "Remove and destroy infected crop debris using locally appropriate practices.",
+        "Use crop rotation as described by TNAU."
+      ],
+      "followUp": [
+        "Confirm the diagnosis locally; other leaf spots can look similar.",
+        "Consult local extension advice for practices suitable to the production area."
+      ],
+      "treatments": [
+        "Confirm the diagnosis locally before choosing disease-specific treatment."
+      ],
+      "references": [
+        {
+          "title": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        }
+      ],
+      "sourceName": "Tamil Nadu Agricultural University Agritech Portal",
+      "lastReviewedAt": "2026-11-24",
+      "verificationStatus": "source_verified",
+      "guidanceDisclaimer": "Educational information about a possible image-class match; not a diagnosis. TNAU guidance is regional and should be checked against local extension advice.",
+      "message": null
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "unsure",
+        "visibleSymptoms": []
+      }
+    },
+    "organicTreatments": {
+      "status": "AVAILABLE",
+      "recommendations": [
+        {
+          "name": "Crop-debris sanitation and rotation",
+          "category": "cultural practice",
+          "description": "Tamil Nadu Agricultural University lists removal and destruction of crop debris and crop rotation as cultural practices for tomato early blight. These practices are not a cure for existing lesions.",
+          "relevant_ingredient_or_agent": null,
+          "how_it_works": "The cited guidance identifies infected crop debris as a survival source and crop rotation as a management practice.",
+          "target_crop": "Tomato",
+          "target_disease": "Early blight",
+          "application_guidance": "Use locally appropriate crop rotation and sanitation practices; seek local extension advice for timing and disposal.",
+          "prevention_practices": [
+            "Remove and destroy infected crop debris using locally appropriate practices.",
+            "Use crop rotation as recommended by local agricultural extension."
+          ],
+          "safety_information": "No pesticide application is recommended here. Follow local rules for handling and disposal of infected plant material.",
+          "limitations": "Cultural management is not a cure and does not confirm the model diagnosis. The cited guidance is regional and may not transfer directly to every production system.",
+          "source_name": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html",
+          "last_reviewed_at": "2026-11-24",
+          "verification_status": "source_verified",
+          "guidance_scope": "disease_mapped_cultural_guidance",
+          "application_allowed": false
+        }
+      ],
+      "message": "Verified source-linked cultural guidance; it is not a product application or cure."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "ea258ed0-b4d5-4e77-b5d5-af0348cfeb99",
+    "createdAt": "2026-11-24T11:27:30.647Z"
+  },
+  {
+    "userId": "Yash",
+    "disease": "Tomato — Early blight",
+    "severity": "unassessed",
+    "treatments": [
+      "Confirm the diagnosis locally before choosing disease-specific treatment."
+    ],
+    "pesticides": {
+      "organic": [],
+      "chemical": []
+    },
+    "affordableAlternatives": [],
+    "weatherForecast": {
+      "status": "available",
+      "informationStatus": "AVAILABLE",
+      "source": "Open-Meteo",
+      "fetchedAt": "2026-11-24T11:29:56.069Z",
+      "timezone": "Asia/Kolkata",
+      "summary": "Live Open-Meteo forecast loaded for 12.32, 76.77.",
+      "forecast": [
+        {
+          "day": "Tuesday, November 24, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 20.7,
+          "tempMax": 30.1,
+          "precipitationMm": 9.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Wednesday, November 25, 2026",
+          "condition": "Thunderstorm",
+          "tempMin": 21.3,
+          "tempMax": 29.4,
+          "precipitationMm": 9.8,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        },
+        {
+          "day": "Thursday, November 26, 2026",
+          "condition": "Rain showers",
+          "tempMin": 21,
+          "tempMax": 28.9,
+          "precipitationMm": 4.5,
+          "advice": "Avoid spraying during rain; check the product label and local extension guidance."
+        }
+      ]
+    },
+    "voiceText": "Image classification: Tomato — Early blight. Confidence 75.6 percent.",
+    "confidence": 0.7557767033576965,
+    "imagePath": "C:\\AgriTech\\backend\\uploads\\1795519794910.png",
+    "crop": "Tomato",
+    "cropId": "Tomato",
+    "diseaseId": "Early_blight",
+    "canonicalCropId": "tomato",
+    "canonicalDiseaseId": "early_blight",
+    "classMappingStatus": "AVAILABLE",
+    "classMetadata": {
+      "className": "Tomato___Early_blight",
+      "modelCrop": "Tomato",
+      "cropId": "tomato",
+      "cropName": "Tomato",
+      "diseaseId": "early_blight",
+      "diseaseName": "Early blight",
+      "condition": "diseased"
+    },
+    "possibleDiseaseName": "Tomato — Early blight",
+    "cropSelection": {
+      "status": "matched",
+      "selected_crop": "Tomato",
+      "model_crop": "Tomato",
+      "canonical_crop_id": "tomato",
+      "crop_name": "Tomato",
+      "disease_specific_recommendations_allowed": true,
+      "explanation": "The selected crop matches the crop associated with the model class; this does not confirm a field diagnosis.",
+      "source": "farmer"
+    },
+    "predictedClass": "Tomato___Early_blight",
+    "predictionStatus": "CONFIRMED_BY_MODEL",
+    "detectionStatus": "prediction",
+    "calibratedConfidence": 0.8948440551757812,
+    "confidenceThreshold": 0.6004458665847778,
+    "calibrationStatus": "applied",
+    "diseaseInfo": {
+      "className": "Tomato___Early_blight",
+      "cropId": "Tomato",
+      "diseaseId": "Early_blight",
+      "canonicalCropId": "tomato",
+      "canonicalDiseaseId": "early_blight",
+      "cropName": "Tomato",
+      "diseaseName": "Early blight",
+      "classificationType": "diseased",
+      "classMappingStatus": "AVAILABLE",
+      "knowledgeCoverage": "DISEASE_SPECIFIC",
+      "status": "AVAILABLE",
+      "sourceStatus": "AVAILABLE",
+      "matchLabel": "Model match — not a field diagnosis.",
+      "description": "Tomato early blight is caused by Alternaria solani. Tamil Nadu Agricultural University describes brown spots with concentric rings and yellow margins on leaves, and concentric brown lesions on fruit.",
+      "scientificName": "Alternaria solani",
+      "causes": [
+        "The disease is caused by the fungus Alternaria solani."
+      ],
+      "symptoms": [
+        "Brown leaf spots may have concentric rings and a yellow margin.",
+        "Fruit may develop brown concentric lesions near the calyx or stem attachment."
+      ],
+      "developmentConditions": [
+        "TNAU reports warm, humid, rainy, and wet weather, around 24–29 °C, as favorable conditions."
+      ],
+      "spreadInformation": [
+        "The fungus survives in infected plant debris.",
+        "Infected seed is described as a primary spread route; conidia can be carried by rain and wind."
+      ],
+      "preventiveMeasures": [
+        "Remove and destroy infected crop debris using locally appropriate practices.",
+        "Use crop rotation as described by TNAU."
+      ],
+      "followUp": [
+        "Confirm the diagnosis locally; other leaf spots can look similar.",
+        "Consult local extension advice for practices suitable to the production area."
+      ],
+      "treatments": [
+        "Confirm the diagnosis locally before choosing disease-specific treatment."
+      ],
+      "references": [
+        {
+          "title": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        }
+      ],
+      "sourceName": "Tamil Nadu Agricultural University Agritech Portal",
+      "lastReviewedAt": "2026-11-24",
+      "verificationStatus": "source_verified",
+      "guidanceDisclaimer": "Educational information about a possible image-class match; not a diagnosis. TNAU guidance is regional and should be checked against local extension advice.",
+      "message": null
+    },
+    "riskAssessment": {
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 0.7557767033576965,
+      "calibrated_confidence": 0.8948440551757812,
+      "confidence_threshold": 0.6004458665847778,
+      "is_uncertain": false,
+      "risk_level": "UNASSESSED",
+      "risk_reason": "The image class alone does not establish field risk; spreading and affected-plant observations are incomplete.",
+      "recommended_action": "Record whether symptoms are spreading and the approximate affected-plant range, then seek local confirmation.",
+      "assessment_limitations": [
+        "This is a rule-based triage of farmer-reported observations, not a validated disease severity or outbreak model.",
+        "No verified disease-specific risk/severity map is configured; LOW, MEDIUM, and HIGH reflect reported spread and affected-plant range only.",
+        "Image classification confidence is not a calibrated probability of correctness and is separate from this risk level.",
+        "PlantVillage classes represent controlled-background images; field performance and field diagnosis are unverified."
+      ],
+      "farmer_observations": {
+        "symptomsSpreading": "unsure",
+        "affectedPlants": "less_10",
+        "visibleSymptoms": [
+          "yellowing",
+          "spots"
+        ]
+      }
+    },
+    "organicTreatments": {
+      "status": "AVAILABLE",
+      "recommendations": [
+        {
+          "name": "Crop-debris sanitation and rotation",
+          "category": "cultural practice",
+          "description": "Tamil Nadu Agricultural University lists removal and destruction of crop debris and crop rotation as cultural practices for tomato early blight. These practices are not a cure for existing lesions.",
+          "relevant_ingredient_or_agent": null,
+          "how_it_works": "The cited guidance identifies infected crop debris as a survival source and crop rotation as a management practice.",
+          "target_crop": "Tomato",
+          "target_disease": "Early blight",
+          "application_guidance": "Use locally appropriate crop rotation and sanitation practices; seek local extension advice for timing and disposal.",
+          "prevention_practices": [
+            "Remove and destroy infected crop debris using locally appropriate practices.",
+            "Use crop rotation as recommended by local agricultural extension."
+          ],
+          "safety_information": "No pesticide application is recommended here. Follow local rules for handling and disposal of infected plant material.",
+          "limitations": "Cultural management is not a cure and does not confirm the model diagnosis. The cited guidance is regional and may not transfer directly to every production system.",
+          "source_name": "Tamil Nadu Agricultural University - Tomato: Early Blight",
+          "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html",
+          "last_reviewed_at": "2026-11-24",
+          "verification_status": "source_verified",
+          "guidance_scope": "disease_mapped_cultural_guidance",
+          "application_allowed": false
+        }
+      ],
+      "message": "Verified source-linked cultural guidance; it is not a product application or cure."
+    },
+    "chemicalRecommendations": {
+      "status": "NOT_AVAILABLE",
+      "applicationAllowed": false,
+      "recommendations": [],
+      "message": "No matching verified pesticide registration and approved-label record is available for this possible disease match."
+    },
+    "pesticidePrices": [],
+    "pesticidePriceStatus": "NOT_AVAILABLE",
+    "pesticidePriceMessage": "No matching verified pesticide product or price record is available.",
+    "lang": "en",
+    "_id": "e604818c-2ce7-4576-b4b7-9af31e6d0f82",
+    "createdAt": "2026-11-24T11:29:56.069Z"
   }
 ]

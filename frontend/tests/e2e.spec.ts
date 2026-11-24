@@ -3,7 +3,21 @@ import { test, expect } from '@playwright/test';
 const APP_URL = process.env.APP_URL || 'http://localhost:5173';
 
 test.describe('Language -> TTS', () => {
+  test('language selection updates the dashboard and persists after reload', async ({ page }) => {
+    await page.goto(APP_URL);
+    await page.selectOption('[data-testid="language-select"]', 'kn');
+
+    await expect(page.getByText('ಬೆಳೆ ವೈದ್ಯ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್')).toBeVisible();
+    await page.reload();
+
+    await expect(page.getByTestId('language-select')).toHaveValue('kn');
+    await expect(page.getByText('ಬೆಳೆ ವೈದ್ಯ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್')).toBeVisible();
+  });
+
   test('select language and speak triggers speechSynthesis with matching lang', async ({ page }) => {
+    await page.route('**/api/speech/synthesize', route =>
+      route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ message: 'unavailable' }) })
+    );
     // stub speechSynthesis to capture utterances
     await page.addInitScript(() => {
       window.__utterances = [];
@@ -29,12 +43,50 @@ test.describe('Language -> TTS', () => {
     });
 
     // read captured utterances
+    await expect.poll(() => page.evaluate(() => (window.__utterances || []).length)).toBeGreaterThan(0);
     const utterances = await page.evaluate(() => window.__utterances || []);
     // there should be at least one utterance
     expect(utterances.length).toBeGreaterThan(0);
     // the lang should be set to a hindi locale or at least contain 'hi'
     const first = utterances[0];
     expect(String(first.lang || '').toLowerCase()).toContain('hi');
+  });
+
+  test('unsupported Sarvam speech language leaves browser audio disabled', async ({ page }) => {
+    await page.route('**/api/speech/synthesize', route =>
+      route.fulfill({ status: 422, contentType: 'application/json', body: JSON.stringify({ message: 'unsupported' }) })
+    );
+    await page.addInitScript(() => {
+      window.__utterances = [];
+      if (window.speechSynthesis) {
+        window.speechSynthesis.speak = () => window.__utterances.push('unexpected');
+      }
+    });
+
+    await page.goto(APP_URL);
+    await page.selectOption('[data-testid="language-select"]', 'hi');
+    const speechResponse = page.waitForResponse(response =>
+      response.url().includes('/api/speech/synthesize') && response.request().method() === 'POST'
+    );
+    await page.evaluate(() => window.__aiCropSpeak?.({ disease: 'टेस्ट', severity: 'low', treatments: ['A', 'B'] }));
+    expect((await speechResponse).status()).toBe(422);
+    expect(await page.evaluate(() => window.__utterances)).toEqual([]);
+  });
+
+  test('irrigation labels switch immediately without changing submitted enum values', async ({ page }) => {
+    await page.goto(APP_URL);
+    await page.selectOption('[data-testid="language-select"]', 'hi');
+
+    const growthStage = page.getByLabel('विकास की अवस्था');
+    await expect(growthStage).toHaveValue('vegetative');
+    const soilType = page.getByLabel('मिट्टी का प्रकार — स्वयं दर्ज करें');
+    await soilType.selectOption('sandy');
+    await expect(soilType).toHaveValue('sandy');
+
+    await page.selectOption('[data-testid="language-select"]', 'ta');
+    const translatedSoilType = page.getByLabel('மண் வகை — கைமுறையாக');
+    await expect(translatedSoilType).toHaveValue('sandy');
+    await expect(translatedSoilType.locator('option[value="sandy"]')).toHaveText('மணற்பாங்கான மண்');
   });
 });
 

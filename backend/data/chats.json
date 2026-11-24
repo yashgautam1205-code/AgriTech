@@ -208,5 +208,23 @@
     "text": "Immediate steps: Remove and destroy badly infected leaves to reduce spread. Avoid overhead irrigation; water at the base of the plants. If available, apply one of these treatments: recommended treatment.   Best time: early morning when leaves are dry and wind is calm.",
     "_id": "dd2b6a91-60e9-4d8b-aa20-4ada268f5abb",
     "createdAt": "2026-06-05T17:09:44.339Z"
+  },
+  {
+    "scanId": "146e648e-9495-4348-95ee-71c34866f711",
+    "userId": "anonymous",
+    "lang": "en",
+    "from": "user",
+    "text": "hello, brother",
+    "_id": "11a78622-962f-4ec1-a960-1cecaec9d808",
+    "createdAt": "2026-11-24T07:39:50.023Z"
+  },
+  {
+    "scanId": "146e648e-9495-4348-95ee-71c34866f711",
+    "userId": "anonymous",
+    "lang": "en",
+    "from": "bot",
+    "text": "The image model cannot assess disease severity. Do not treat this result as a confirmed diagnosis; consult a local agricultural extension specialist.",
+    "_id": "751c829d-3e92-4643-90a4-80f139f77fa7",
+    "createdAt": "2026-11-24T07:39:50.025Z"
   }
 ]

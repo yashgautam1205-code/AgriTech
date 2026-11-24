@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import json
 import random
 import re
@@ -39,14 +40,121 @@ def parse_leaf_id(relative_path: str, leaf_map: dict) -> str:
     for suggestion in suggestions:
         if class_name in suggestion:
             return f"{class_name}::{suggestion}"
+    # Filename fallbacks are never allowed to imply a biological leaf relationship.
+    # Use a stable, image-specific digest so a fallback record is one singleton group.
+    digest = hashlib.sha256(relative_path.encode("utf-8")).hexdigest()[:16]
+    return f"{class_name}::fallback-image::{digest}"
+
+
+def is_fallback_leaf_id(leaf_id: str) -> bool:
+    return "::fallback-image::" in leaf_id
+
+
+def parse_legacy_leaf_id(relative_path: str, leaf_map: dict) -> str:
+    parts = relative_path.replace("\\", "/").split("/")
+    if len(parts) < 4:
+        raise ValueError(f"Unexpected image path: {relative_path}")
+    class_name, file_name = parts[2], parts[3]
+    identifier = file_name.replace("_final_masked", "")
+    if "___" in identifier:
+        identifier = identifier.split("___")[-1]
+    identifier = re.split(r"copy", identifier, maxsplit=1, flags=re.IGNORECASE)[0]
+    identifier = re.sub(r"\.(jpg|jpeg|png)$", "", identifier, flags=re.IGNORECASE).strip()
+    key = identifier.lower()
+    suggestions = leaf_map.get(key, [])
+    if len(suggestions) == 1:
+        return f"{class_name}::{suggestions[0]}"
+    for suggestion in suggestions:
+        if class_name in suggestion:
+            return f"{class_name}::{suggestion}"
     return f"{class_name}::fallback::{identifier}"
 
 
-def load_records():
+def assign_split_groups(records, group_exact_images=False):
+    if not group_exact_images:
+        for row in records:
+            row["split_group"] = row["leaf_id"]
+        return {
+            "method": "filename-inferred leaf-map groups with image-specific fallback IDs",
+            "unique_exact_image_hashes": None,
+            "duplicate_exact_image_groups": None
+        }
+
+    parent = list(range(len(records)))
+
+    def find(index):
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(first, second):
+        first_root = find(first)
+        second_root = find(second)
+        if first_root != second_root:
+            parent[second_root] = first_root
+
+    indexes_by_leaf = {}
+    indexes_by_hash = {}
+    labels_by_hash = {}
+    for index, row in enumerate(records):
+        indexes_by_leaf.setdefault(row["leaf_id"], []).append(index)
+        with open(row["path"], "rb") as image_file:
+            digest = hashlib.sha256(image_file.read()).hexdigest()
+        row["_exact_image_hash"] = digest
+        indexes_by_hash.setdefault(digest, []).append(index)
+        labels_by_hash.setdefault(digest, set()).add(row["class_name"])
+
+    conflicting = {
+        digest: sorted(labels)
+        for digest, labels in labels_by_hash.items()
+        if len(labels) > 1
+    }
+    if conflicting:
+        raise ValueError(
+            f"Identical image bytes have conflicting disease labels in {len(conflicting)} groups"
+        )
+
+    for indexes in list(indexes_by_leaf.values()) + list(indexes_by_hash.values()):
+        first = indexes[0]
+        for index in indexes[1:]:
+            union(first, index)
+
+    component_paths = {}
+    for index, row in enumerate(records):
+        component_paths.setdefault(find(index), []).append(row["path"])
+    group_names = {
+        root: "split-group::" + hashlib.sha256(
+            "\n".join(sorted(paths)).encode("utf-8")
+        ).hexdigest()[:16]
+        for root, paths in component_paths.items()
+    }
+    for index, row in enumerate(records):
+        row["split_group"] = group_names[find(index)]
+
+    return {
+        "method": "filename-inferred leaf-map groups joined by exact image SHA-256",
+        "unique_exact_image_hashes": len(indexes_by_hash),
+        "duplicate_exact_image_groups": sum(len(indexes) > 1 for indexes in indexes_by_hash.values())
+    }
+
+
+def load_records(group_exact_images=False):
     train_paths = (DATA_DIR / "color_train.txt").read_text(encoding="utf-8").splitlines()
     test_paths = (DATA_DIR / "color_test.txt").read_text(encoding="utf-8").splitlines()
     leaf_map = json.loads((DATA_DIR / "leaf-map.json").read_text(encoding="utf-8"))
     paths_by_split = {"train": train_paths, "test": test_paths}
+
+    source_rows = []
+    for split_name, paths in paths_by_split.items():
+        cleaned = [path.strip().replace("\\", "/") for path in paths if path.strip()]
+        if len(cleaned) != len(set(cleaned)):
+            raise ValueError(f"Duplicate image paths found in the {split_name} PlantVillage manifest")
+        source_rows.extend(cleaned)
+    if len(source_rows) != len(set(source_rows)):
+        raise ValueError("Published PlantVillage train/test manifests overlap on exact image paths")
+    if not leaf_map:
+        raise ValueError("PlantVillage leaf-map.json is empty")
 
     classes = sorted(
         {
@@ -78,14 +186,29 @@ def load_records():
                 "class_name": parts[2],
                 "label": class_to_index[parts[2]],
                 "leaf_id": parse_leaf_id(normalized, leaf_map),
+                "legacy_leaf_id": parse_legacy_leaf_id(normalized, leaf_map),
                 "source_split": split_name,
             }
             rows.append(row)
             all_records.append(row)
         source_records[split_name] = rows
 
+    split_grouping = assign_split_groups(all_records, group_exact_images)
+    if group_exact_images:
+        seen_image_hashes = set()
+        unique_records = []
+        duplicate_records_removed = 0
+        for row in all_records:
+            if row["_exact_image_hash"] in seen_image_hashes:
+                duplicate_records_removed += 1
+                continue
+            seen_image_hashes.add(row["_exact_image_hash"])
+            unique_records.append(row)
+        all_records = unique_records
+        split_grouping["duplicate_records_removed_before_split"] = duplicate_records_removed
+
     labels = np.asarray([row["label"] for row in all_records])
-    groups = np.asarray([row["leaf_id"] for row in all_records])
+    groups = np.asarray([row["split_group"] for row in all_records])
     splitter = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=SEED)
     train_indices, test_indices = next(
         splitter.split(np.zeros(len(labels)), labels, groups)
@@ -100,8 +223,8 @@ def load_records():
         "source_test": source_records["test"],
     }
 
-    train_groups = {row["leaf_id"] for row in records["train"]}
-    test_groups = {row["leaf_id"] for row in records["test"]}
+    train_groups = {row["split_group"] for row in records["train"]}
+    test_groups = {row["split_group"] for row in records["test"]}
     if train_groups.intersection(test_groups):
         raise ValueError("Leaf group leakage found between training and test")
     source_train_groups = {
@@ -110,15 +233,40 @@ def load_records():
     source_test_groups = {
         row["leaf_id"] for row in source_records["test"]
     }
+    mapped_train_groups = {
+        leaf_id for leaf_id in source_train_groups
+        if not is_fallback_leaf_id(leaf_id)
+    }
+    mapped_test_groups = {
+        leaf_id for leaf_id in source_test_groups
+        if not is_fallback_leaf_id(leaf_id)
+    }
     records["source_manifest_group_overlap"] = len(
-        source_train_groups.intersection(source_test_groups)
+        mapped_train_groups.intersection(mapped_test_groups)
     )
+    legacy_train_groups = {
+        row["legacy_leaf_id"] for row in source_records["train"]
+    }
+    legacy_test_groups = {
+        row["legacy_leaf_id"] for row in source_records["test"]
+    }
+    records["source_manifest_legacy_group_overlap"] = len(
+        legacy_train_groups.intersection(legacy_test_groups)
+    )
+    records["source_manifest_mapped_group_overlap"] = records["source_manifest_group_overlap"]
+    records["source_train_fallback_records"] = sum(
+        is_fallback_leaf_id(row["leaf_id"]) for row in source_records["train"]
+    )
+    records["source_test_fallback_records"] = sum(
+        is_fallback_leaf_id(row["leaf_id"]) for row in source_records["test"]
+    )
+    records["split_grouping"] = split_grouping
     return records, classes
 
 
 def grouped_train_validation_split(train_records):
     labels = np.asarray([row["label"] for row in train_records])
-    groups = np.asarray([row["leaf_id"] for row in train_records])
+    groups = np.asarray([row.get("split_group", row["leaf_id"]) for row in train_records])
     splitter = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=SEED)
     train_indices, validation_indices = next(
         splitter.split(np.zeros(len(labels)), labels, groups)
@@ -128,8 +276,8 @@ def grouped_train_validation_split(train_records):
         raise ValueError("Grouped train/validation split does not contain every disease class")
     training = [train_records[index] for index in train_indices]
     validation = [train_records[index] for index in validation_indices]
-    if {row["leaf_id"] for row in training} & {
-        row["leaf_id"] for row in validation
+    if {row.get("split_group", row["leaf_id"]) for row in training} & {
+        row.get("split_group", row["leaf_id"]) for row in validation
     }:
         raise ValueError("Leaf group leakage found between training and validation")
     return training, validation
@@ -148,18 +296,36 @@ def cap_per_class(records, cap, seed):
     return selected
 
 
-def make_dataset(records, classes, training):
+def compute_class_weights(records, class_count):
+    labels = np.asarray([row["label"] for row in records], dtype=np.int64)
+    counts = np.bincount(labels, minlength=class_count)
+    if len(labels) == 0 or np.any(counts == 0):
+        raise ValueError("Class weights require at least one training sample for every class")
+    return {
+        index: float(len(labels) / (class_count * count))
+        for index, count in enumerate(counts)
+    }
+
+
+def make_dataset(records, classes, training, class_weights=None):
     paths = [row["path"] for row in records]
     labels = [row["label"] for row in records]
-    dataset = tf.data.Dataset.from_tensor_slices((paths, labels))
+    if class_weights is None:
+        dataset = tf.data.Dataset.from_tensor_slices((paths, labels))
+    else:
+        weights = [class_weights[label] for label in labels]
+        dataset = tf.data.Dataset.from_tensor_slices((paths, labels, weights))
 
-    def load_image(path, label):
+    def load_image(path, label, sample_weight=None):
         contents = tf.io.read_file(path)
         image = tf.io.decode_image(contents, channels=3, expand_animations=False)
         image.set_shape([None, None, 3])
         image = tf.image.resize(image, IMAGE_SIZE)
         image = tf.keras.applications.mobilenet_v2.preprocess_input(image)
-        return image, tf.one_hot(label, depth=len(classes))
+        one_hot = tf.one_hot(label, depth=len(classes))
+        if sample_weight is None:
+            return image, one_hot
+        return image, one_hot, tf.cast(sample_weight, tf.float32)
 
     if training:
         dataset = dataset.shuffle(min(len(records), 8192), seed=SEED, reshuffle_each_iteration=True)
@@ -178,17 +344,46 @@ def build_model(class_count):
     )
     base.trainable = False
     inputs = tf.keras.Input(shape=(*IMAGE_SIZE, 3))
-    features = base(inputs, training=False)
+    augmented = tf.keras.Sequential(
+        [
+            tf.keras.layers.RandomFlip("horizontal"),
+            tf.keras.layers.RandomRotation(0.08),
+            tf.keras.layers.RandomZoom(0.1),
+        ],
+        name="training_only_augmentation",
+    )(inputs)
+    features = base(augmented, training=False)
     features = tf.keras.layers.GlobalAveragePooling2D()(features)
     features = tf.keras.layers.Dropout(0.25)(features)
     outputs = tf.keras.layers.Dense(class_count, activation="softmax")(features)
     return tf.keras.Model(inputs, outputs), base
 
 
+def training_callbacks():
+    return [
+        tf.keras.callbacks.EarlyStopping(
+            monitor="val_accuracy", patience=2, restore_best_weights=True
+        ),
+        tf.keras.callbacks.ReduceLROnPlateau(
+            monitor="val_loss", factor=0.5, patience=1, min_lr=1e-6
+        )
+    ]
+
+
 def evaluate(model, dataset, records, classes):
     probabilities = model.predict(dataset, verbose=1)
+    if probabilities.ndim != 2 or probabilities.shape[1] != len(classes):
+        raise ValueError("Model probabilities do not match the 38 disease classes")
+    if not np.isfinite(probabilities).all():
+        raise ValueError("Model returned non-finite probabilities")
+    if not np.allclose(probabilities.sum(axis=1), 1.0, rtol=1e-5, atol=1e-5):
+        raise ValueError("Model probabilities do not sum to one")
     predictions = probabilities.argmax(axis=1)
     truth = np.asarray([row["label"] for row in records])
+    if len(predictions) != len(truth):
+        raise ValueError(
+            f"Prediction/image count mismatch: {len(predictions)} predictions for {len(truth)} images"
+        )
     report = classification_report(
         truth,
         predictions,
@@ -207,13 +402,25 @@ def evaluate(model, dataset, records, classes):
 
 
 def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
+    if max_per_class < 1:
+        raise ValueError("--max-per-class must be at least 1")
+    if head_epochs < 1:
+        raise ValueError("--head-epochs must be at least 1")
+    if fine_tune_epochs < 0:
+        raise ValueError("--fine-tune-epochs cannot be negative")
     tf.keras.utils.set_random_seed(SEED)
-    records, classes = load_records()
+    records, classes = load_records(group_exact_images=True)
     train_records, validation_records = grouped_train_validation_split(records["train"])
     train_records = cap_per_class(train_records, max_per_class, SEED)
     validation_records = cap_per_class(validation_records, max_per_class, SEED + 1)
 
-    training_data = make_dataset(train_records, classes, training=True)
+    class_weights = compute_class_weights(train_records, len(classes))
+    training_data = make_dataset(
+        train_records,
+        classes,
+        training=True,
+        class_weights=class_weights
+    )
     validation_data = make_dataset(validation_records, classes, training=False)
     test_data = make_dataset(records["test"], classes, training=False)
 
@@ -223,16 +430,11 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
         loss="categorical_crossentropy",
         metrics=["accuracy"],
     )
-    callbacks = [
-        tf.keras.callbacks.EarlyStopping(
-            monitor="val_accuracy", patience=2, restore_best_weights=True
-        )
-    ]
     model.fit(
         training_data,
         validation_data=validation_data,
         epochs=head_epochs,
-        callbacks=callbacks,
+        callbacks=training_callbacks(),
     )
 
     if fine_tune_epochs > 0:
@@ -248,7 +450,7 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
             training_data,
             validation_data=validation_data,
             epochs=fine_tune_epochs,
-            callbacks=callbacks,
+            callbacks=training_callbacks(),
         )
 
     validation_metrics = evaluate(model, validation_data, validation_records, classes)
@@ -260,7 +462,7 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
     image = axis.imshow(matrix, interpolation="nearest", cmap="Blues")
     figure.colorbar(image, ax=axis, fraction=0.046, pad=0.04)
     axis.set(
-        title="PlantVillage grouped independent test confusion matrix",
+        title="PlantVillage grouped held-out test confusion matrix",
         xlabel="Predicted class",
         ylabel="True class",
     )
@@ -277,6 +479,7 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
                 "input_size": list(IMAGE_SIZE),
                 "architecture": "MobileNetV2",
                 "dataset_revision": "mohanty/PlantVillage@9e97599868962bd0079b8db4b7f1efa9185fa1e7",
+                "split_grouping_method": "filename_group_plus_exact_image_sha256",
             },
             indent=2,
         ),
@@ -287,13 +490,13 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
     test_counts = Counter(row["class_name"] for row in records["test"])
     report = {
         "status": "evaluated",
-        "evaluation_scope": "PlantVillage dataset-level image classification; not field validation.",
+        "evaluation_scope": "PlantVillage same-source grouped held-out image classification; not field or external-source validation.",
         "dataset": {
             "name": "PlantVillage color images",
             "source": "https://huggingface.co/datasets/mohanty/PlantVillage",
             "revision": "9e97599868962bd0079b8db4b7f1efa9185fa1e7",
             "license_declared_by_dataset_card": "CC BY-SA 3.0",
-            "total_source_images": len(records["train"]) + len(records["test"]),
+            "total_source_images": len(records["source_train"]) + len(records["source_test"]),
             "class_count": len(classes),
             "class_names": classes,
             "source_train_images": len(records["source_train"]),
@@ -302,14 +505,18 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
             "source_test_counts": dict(sorted(Counter(row["class_name"] for row in records["source_test"]).items())),
         },
         "split_method": {
-            "independent_test": "One held-out fold from 5-fold StratifiedGroupKFold over both published color manifests, grouped by inferred leaf_id. The published manifests share inferred leaf groups and are not used directly as independent splits.",
+            "independent_test": "One held-out fold from 5-fold StratifiedGroupKFold over both published color manifests, grouped by inferred filename/leaf-map groups and exact image-byte hashes. Unresolved filenames are image-specific singleton fallback IDs.",
             "validation": "One fold of 5-fold StratifiedGroupKFold over the grouped training partition, grouped by leaf_id.",
-            "train_leaf_groups": len({row["leaf_id"] for row in train_records}),
-            "validation_leaf_groups": len({row["leaf_id"] for row in validation_records}),
-            "independent_test_leaf_groups": len({row["leaf_id"] for row in records["test"]}),
+            "train_leaf_groups": len({row["split_group"] for row in train_records}),
+            "validation_leaf_groups": len({row["split_group"] for row in validation_records}),
+            "independent_test_leaf_groups": len({row["split_group"] for row in records["test"]}),
             "train_validation_leaf_overlap": 0,
             "train_test_leaf_overlap": 0,
             "published_train_test_leaf_overlap": records["source_manifest_group_overlap"],
+            "published_train_test_mapped_leaf_overlap": records["source_manifest_mapped_group_overlap"],
+            "published_train_test_legacy_group_overlap": records["source_manifest_legacy_group_overlap"],
+            "fallback_grouping": "Unresolved filenames use image-specific SHA-256 singleton IDs.",
+            "exact_image_grouping": records["split_grouping"],
         },
         "training": {
             "architecture": "ImageNet-pretrained MobileNetV2, 160x160 RGB",
@@ -324,6 +531,15 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
             "independent_test_class_counts": dict(sorted(test_counts.items())),
             "seed": SEED,
             "batch_size": 32,
+            "class_weights": {
+                classes[index]: weight for index, weight in class_weights.items()
+            },
+            "data_augmentation": [
+                "random horizontal flip",
+                "random rotation up to 0.08",
+                "random zoom up to 0.1"
+            ],
+            "learning_rate_schedule": "ReduceLROnPlateau on validation loss; early stopping on validation accuracy",
         },
         "validation_metrics": validation_metrics,
         "independent_test_metrics": test_metrics,
@@ -332,6 +548,8 @@ def train(max_per_class: int, head_epochs: int, fine_tune_epochs: int):
             "PlantVillage uses controlled-background leaf images; field photos may differ substantially.",
             "Predictions are limited to the supported dataset classes and do not establish diagnosis in real crops.",
             "The confidence threshold is not a calibrated probability of correctness.",
+            f"{records['source_train_fallback_records']} published-train and {records['source_test_fallback_records']} published-test records used filename-unresolved singleton fallback groups.",
+            "Filename mappings and fallback IDs are not evidence of biological leaf independence.",
             "The dataset card declares CC BY-SA 3.0; the upstream GitHub repository does not publish license metadata. Review attribution/share-alike obligations before redistribution.",
         ],
     }

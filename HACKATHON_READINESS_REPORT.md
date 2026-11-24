@@ -2,13 +2,13 @@
 
 ## Executive summary
 
-The existing application now demonstrates three connected workflows: saved-model crop suitability, saved-model plant disease classification, and explainable irrigation/crop-management guidance. End-to-end browser tests verified real user inputs flowing through Express to the ML/recommendation services. This is a working prototype, not a field-validated decision system.
+The existing application demonstrates three workflows: saved-model crop suitability, saved-model plant disease classification, and explainable irrigation/crop-management guidance. The current Playwright suite exercises crop recommendation, irrigation, and real-image disease scans. This is a working prototype, not a field-validated decision system.
 
 | Requirement | Status | Verified scope |
 |---|---|---|
 | Agricultural data | **Partial** | Crop recommendation dataset and live Open-Meteo weather are integrated. Soil values are user-entered; there is no verified measured-soil dataset or connected soil sensor. |
 | Crop suitability ML | **Implemented; dataset-level evaluation** | Saved Random Forest pipeline predicts 22 crop classes; Express-to-FastAPI and UI paths tested. No yield model. |
-| Plant disease classification | **Implemented; dataset-level evaluation** | Saved MobileNetV2 classifies 38 PlantVillage classes; a real uploaded test image was processed through Express and FastAPI. No field-photo validation. |
+| Plant disease classification | **Implemented; same-source grouped evaluation** | Saved MobileNetV2 classifies 38 PlantVillage classes. Exact-image leakage was audited and duplicate test records excluded; no external-source or field-photo validation. |
 | Irrigation and crop management | **Prototype implemented** | User inputs and optional live forecast drive a transparent, qualitative rule-based response. It is not a calibrated irrigation schedule; no fertilizer rates are prescribed. |
 | Independent evaluation | **Partial — source-independent test not verified** | Existing five-fold CV holds out rows per fold but exact-vector groups are all singletons; source/augmentation groups are unavailable. Public candidates were audited and rejected. No external metrics are claimed. |
 
@@ -53,9 +53,16 @@ External samples evaluated: **0**. Accuracy, precision, recall, F1, per-class me
 ### Plant disease
 
 - Saved ImageNet-initialized **MobileNetV2**, 160 × 160 RGB input, 38 softmax classes (healthy and diseased).
-- Dataset: 54,305 listed PlantVillage color images, pinned Hugging Face revision `9e97599868962bd0079b8db4b7f1efa9185fa1e7`; dataset card declares **CC BY-SA 3.0**. Published manifests had 227 inferred leaf-group overlaps; the generated train/validation/test partitions were group-separated.
-- Partition sizes: **10,843 train / 6,923 validation / 10,861 held-out test images**. Held-out dataset-level results: **93.48% accuracy**; macro precision/recall/F1 **91.26% / 92.78% / 91.67%**; weighted precision/recall/F1 **93.93% / 93.48% / 93.57%**.
-- Browser E2E uploaded a real held-out healthy Raspberry image; the service returned `Raspberry___healthy` with confidence `0.9997`. This validates the pipeline, not generalization to field photos. PlantVillage has controlled backgrounds; confidence is not calibrated and unsupported plants can be misclassified.
+- Dataset: 54,305 listed PlantVillage color images, pinned Hugging Face revision `9e97599868962bd0079b8db4b7f1efa9185fa1e7`; dataset card declares **CC BY-SA 3.0**. The legacy filename method reported 227 overlaps. The corrected split has zero inferred group/hash overlap, but filename IDs and singleton fallbacks do not establish biological independence. The current report lists 2,634 fallback records in held-out test and 2,676 in the full published-test manifest; the previously cited 2,639 count is unreconciled.
+- Preserved model fit: **10,841 train / 6,924 validation images**; original grouped holdout test was 10,862 images. Same-source grouped test after exact-content exclusions: **10,856 images**, **94.11% accuracy**; macro precision/recall/F1 **92.03% / 93.82% / 92.67%**; weighted precision/recall/F1 **94.44% / 94.11% / 94.18%**.
+- SHA-256 audit found 14 duplicate records within the published train manifest, 2 within test, 5 exact hashes across published manifests, and 8 across the prior grouped training pool/test partition. Of those, one was in model fit and two in validation; three additional repeated test copies were excluded. Six test records were excluded total. Future training now groups and deduplicates exact-image hashes before splitting.
+- Filename-derived leaf IDs remain heuristic. No exact hashes overlap among the corrected fit/calibration/test sets; this still does not establish biological independence. The results are same-source PlantVillage only.
+- Validation-fitted temperature scaling (T = **0.73647**) changed test ECE from **0.04277** to **0.00649** and multiclass Brier score from **0.09485** to **0.08947**. The raw-score threshold (**0.60045**) was selected on validation at 96.62% precision / 90.22% coverage. These are dataset-level calibration results, not field calibration.
+- Serving now uses the same TensorFlow RGB decoder, resize, and MobileNetV2 preprocessing as training/evaluation. The reported Strawberry photo scored **42.88% raw / 48.58% temperature-scaled** through the updated FastAPI source and remains uncertain; its diagnosis is not independently verified. Strawberry leaf-scorch test metrics are **99.08% precision / 97.30% recall / 98.18% F1** on 222 same-source images; six misses were mostly predicted as Tomato late blight (3), with one each to Grape Esca, Grape leaf blight, and Tomato early blight.
+- Lowest-F1 classes include Potato healthy (F1 **71.91%**, support 32), Tomato early blight (F1 **72.14%**, support 200), and Tomato target spot (F1 **78.50%**, support 281). An alternative architecture comparison and expert review of labels were not performed.
+- Source-backed Strawberry cultural guidance now covers reducing leaf wetness, with regional limitations cited from the Pacific Northwest Plant Disease Management Handbook. The pesticide product and price catalogues remain empty: no Strawberry leaf-scorch-specific Indian registration plus approved label, or verified price feed, was established.
+- Scan results now retain educational information for the possible top-class match regardless of confidence. Disease knowledge, management, pesticide references, prices, and weather carry explicit availability/restriction states; uncertain diagnoses remain `UNASSESSED` and never receive pesticide dosage/application advice.
+- Real-image React-to-Express-to-FastAPI Playwright scans passed for the uploaded Strawberry photo and a PlantVillage Tomato image. The currently running FastAPI process was started without `--reload`, so it still uses the previous decoder until restarted; the updated FastAPI source was separately exercised through TestClient. Confidence and calibration are supported only on the grouped PlantVillage split; unsupported plants can still be misclassified.
 - Classwise metrics and confusion matrix: `ml_service/models/plant_disease_evaluation.json`, `plant_disease_confusion_matrix.png`. Review share-alike and attribution obligations before redistributing data or derivatives.
 
 ### Weather, irrigation, and crop management
@@ -89,14 +96,15 @@ The sketch sets both dry and wet thresholds to 40%, although a comment says the 
 
 | Check | Result |
 |---|---|
-| Formal backend Node tests (`npm test`) | **15 passed** |
-| FastAPI crop and disease tests | **16 passed** (one Starlette/AnyIO deprecation warning) |
-| Playwright E2E | **4 passed**: crop model input/result, real disease upload, irrigation input/source, language/TTS |
+| Backend Node tests (`npm test`) | **30 passed** |
+| FastAPI disease inference/evaluation/training tests | **15 passed**; final evaluation artifact tests **4 passed** (one upstream Starlette/AnyIO deprecation warning) |
+| Playwright E2E | **4 passed**: language/TTS, crop recommendation, irrigation, and real-image disease scan |
 | Frontend production build | **Passed** |
-| Crop evaluation-only script | Reproduced 100% row-split and 99.45% grouped accuracy; serialized model SHA-256 unchanged |
-| Disease evaluation-only script | Recomputed all 10,861 held-out images; aggregate results matched saved report |
-| Express crop metadata endpoint | **200** with the serialized model's 22 supported classes |
-| Live Open-Meteo check | **Available**, three forecast days for supplied coordinates |
+| Disease evaluation-only script | Recomputed 10,856 eligible held-out images; accuracy **94.11%**; `model_modified: false` |
+| Updated disease preprocessing and direct inference | TensorFlow decoder/preprocessing tensors match training exactly; real Strawberry and Tomato images returned predictions through FastAPI TestClient |
+| Current React-to-Express-to-FastAPI E2E | **Passed** for real Strawberry and Tomato images using the running services; FastAPI on port 8001 needs restart to load the decoder change |
+| Express crop metadata endpoint | **200** with the serialized model's 22 supported classes; full browser crop recommendation test passed |
+| Weather/irrigation browser checks | **Passed**; disease results retain the weather panel independently of uncertainty |
 | Shop and scheme API checks | No verified shops returned; schemes identify themselves as curated static references |
 | Frontend npm audit | **0 vulnerabilities** |
 | Backend production dependency audit | **0 vulnerabilities** with dev dependencies omitted |
@@ -104,13 +112,13 @@ The sketch sets both dry and wet thresholds to 40%, although a comment says the 
 | Python dependency audit | Not run: `pip-audit` was unavailable in the environment |
 | MongoDB persistence | Not verified: no local MongoDB service was available; JSON fallback was used |
 
-The irrigation E2E test initially raced the asynchronous crop-model metadata request. The test now waits for the `GET /api/crop/model-info` response before selecting a crop; all four browser tests then passed.
+An earlier irrigation E2E test raced the asynchronous crop-model metadata request; the test was updated to wait for `GET /api/crop/model-info`. The earlier four-test pass predates the latest disease UI/API changes and must not be interpreted as verification of those changes.
 
 An unfiltered `node --test` also discovers legacy root-level manual scripts: two passed, one timed out, and one received HTTP 415 because its 1 × 1 PNG fixture is correctly rejected by the upload validator. These are not part of the formal `backend/tests/*.test.js` suite; `npm test` now runs only the maintained suite.
 
 ### Service lifecycle and persistence
 
-- Vite, Express, the crop FastAPI service, and the disease FastAPI service all started successfully. Logs recorded successful health/model-info requests, crop predictions, disease predictions, and irrigation E2E requests; invalid disease image requests returned validation errors as expected.
+- In earlier verification, Vite, Express, crop FastAPI, and disease FastAPI started successfully and served health/model-info, predictions, and irrigation requests. During the latest check, the existing service on port 8001 was running older loaded code without calibration response fields; the current disease source was verified separately on port 8011. The updated React-to-service flow has not been rerun.
 - The four local services were stopped intentionally after testing with explicit process IDs. The harness later reported exit code `-1` for those stopped sessions; these are intentional shutdowns, not application crashes or failed tests.
 - MongoDB connection attempts failed with `ECONNREFUSED`. The application used its local JSON fallback; MongoDB-backed persistence and functionality remain **unverified**, not passed.
 

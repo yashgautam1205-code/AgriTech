@@ -1,0 +1,171 @@
+{
+  "status": "evaluated",
+  "method": "temperature scaling using grouped validation probabilities",
+  "temperature": 0.7364711453332474,
+  "model_sha256": "a645bd463adc0e6629c39326635c5c88abaf607135fad0b1156a943455d985c4",
+  "labels_sha256": "af407229db32772b82c11e0f2aac6a3373e9dda32ffbf3d5ee9321f9d544e470",
+  "fit_data": "grouped validation partition after excluding exact byte duplicates from model training",
+  "test_data": "held-out grouped test after excluding exact byte duplicates from model training and validation",
+  "validation_images_used": 6924,
+  "test_images_evaluated": 10856,
+  "confidence_threshold": {
+    "status": "selected",
+    "value": 0.6004458665847778,
+    "minimum_validation_precision": 0.95,
+    "minimum_validation_coverage": 0.5,
+    "minimum_raw_confidence": 0.6,
+    "validation_precision": 0.9662237874179607,
+    "validation_coverage": 0.9022241478913923,
+    "method": "lowest raw softmax confidence at least 0.60 with at least 95% validation top-1 precision and 50% coverage"
+  },
+  "confidence_threshold_scale": "raw_softmax",
+  "uncalibrated_test_ece": 0.0427653804797522,
+  "calibrated_test_ece": 0.006487321497220931,
+  "uncalibrated_test_brier_score": 0.09484762116468652,
+  "calibrated_test_brier_score": 0.08946672525731424,
+  "uncalibrated_reliability": [
+    {
+      "lower": 0.0,
+      "upper": 0.1,
+      "count": 0,
+      "accuracy": null,
+      "confidence": null
+    },
+    {
+      "lower": 0.1,
+      "upper": 0.2,
+      "count": 4,
+      "accuracy": 0.75,
+      "confidence": 0.18812646716833115
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.30000000000000004,
+      "count": 41,
+      "accuracy": 0.3170731707317073,
+      "confidence": 0.26692154531071827
+    },
+    {
+      "lower": 0.30000000000000004,
+      "upper": 0.4,
+      "count": 160,
+      "accuracy": 0.48125,
+      "confidence": 0.35100091975182296
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "count": 303,
+      "accuracy": 0.5676567656765676,
+      "confidence": 0.45295398315974195
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6000000000000001,
+      "count": 429,
+      "accuracy": 0.6899766899766899,
+      "confidence": 0.5511929005176037
+    },
+    {
+      "lower": 0.6000000000000001,
+      "upper": 0.7000000000000001,
+      "count": 454,
+      "accuracy": 0.7731277533039648,
+      "confidence": 0.6506909367008882
+    },
+    {
+      "lower": 0.7000000000000001,
+      "upper": 0.8,
+      "count": 625,
+      "accuracy": 0.8736,
+      "confidence": 0.7533102590560913
+    },
+    {
+      "lower": 0.8,
+      "upper": 0.9,
+      "count": 1055,
+      "accuracy": 0.9497630331753555,
+      "confidence": 0.8567351648592836
+    },
+    {
+      "lower": 0.9,
+      "upper": 1.0,
+      "count": 7785,
+      "accuracy": 0.9964033397559409,
+      "confidence": 0.9815141407587472
+    }
+  ],
+  "calibrated_reliability": [
+    {
+      "lower": 0.0,
+      "upper": 0.1,
+      "count": 0,
+      "accuracy": null,
+      "confidence": null
+    },
+    {
+      "lower": 0.1,
+      "upper": 0.2,
+      "count": 0,
+      "accuracy": null,
+      "confidence": null
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.30000000000000004,
+      "count": 13,
+      "accuracy": 0.5384615384615384,
+      "confidence": 0.26671346830454473
+    },
+    {
+      "lower": 0.30000000000000004,
+      "upper": 0.4,
+      "count": 79,
+      "accuracy": 0.31645569620253167,
+      "confidence": 0.361362047817574
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "count": 189,
+      "accuracy": 0.48148148148148145,
+      "confidence": 0.45967641849495233
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6000000000000001,
+      "count": 301,
+      "accuracy": 0.6345514950166113,
+      "confidence": 0.5498828515043233
+    },
+    {
+      "lower": 0.6000000000000001,
+      "upper": 0.7000000000000001,
+      "count": 297,
+      "accuracy": 0.67003367003367,
+      "confidence": 0.6512191420362597
+    },
+    {
+      "lower": 0.7000000000000001,
+      "upper": 0.8,
+      "count": 415,
+      "accuracy": 0.7614457831325301,
+      "confidence": 0.7510694041415128
+    },
+    {
+      "lower": 0.8,
+      "upper": 0.9,
+      "count": 674,
+      "accuracy": 0.8664688427299704,
+      "confidence": 0.8549394608216728
+    },
+    {
+      "lower": 0.9,
+      "upper": 1.0,
+      "count": 8888,
+      "accuracy": 0.9905490549054905,
+      "confidence": 0.9887404701417807
+    }
+  ],
+  "interpretation": "Calibration describes the eligible PlantVillage split only and does not establish field calibration."
+}

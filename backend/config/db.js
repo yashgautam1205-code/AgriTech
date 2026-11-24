@@ -25,7 +25,7 @@ const connectDB = async () => {
   attachConnectionHandlers();
 
   try {
-    const uri = process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb://localhost:27017/ai-crop-doctor';
+    const uri = process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ai-crop-doctor';
     await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     state.connected = true;
   } catch (err) {

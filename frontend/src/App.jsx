@@ -5,8 +5,9 @@ import AssistantChat from './components/AssistantChat'
 import UserHistory from './components/UserHistory'
 import CropRecommendation from './components/CropRecommendation'
 import CropManagementRecommendation from './components/CropManagementRecommendation'
-import { t } from './i18n'
+import { t, setAppLanguage, languageNames, getTranslationCoverage } from './i18n'
 import axios from 'axios'
+import { translateDynamicText } from './translationService'
 
 // Calculate distance between two coordinates using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -38,7 +39,10 @@ function getChemicalShopsWithinRadius(shops, coords, maxKm = 15) {
 }
 
 export default function App() {
-  const [lang, setLang] = useState('en')
+  const [lang, setLang] = useState(() => {
+    const storedLanguage = localStorage.getItem('agritech-language')
+    return languageNames[storedLanguage] ? storedLanguage : 'en'
+  })
   const [userId, setUserId] = useState('')
   const [bgColor, setBgColor] = useState('white')
   const [voices, setVoices] = useState([])
@@ -49,6 +53,7 @@ export default function App() {
   const [shopsLoading, setShopsLoading] = useState(false)
   const [shopsLoadError, setShopsLoadError] = useState(false)
   const [governmentSchemes, setGovernmentSchemes] = useState([])
+  const [localizedSchemes, setLocalizedSchemes] = useState([])
   const [govSchemesLoading, setGovSchemesLoading] = useState(false)
   const [searchRadius, setSearchRadius] = useState(15)
   const locationWatchId = useRef(null)
@@ -56,11 +61,33 @@ export default function App() {
   const nearbyChemicalShops = coords ? chemicalShops.filter(shop => shop.distance <= searchRadius) : []
   const exactLocationNote = coords ? `Exact search location: ${coords.lat.toFixed(4)}, ${coords.lon.toFixed(4)}` : null
   const langStrings = t(lang)
+  const translationCoverage = getTranslationCoverage(lang)
   const [result, setResult] = useState(null)
+  const [scanError, setScanError] = useState('')
   const [chatOpen, setChatOpen] = useState(false)
   const [chatResult, setChatResult] = useState(null)
   const [historyOpen, setHistoryOpen] = useState(false)
   const isDark = bgColor === 'black'
+
+  useEffect(() => {
+    setAppLanguage(lang)
+  }, [])
+
+  useEffect(() => {
+    let active = true
+    async function localizeSchemes() {
+      const translated = await Promise.all(governmentSchemes.map(async scheme => ({
+        ...scheme,
+        title: await translateDynamicText(scheme.title, lang),
+        description: await translateDynamicText(scheme.description, lang),
+        benefit: await translateDynamicText(scheme.benefit, lang),
+        category: await translateDynamicText(scheme.category, lang)
+      })))
+      if (active) setLocalizedSchemes(translated)
+    }
+    localizeSchemes()
+    return () => { active = false }
+  }, [governmentSchemes, lang])
 
   useEffect(() => {
     document.body.classList.remove('theme-white', 'theme-black')
@@ -142,7 +169,19 @@ export default function App() {
   }
 
   function handleResult(data) {
-    setResult({ ...data, lang })
+    if (!data) return
+    setScanError('')
+    setResult({ ...data, lang, sourceLang: data.lang || lang })
+  }
+
+  function handleScanStart() {
+    setResult(null)
+    setScanError('')
+  }
+
+  function handleScanError(message) {
+    setResult(null)
+    setScanError(message)
   }
 
   useEffect(() => {
@@ -304,6 +343,9 @@ export default function App() {
       ta: ['ta-IN', 'ta'],
       te: ['te-IN', 'te'],
       bn: ['bn-IN', 'bn'],
+      ml: ['ml-IN', 'ml'],
+      gu: ['gu-IN', 'gu'],
+      pa: ['pa-IN', 'pa'],
       en: ['en-US', 'en']
     }
     const prefs = map[langCode] || map.en
@@ -356,11 +398,27 @@ export default function App() {
     return diseaseKey ? langStrings[diseaseKey] || disease : disease
   }
 
-  function speak(result) {
+  async function speak(result) {
     if (!result) return
     const text = typeof result === 'string'
       ? result
       : ((result.voiceText && result.lang === lang) ? result.voiceText : getLocalizedVoiceText(result))
+    try {
+      const API_BASE = import.meta.env.VITE_API_BASE || ''
+      const response = await axios.post(`${API_BASE}/api/speech/synthesize`, { text, language: lang }, {
+        timeout: 25000
+      })
+      if (response.data?.audioBase64 && response.data?.mimeType) {
+        const audio = new Audio(`data:${response.data.mimeType};base64,${response.data.audioBase64}`)
+        await audio.play()
+        return
+      }
+      throw new Error('Speech service returned no playable audio.')
+    } catch (error) {
+      console.warn('Sarvam speech playback unavailable; using browser speech:', error.response?.status || error.message)
+      if (error.response?.status === 422) return
+    }
+
     const msg = new SpeechSynthesisUtterance(text)
     msg.lang = lang === 'hi'
       ? 'hi-IN'
@@ -374,6 +432,12 @@ export default function App() {
       ? 'te-IN'
       : lang === 'bn'
       ? 'bn-IN'
+      : lang === 'ml'
+      ? 'ml-IN'
+      : lang === 'gu'
+      ? 'gu-IN'
+      : lang === 'pa'
+      ? 'pa-IN'
       : 'en-US'
     // set a selected voice if available for better quality
     const voice = selectVoiceForLang(lang)
@@ -393,9 +457,9 @@ export default function App() {
   }
 
   const dashboardStats = [
-    { label: langStrings.dashboardScans || 'Scans', value: result ? '1' : '0', color: 'emerald' },
-    { label: langStrings.dashboardDisease || 'Detected', value: result ? result.disease : (langStrings.noScans || 'No scan yet'), color: 'amber' },
-    { label: langStrings.dashboardRisk || 'Risk', value: result ? localizeSeverity(result.severity) : 'N/A', color: 'rose' }
+    { label: langStrings.scans, value: result ? '1' : '0', color: 'emerald' },
+    { label: langStrings.detected, value: result ? result.disease : langStrings.noScanYet, color: 'amber' },
+    { label: langStrings.risk, value: result ? localizeSeverity(result.severity) : '—', color: 'rose' }
   ]
 
   return (
@@ -403,9 +467,9 @@ export default function App() {
       <div className="mx-auto max-w-full">
         <header className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Crop Doctor Dashboard</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-400">{langStrings.dashboardEyebrow}</p>
             <h1 className="mt-2 text-4xl font-bold">{langStrings.appTitle}</h1>
-            <p className={`mt-2 max-w-2xl ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>A full-screen web dashboard for crop disease detection, smart assistant guidance, and field action planning.</p>
+            <p className={`mt-2 max-w-2xl ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{langStrings.dashboardSubtitle}</p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/95 border-slate-200'} rounded-3xl border p-5 shadow-lg`}>
@@ -413,17 +477,20 @@ export default function App() {
               <select
                 data-testid="language-select"
                 value={lang}
-                onChange={e => setLang(e.target.value)}
+                onChange={e => {
+                  const selected = setAppLanguage(e.target.value)
+                  setLang(selected)
+                  document.documentElement.lang = selected
+                }}
                 className={`mt-2 w-full p-3 rounded-lg transition border shadow-sm ${bgColor === 'black' ? 'bg-slate-900 text-white border-slate-700' : 'bg-white text-slate-900 border-slate-300'}`}
               >
-                <option value="en">English</option>
-                <option value="hi">हिन्दी</option>
-                <option value="kn">ಕನ್ನಡ</option>
-                <option value="mr">मराठी</option>
-                <option value="ta">தமிழ்</option>
-                <option value="te">తెలుగు</option>
-                <option value="bn">বাংলা</option>
+                {Object.entries(languageNames).map(([code, name]) => (
+                  <option key={code} value={code}>{name}</option>
+                ))}
               </select>
+              {translationCoverage.missing.length > 0 && (
+                <p className="mt-2 text-xs text-amber-600">{langStrings.translationCoverageWarning}</p>
+              )}
             </div>
             <div className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/95 border-slate-200'} rounded-3xl border p-5 shadow-lg`}>
               <p className="text-sm text-slate-400">{langStrings.chooseBackground}</p>
@@ -443,7 +510,7 @@ export default function App() {
           <aside className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/90 border-slate-200'} rounded-[32px] border p-6 shadow-xl`}> 
             <div className="mb-6">
               <h2 className="text-xl font-semibold">{langStrings.userIdLabel || 'User ID'}</h2>
-              <p className={`mt-2 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Enter a farmer ID to store chat history and notes per user.</p>
+              <p className={`mt-2 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{langStrings.userIdHelp}</p>
               <input
                 value={userId}
                 onChange={e => setUserId(e.target.value)}
@@ -454,16 +521,16 @@ export default function App() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold">Quick actions</h3>
+              <h3 className="text-lg font-semibold">{langStrings.quickActions}</h3>
               <div className="mt-3 grid gap-3">
                 <button onClick={() => requestLocationPermission()} className="w-full rounded-2xl border px-4 py-3 text-left text-sm font-medium border-slate-300 bg-slate-50 text-slate-900">{langStrings.locationAvailable || 'Use location'}</button>
                 <button onClick={openChat.bind(null, result)} disabled={!result} className="w-full rounded-2xl border px-4 py-3 text-left text-sm font-medium border-slate-300 bg-emerald-50 text-emerald-900 disabled:opacity-40">{langStrings.askHelp || 'Ask the crop doctor'}</button>
               </div>
               <p className={`mt-3 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 {locationStatus === 'available'
-                  ? `Farmer's live location: ${coords?.lat.toFixed(4)}, ${coords?.lon.toFixed(4)}`
+                  ? `${langStrings.liveLocation}: ${coords?.lat.toFixed(4)}, ${coords?.lon.toFixed(4)}`
                   : locationStatus === 'pending'
-                  ? 'Requesting live location…'
+                  ? langStrings.requestingLocation
                   : locationStatus === 'denied'
                   ? langStrings.locationBlocked || 'Location access denied. Please enable location in browser settings.'
                   : langStrings.locationUnsupported || 'Geolocation not supported by this browser.'}
@@ -508,7 +575,7 @@ export default function App() {
                 ) : governmentSchemes.length === 0 ? (
                   <p className={`text-sm ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{langStrings.noSchemesFound || 'No schemes found right now.'}</p>
                 ) : (
-                  governmentSchemes.map((scheme) => (
+                  localizedSchemes.map((scheme) => (
                     <div key={scheme.id} className={`${isDark ? 'bg-slate-800 border-slate-700 text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-900'} rounded-3xl border p-4`}>
                       <p className="text-sm uppercase tracking-[0.2em] text-slate-400">{scheme.category}</p>
                       <h4 className="mt-2 text-lg font-semibold">{scheme.title}</h4>
@@ -533,14 +600,14 @@ export default function App() {
           </aside>
 
           <main className="space-y-6">
-            <CropRecommendation isDark={isDark} />
-            <CropManagementRecommendation isDark={isDark} coords={coords} />
+            <CropRecommendation isDark={isDark} lang={lang} />
+            <CropManagementRecommendation isDark={isDark} coords={coords} lang={lang} />
 
             <section className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/90 border-slate-200'} rounded-[32px] border p-6 shadow-xl`}>
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div>
-                  <h2 className="text-xl font-semibold">Live scan area</h2>
-                  <p className={`mt-2 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Upload a leaf image, detect disease, and get instant guidance from the crop doctor.</p>
+                  <h2 className="text-xl font-semibold">{langStrings.liveScanArea}</h2>
+                  <p className={`mt-2 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{langStrings.liveScanHelp}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                   <button
@@ -569,20 +636,22 @@ export default function App() {
                 </div>
               </div>
               <div className="mt-6">
-                <CameraUpload onResult={handleResult} langStrings={langStrings} coords={coords} userId={userId} lang={lang} />
+                <CameraUpload onResult={handleResult} onScanStart={handleScanStart} onError={handleScanError} langStrings={langStrings} coords={coords} userId={userId} lang={lang} />
               </div>
             </section>
 
             <section className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/90 border-slate-200'} rounded-[32px] border p-6 shadow-xl`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-semibold">{langStrings.resultsTitle || 'Detection results'}</h2>
+                  <h2 className="text-xl font-semibold">{langStrings.resultsTitle}</h2>
                   <p className={`mt-2 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{langStrings.resultsSubtitle || 'See disease details, treatment, and weather advice in one place.'}</p>
                 </div>
-                <button onClick={() => handleResult(result)} className={`${isDark ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-900'} rounded-2xl px-4 py-2 text-sm`}>Refresh</button>
+                <button onClick={() => handleResult(result)} className={`${isDark ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-900'} rounded-2xl px-4 py-2 text-sm`}>{langStrings.refresh}</button>
               </div>
               <div className="mt-6">
-                <ResultCard result={result} langStrings={langStrings} onSpeak={speak} onChat={openChat} onOpenMap={() => openMap()} isDark={isDark} />
+                {scanError
+                  ? <p className="rounded-lg border border-red-300 bg-red-50 p-3 text-sm text-red-800" role="alert" data-testid="scan-error">{scanError}</p>
+                  : <ResultCard result={result} langStrings={langStrings} onSpeak={speak} onChat={openChat} onOpenMap={() => openMap()} isDark={isDark} lang={lang} />}
               </div>
             </section>
 
@@ -659,7 +728,7 @@ export default function App() {
         <UserHistory userId={userId} onClose={() => setHistoryOpen(false)} langStrings={langStrings} />
       )}
 
-      <footer className={`mt-6 text-sm text-center ${isDark ? 'text-slate-400' : 'text-gray-600'}`}>Made for farmers — simple, clear results.</footer>
+      <footer className={`mt-6 text-sm text-center ${isDark ? 'text-slate-400' : 'text-gray-600'}`}>{langStrings.footer}</footer>
     </div>
   )
 }

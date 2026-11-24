@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { t } from '../i18n'
 
 const fields = [
   { name: 'N', label: 'Nitrogen (N)', min: 0, max: 300, step: 1, placeholder: '0-300' },
@@ -11,7 +12,8 @@ const fields = [
   { name: 'rainfall', label: 'Rainfall (mm)', min: 0, max: 5000, step: 'any', placeholder: '0-5000' }
 ]
 
-export default function CropRecommendation({ isDark }) {
+export default function CropRecommendation({ isDark, lang = 'en' }) {
+  const langStrings = t(lang)
   const [values, setValues] = useState({
     N: '',
     P: '',
@@ -64,9 +66,9 @@ export default function CropRecommendation({ isDark }) {
 
   return (
     <section className={`${isDark ? 'bg-slate-900/90 border-slate-700' : 'bg-white/90 border-slate-200'} rounded-[32px] border p-6 shadow-xl`}>
-      <h2 className="text-xl font-semibold">Crop suitability recommendation</h2>
+      <h2 className="text-xl font-semibold">{langStrings.cropRecommendationTitle}</h2>
       <p className={`mt-2 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-        Enter measured or observed soil and weather values. Values are used by the trained Random Forest model.
+        {langStrings.cropRecommendationHelp}
       </p>
 
       <form onSubmit={submit} className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -91,7 +93,7 @@ export default function CropRecommendation({ isDark }) {
             disabled={loading}
             className="w-full rounded-2xl bg-emerald-600 px-4 py-3 font-semibold text-white disabled:opacity-50"
           >
-            {loading ? 'Generating recommendation…' : 'Recommend suitable crops'}
+            {loading ? langStrings.generatingRecommendation : langStrings.recommendCrops}
           </button>
         </div>
       </form>
@@ -104,11 +106,11 @@ export default function CropRecommendation({ isDark }) {
 
       {prediction && (
         <div className={`mt-5 rounded-3xl border p-5 ${isDark ? 'border-emerald-800 bg-slate-800' : 'border-emerald-200 bg-emerald-50'}`}>
-          <p className="text-sm text-slate-500">Model recommendation</p>
+          <p className="text-sm text-slate-500">{langStrings.modelRecommendation}</p>
           <h3 className="mt-1 text-3xl font-bold text-emerald-600">{prediction.recommended_crop}</h3>
-          <p className="mt-2 text-sm">Model confidence: {(prediction.confidence * 100).toFixed(1)}%</p>
+          <p className="mt-2 text-sm">{langStrings.modelConfidence}: {(prediction.confidence * 100).toFixed(1)}%</p>
           <p className="mt-2 text-xs text-slate-500">
-            Confidence is a model probability, not a guaranteed agricultural outcome.
+            {langStrings.confidenceDisclaimer}
           </p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {prediction.probabilities.slice(0, 5).map(item => (

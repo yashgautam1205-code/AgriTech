@@ -35,7 +35,7 @@ Expand-Archive -Path ml_service/data/crop/crop.zip -DestinationPath ml_service/d
 
 - **Service:** Open-Meteo Forecast API
 - **URL:** https://open-meteo.com/
-- **Disease scan integration:** `backend/services/weatherService.js`; it requests live daily temperature and weather code only when farmer location is available. Missing location or provider failure is explicitly returned as unavailable; no synthetic forecast or default coordinates are used.
+- **Disease scan integration:** `backend/services/weatherService.js`; it requests live daily temperature, weather code, and precipitation only when farmer location is available. Results include the provider timezone and fetch timestamp; missing location or provider failure is explicitly returned as unavailable with no synthetic forecast or default coordinates.
 - **Irrigation integration:** `backend/services/agricultureWeatherService.js`; it requests current conditions and daily precipitation, temperature, wind and FAO reference ET0 for three days.
 - **Limitations:** forecast accuracy varies by location and lead time. Open-Meteo terms, attribution requirements and availability should be reviewed for production use.
 
@@ -45,7 +45,8 @@ Expand-Archive -Path ml_service/data/crop/crop.zip -DestinationPath ml_service/d
 - **Pinned source:** https://huggingface.co/datasets/mohanty/PlantVillage at revision `9e97599868962bd0079b8db4b7f1efa9185fa1e7`
 - **License declared by the dataset card:** CC BY-SA 3.0. Review attribution and share-alike obligations before redistributing the dataset, model weights, or derivative works.
 - **Contents:** 54,305 listed color images across 38 classes, including healthy classes. The downloaded manifests and evaluation report are authoritative for the local data counts.
-- **Limitations:** Publisher train/test manifests contain inferred leaf-group overlap. The training pipeline combines both manifests, creates leaf-grouped train/validation/test partitions, and records the overlap audit. PlantVillage images use controlled backgrounds; held-out metrics remain dataset-level, not field-photo validation.
+- **Split audit:** Filename-derived leaf IDs are heuristic. SHA-256 identified 14 duplicate records within the published train manifest, 2 within the published test manifest, 5 exact-content hashes crossing the source manifests, and 8 across the prior grouped training pool/test partition. Six exact duplicate/repeated test records overlapping model-fit, validation, or test data were excluded from the corrected score. Future training joins and deduplicates exact-image hashes before group splitting.
+- **Limitations:** Hashes detect exact-byte copies only and do not prove biological leaf independence or detect resized/recompressed variants. PlantVillage images use controlled backgrounds; held-out metrics remain same-source dataset-level results, not external-source or field-photo validation. No independent disease-image source is present in the project.
 
 ## Generated local data and models
 

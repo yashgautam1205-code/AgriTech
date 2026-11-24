@@ -62,6 +62,49 @@ npm run dev
 
 Open the Vite URL (normally `http://localhost:5173`). MongoDB is optional for local demo use: when it is unavailable, the backend uses local JSON persistence for scans/chat. That fallback is not multi-process or production-grade storage. Crop and disease inference require their local serialized model artifacts; a missing service/model reports unavailable instead of returning a mock prediction.
 
+### Windows PowerShell startup guide
+
+Use separate PowerShell terminals and start them in this order:
+
+```powershell
+# Terminal 1 - Express backend, port 4000
+cd C:\AgriTech\backend
+Copy-Item .env.example .env -ErrorAction SilentlyContinue
+npm install
+npm start
+```
+
+The backend is healthy at `http://127.0.0.1:4000/api/health`.
+
+```powershell
+# Terminal 2 - Crop FastAPI, port 8000
+cd C:\AgriTech\ml_service
+python -m pip install -r requirements.txt
+python -m uvicorn crop_service:app --host 127.0.0.1 --port 8000
+```
+
+```powershell
+# Terminal 3 - Disease FastAPI, port 8001
+cd C:\AgriTech\ml_service
+python -m uvicorn disease_service:app --host 127.0.0.1 --port 8001
+```
+
+```powershell
+# Terminal 4 - React/Vite, port 5173
+cd C:\AgriTech\frontend
+npm install
+npm run dev -- --host 127.0.0.1
+```
+
+The repository uses these loopback addresses for local startup:
+
+- Crop FastAPI: `ML_SERVICE_URL=http://127.0.0.1:8000`
+- Disease FastAPI: `DISEASE_ML_SERVICE_URL=http://127.0.0.1:8001`
+- Express: `PORT=4000`
+- Vite proxy: `http://127.0.0.1:4000`
+
+Local MongoDB is expected at `mongodb://127.0.0.1:27017/ai-crop-doctor` only when a Windows MongoDB service/installation is available. MongoDB Atlas can instead be supplied through `MONGODB_URI=mongodb+srv://...` in `backend/.env`. MongoDB is optional; without a reachable server, Express deliberately continues and uses local JSON fallback persistence.
+
 ### Environment and persistence
 
 - `MONGODB_URI` or `MONGO_URI`: optional MongoDB connection string.
@@ -174,7 +217,7 @@ ML endpoints:
 Set in `backend/.env`:
 
 ```text
-ML_SERVICE_URL=http://localhost:8000
+ML_SERVICE_URL=http://127.0.0.1:8000
 ML_SERVICE_TIMEOUT_MS=10000
 ```
 
@@ -201,7 +244,7 @@ The disease scan route sends the uploaded image to a separate FastAPI MobileNetV
 - Dataset: [PlantVillage via Hugging Face](https://huggingface.co/datasets/mohanty/PlantVillage), pinned to revision `9e97599868962bd0079b8db4b7f1efa9185fa1e7`.
 - The dataset card declares **CC BY-SA 3.0**. The upstream PlantVillage GitHub repository does not publish license metadata; confirm attribution and share-alike obligations before redistributing data or derived artifacts.
 - The pinned card describes 54,306 images and 38 classes (including healthy leaves). Its published color train/test manifests sum to 54,305 entries; the downloader and training report record the actual manifest and image counts and must be treated as authoritative for this checkout.
-- The publisher supplies `color_train.txt`, `color_test.txt`, and a leaf map. The local filename/leaf-map grouping audit found **227 inferred leaf groups shared across the two published manifests**, so those manifests are not treated as independent evaluation partitions. Training instead creates its own held-out test fold by applying `StratifiedGroupKFold` to both color manifests together; it then creates a separate grouped validation fold from the remaining training partition. The report records both the source-manifest overlap and the zero overlap in the generated training/validation/test partitions.
+- The publisher supplies `color_train.txt`, `color_test.txt`, and a leaf map. The original fallback-inclusive heuristic reported **227 filename leaf-group overlaps** across the published manifests. These filename-derived IDs are heuristic and do not establish biological leaf identity; unresolved filenames use image-specific singleton IDs.
 - PlantVillage images have controlled backgrounds. Dataset-level test results do not establish field-photo accuracy or real-world diagnosis.
 
 The downloader fetches roughly 2.2 GB of archive data and extracts it under an ignored data directory:
@@ -218,9 +261,17 @@ cd C:\AgriTech\ml_service
 python train_disease_model.py --head-epochs 3 --fine-tune-epochs 0 --max-per-class 300
 ```
 
-This verified run trained the classification head for three epochs with the ImageNet MobileNetV2 base frozen (fine-tuning was disabled). It used at most 300 images per class in train/validation, and the complete generated held-out test fold. The source manifests contain 43,596 train and 10,709 test images (54,305 total listed images, 38 classes). The inferred leaf-group audit found 227 groups shared across the publisher's manifests. The new group-separated partitions contain 10,843 training images, 6,923 validation images and 10,861 independent test images, with no leaf-group overlap.
+The preserved production weights were trained for three classification-head epochs with the ImageNet MobileNetV2 base frozen; fine-tuning was disabled. The original model fit used 10,841 capped training images and 6,924 validation images. The source manifests list 43,596 train and 10,709 test records (54,305 total, 38 classes). Filename-derived groups are heuristic; unresolved records use image-specific singleton IDs.
 
-**Verified PlantVillage dataset-level test results:** accuracy **93.48%**; macro precision/recall/F1 **91.26% / 92.78% / 91.67%**; weighted precision/recall/F1 **93.93% / 93.48% / 93.57%**. The report includes all 38 per-class metrics and the 38 × 38 confusion matrix. View the matrix at `ml_service/models/plant_disease_confusion_matrix.png` and complete metrics/counts in `ml_service/models/plant_disease_evaluation.json`.
+An exact-byte SHA-256 audit found 14 duplicate records within the published train manifest, 2 within the published test manifest, and 5 hashes shared across the manifests. Eight exact hashes crossed the prior grouped training pool and test partition; one was present in the model's actual fit data and two in its validation data. Six test records were excluded from the corrected evaluation: one exact match to model training, two exact matches to validation, and three repeated exact test images. The future training pipeline now joins and deduplicates exact-image hashes before its group split. This detects byte-identical copies only; it cannot establish biological leaf independence or detect resized/recompressed variants.
+
+**Corrected same-source grouped evaluation:** 10,856 eligible held-out images, accuracy **94.11%**; macro precision/recall/F1 **92.03% / 93.82% / 92.67%**; weighted precision/recall/F1 **94.44% / 94.11% / 94.18%**. The preserved model was not retrained. The evaluation has zero filename-group overlap and zero exact image-hash overlap between fit, calibration, and eligible test records. It remains PlantVillage-only; the test set is not an external source or field-photo validation.
+
+Temperature scaling (`T=0.73647`) was fitted only on 6,924 validation images. On the untouched eligible test records, ECE changed from **0.04277** to **0.00649** and multiclass Brier score from **0.09485** to **0.08947**. The confidence rejection threshold is selected from validation raw-softmax scores: **0.60045**, meeting 96.62% validation top-1 precision at 90.22% coverage. Inference returns both the raw score and a PlantVillage-calibrated score; the status threshold is applied to raw confidence, so a 43.4% raw score remains uncertain. Calibration and threshold performance do not establish field-photo reliability.
+
+Serving now uses the same TensorFlow RGB decoder, resize, and MobileNetV2 preprocessing as training/evaluation. The reported uploaded Strawberry photo scored 42.88% raw and 48.58% temperature-scaled after alignment, so it remains uncertain. This single image has no verified field diagnosis and is not an independent evaluation set.
+
+No genuinely independent, compatible external disease-image dataset is present. No second architecture was trained or compared; the requested EfficientNet/alternative comparison remains **not verified**. The future MobileNetV2 training path now includes training-only augmentation, class weighting, validation-based learning-rate reduction, and exact-image grouping, but these training changes have not been used to replace or retrain the preserved model. The model card and full report are `ml_service/models/DISEASE_MODEL_CARD.md` and `ml_service/models/plant_disease_evaluation.json`; `plant_disease_split_report.json` records exclusions and distributions.
 
 The training run saves `models/plant_disease_mobilenetv2.keras`, `models/plant_disease_labels.json`, `models/plant_disease_evaluation.json`, and `models/plant_disease_confusion_matrix.png`. The generated model file is ignored by Git; the model must exist locally before enabling inference. Results are dataset-level only—not field-trial accuracy or real-world validation.
 
@@ -231,7 +282,7 @@ cd C:\AgriTech\ml_service
 python evaluate_disease_model.py
 ```
 
-This reloads the serialized model, recreates the documented grouped test partition, evaluates all 10,861 test images, and fails if the recomputed aggregate metrics do not match the saved evaluation report.
+This reloads the serialized model and labels, reconstructs the original grouped fit/validation partitions, hashes the image bytes, excludes exact duplicates from calibration/test scoring, and regenerates the evaluation, calibration, confusion matrix, and split report without retraining.
 
 ### Start and connect the disease service
 
@@ -246,49 +297,36 @@ python -m uvicorn disease_service:app --host 127.0.0.1 --port 8001
 Set these backend environment variables (also listed in `backend/.env.example`):
 
 ```text
-DISEASE_ML_SERVICE_URL=http://localhost:8001
+DISEASE_ML_SERVICE_URL=http://127.0.0.1:8001
 DISEASE_ML_TIMEOUT_MS=30000
 ```
 
 The inference API accepts raw image bytes, not a JSON body:
 
 - `GET /health` — reports whether the saved model loaded.
-- `GET /model-info` — lists the architecture, input size, supported classes and configured confidence threshold.
+- `GET /model-info` — lists the architecture, input size, supported classes, raw-score threshold and calibration status/source.
 - `POST /predict-disease` — accepts raw JPEG, PNG or WebP bytes, up to 10 MB and at least 64 × 64 pixels.
 
 Example request:
 
 ```powershell
 Invoke-WebRequest -Method Post `
-  -Uri http://localhost:8001/predict-disease `
+  -Uri http://127.0.0.1:8001/predict-disease `
   -ContentType "image/jpeg" `
   -InFile .\leaf.jpg
 ```
 
-The response includes the top class, confidence, ranked class probabilities and `status` (`prediction` or `uncertain`). The default `DISEASE_CONFIDENCE_THRESHOLD=0.60` is a rejection heuristic, not a calibrated probability or out-of-distribution detector. Unsupported field plants can still receive a confident but incorrect closed-set result.
+The response includes the top class, raw softmax confidence (`confidence` and `raw_confidence`), PlantVillage-calibrated confidence when the calibration artifact matches the model and label-map hashes, ranked raw/calibrated class scores, threshold source, and `status` (`prediction` or `uncertain`). The validated raw-score threshold is loaded from the evaluation artifact unless `DISEASE_CONFIDENCE_THRESHOLD` overrides it. This is not an out-of-distribution detector; unsupported field plants can still receive a confident but incorrect closed-set result.
 
-The existing Express upload endpoint remains `POST /api/upload-crop-image`. It accepts a multipart `image` field (JPEG/PNG/WebP, up to 10 MB), forwards it to the disease service, and returns a user-safe error if the service or model is unavailable. The React scan screen shows the uploaded preview, class confidence, uncertainty state and conservative extension references. The accompanying treatment guidance is generic; it does not prescribe pesticide products or dosage.
+The existing Express upload endpoint remains `POST /api/upload-crop-image`. It accepts a multipart `image` field (JPEG/PNG/WebP, up to 10 MB), forwards it to the disease service, and returns a user-safe error if the service or model is unavailable. The response retains the original disease, confidence, treatment and weather fields and adds risk, sourced non-chemical guidance, verified-product recommendations and market-price fields.
 
-Example of an actual response from the held-out Raspberry healthy image:
-
-```json
-{
-  "disease": "Raspberry — healthy",
-  "crop": "Raspberry",
-  "predictedClass": "Raspberry___healthy",
-  "detectionStatus": "prediction",
-  "confidence": 0.9997,
-  "severity": "unassessed"
-}
-```
-
-The returned confidence is the model's softmax score, not a calibrated probability of correctness. A `detectionStatus` of `uncertain` suppresses a forced predicted class.
+The Express response includes `predictionStatus` (`CONFIRMED_BY_MODEL`, `UNCERTAIN`, `UNSUPPORTED_CROP`, or `INVALID_IMAGE`) and the legacy `detectionStatus`; it also includes `cropSelection`, `confidence` (raw softmax), `calibratedConfidence` when matching calibration metadata is available, `confidenceThreshold`, and `calibrationStatus`. A `detectionStatus` of `uncertain` suppresses a forced predicted class. `CONFIRMED_BY_MODEL` means the raw score passed its PlantVillage-validation threshold, not that a field diagnosis is confirmed.
 
 Disease model tests require both the prepared dataset and trained model:
 
 ```powershell
 cd C:\AgriTech\ml_service
-python -m pytest test_disease_service.py -q
+python -m pytest -q test_disease_service.py test_disease_evaluation.py test_disease_training_pipeline.py test_crop_service.py
 ```
 
 To run the browser upload test, start the frontend, Express backend, crop service on port 8000, and disease service on port 8001. Set `PLANTVILLAGE_TEST_IMAGE` to an image path from the prepared PlantVillage dataset, then run:
@@ -299,7 +337,38 @@ $env:PLANTVILLAGE_TEST_IMAGE = 'C:\AgriTech\ml_service\data\plantvillage\images\
 npx playwright test tests/disease-scan.spec.ts
 ```
 
-The classifier remains limited to PlantVillage's closed 38 classes. The confidence threshold is not calibrated, and there is no field-photo or external-source validation.
+The classifier remains limited to PlantVillage's closed 38 classes. It does not identify arbitrary crops. The returned calibrated score and threshold are validated only on the documented PlantVillage split; there is no field-photo or external-source validation.
+
+## Disease risk, treatments and pesticide prices
+
+The scan request accepts an optional multipart `observations` JSON value:
+
+- `symptomsSpreading`: `yes`, `no`, or `unsure`
+- `affectedPlants`: `less_10`, `10_30`, `more_30`, or `unsure`
+- `visibleSymptoms`: zero or more of `spots`, `yellowing`, `wilting`, `leaf_drying`, `mold`, `other`
+
+The upload form also allows an optional farmer crop selection. When the selected crop conflicts with the model's class crop, or the crop is not supported, the response marks the classification `UNCERTAIN` or `UNSUPPORTED_CROP` and blocks disease-specific application recommendations. It still retrieves educational information for the model's top class. `CONFIRMED_BY_MODEL` means only that the model score passed its threshold; it is not a confirmed field diagnosis. Invalid image uploads return `predictionStatus: INVALID_IMAGE`.
+
+The response includes the possible class's `cropId`, `diseaseId`, symptoms, description, scientific name where sourced, disease-development conditions, prevention, follow-up, and references. Knowledge comes from locally reviewed records; a source lookup failure reports `PARTIAL`/`SOURCE_UNAVAILABLE` while retaining cached facts. Each information section has an availability status. An unlisted class reports `NOT_AVAILABLE` rather than fabricated disease details.
+
+The response's `riskAssessment` keeps model confidence separate from `risk_level` and includes `predicted_class`, `is_uncertain`, `risk_reason`, `recommended_action`, `assessment_limitations`, and farmer-reported observations. A low-confidence or crop-mismatched result is `UNASSESSED`; observations are displayed as farmer reports and are not diagnosis. Confidence is not disease severity.
+
+Non-chemical guidance is deliberately limited to disease/source pairs with a referenced source. Current entries include **Apple scab** cultural leaf-litter/leaf-wetness management from [Utah State University Extension](https://extension.usu.edu/planthealth/ipm/notes_ag/fruit-apple-scab), and **Strawberry leaf scorch** practices to reduce leaf wetness from the [Pacific Northwest Plant Disease Management Handbook](https://pnwhandbooks.org/plantdisease/host-disease/strawberry-fragaria-spp-leaf-scorch). The Strawberry advice is regional cultural guidance; adapt it to local conditions. Neither entry is a product application, cure claim, or organic certification. On uncertain scans, matching non-chemical information remains visible as educational possible-disease guidance; confirm the diagnosis before disease-specific action.
+
+The product catalogue is initially empty (`backend/data/pesticide-products.json`). A chemical product is returned only when an administrator has reviewed both a crop/disease-matched class label and the product registration/label sources, marked both verification states `verified`, and verified the entry within the previous year. The [PPQS/CIB&RC Registered Products page](https://ppqs.gov.in/divisions/cib-rc/registered-products) publishes registration lists (the latest list reviewed here was dated 31 March 2026), and the [Pesticides Recommendation for Crops page](https://ppqs.gov.in/farmercorner/pesticides-recommendation-crops?language_content_entity=en) is an official reference. No Strawberry leaf-scorch-specific Indian registration and approved label were verified, so no product or price record has been added. Verified class-matched records may appear as reference-only on uncertain/mismatched scans, with application dosage and frequency suppressed and an explicit restriction. Registration references must use the official PPQS/CIB&RC domain; the exact product label reference and safety information are stored per product. The system does not automatically verify the truth of an administrator's review.
+
+No live retailer price API or imported government price dataset is configured, and no product or price records are seeded. The data.gov.in catalogue was not accessible from the research environment, so no historical price dataset or API could be verified for integration. Current prices therefore remain unavailable until verified product records and sourced price records are entered. Live retail, manufacturer MRP, historical government, and administrator-maintained price types are represented separately. An administrator-maintained price is never labeled live; live retail records require a retailer feed source, expire for display after seven days, and cannot be created through the manual admin route. Historical prices require a year and an Indian government source URL, and are always labeled historical.
+
+Price/catalogue endpoints:
+
+- `GET /api/pesticide-prices?state=...&district=...&town=...` — returns non-stale price listings only for products with currently verified registration and label records. The farmer must provide a location; none is inferred.
+- `GET /api/admin/pesticide-products` — administrator listing of pesticide catalogue records.
+- `POST /api/admin/pesticide-products`, `PUT /api/admin/pesticide-products/:productId` — create/update a reviewed product catalogue record.
+- `POST /api/admin/pesticide-prices`, `PUT /api/admin/pesticide-prices/:id` — create/update a price record.
+
+All `/api/admin/*` routes require `Authorization: Bearer <token>` and a configured `PESTICIDE_PRICE_ADMIN_TOKEN` of at least 32 characters. Records use MongoDB when connected and `backend/data/pesticide-products.json` / `backend/data/pesticide-prices.json` otherwise. JSON fallback is single-process local persistence. Provide only official source links and actual verification timestamps; do not enter guessed registration, price, stock or seller data.
+
+For administrator onboarding, copy the exact crop/disease labels from `ml_service/models/plant_disease_labels.json` into `targetClasses`. Supply the PPQS registration reference, approved-label source, reviewed pack sizes, reviewer, review date, safety information, and crop-specific label details. Then add sourced price records whose pack size/unit match the verified catalogue and whose location identifies exact state/district/town. A manually maintained retail listing uses `priceType: "administrator_manual"`; it cannot be marked `live_retail`.
 
 ## Irrigation and crop-management guidance
 

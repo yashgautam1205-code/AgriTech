@@ -4,6 +4,14 @@ const persistence = require('../services/persistence');
 const govSchemeService = require('../services/governmentSchemeService');
 const Shop = require('../models/Shop');
 const cropPredictionService = require('../services/cropPredictionService');
+const { getDiseaseServiceHealth } = require('../services/diseaseInferenceService');
+const { validateObservations } = require('../services/diseaseRiskService');
+const { validateSelectedCrop } = require('../services/diseaseCropCompatibilityService');
+const pesticidePriceService = require('../services/pesticidePriceService');
+const pesticideCatalogService = require('../services/pesticideCatalogService');
+const crypto = require('crypto');
+const { translateText, localizeScanResponse } = require('../services/translationService');
+const sarvamSpeechService = require('../services/sarvamSpeechService');
 
 function validateCropFeatures(body) {
   const ranges = {
@@ -63,21 +71,47 @@ async function uploadCropImage(req, res) {
       return res.status(400).json({ message: 'No image provided or upload failed' });
     }
 
+    const { observations, error: observationsError } = validateObservations((req.body || {}).observations);
+    if (observationsError) {
+      return res.status(400).json({ message: observationsError });
+    }
+    const { selectedCrop, error: cropError } = validateSelectedCrop((req.body || {}).selectedCrop);
+    if (cropError) {
+      return res.status(400).json({ message: cropError });
+    }
+
     const filePath = file.path;
     const lat = parseFloat(req.body.lat);
     const lon = parseFloat(req.body.lon);
     let aiResult;
     try {
-      aiResult = await analyzeImage(filePath, lat, lon, String(req.body.lang || 'en'));
+      aiResult = await analyzeImage(
+        filePath,
+        lat,
+        lon,
+        String(req.body.lang || 'en'),
+        file.mimetype,
+        observations,
+        selectedCrop
+      );
     } catch (err) {
       if (err.message === 'INVALID_DISEASE_IMAGE') {
-        return res.status(415).json({ message: 'Upload a valid JPEG, PNG, or WebP leaf image (at least 64 × 64 pixels).' });
+        return res.status(415).json({
+          predictionStatus: 'INVALID_IMAGE',
+          message: 'Upload a valid JPEG, PNG, or WebP leaf image (at least 64 × 64 pixels).'
+        });
       }
       if (err.message === 'DISEASE_ML_TIMEOUT') {
         return res.status(504).json({ message: 'Disease identification timed out. Please try again.' });
       }
       if (err.message === 'DISEASE_ML_UNAVAILABLE') {
         return res.status(503).json({ message: 'Disease identification is temporarily unavailable.' });
+      }
+      if (err.message === 'DISEASE_MODEL_NOT_LOADED') {
+        return res.status(503).json({ message: 'Disease model is not loaded. Please restart the disease service.' });
+      }
+      if (err.message === 'DISEASE_ML_PREDICTION_FAILED') {
+        return res.status(503).json({ message: 'Disease identification failed while processing the image. Please try again.' });
       }
       throw err;
     }
@@ -116,9 +150,27 @@ async function uploadCropImage(req, res) {
       confidence: aiResult.confidence,
       imagePath: filePath,
       crop: aiResult.crop,
+      cropId: aiResult.cropId,
+      diseaseId: aiResult.diseaseId,
+      canonicalCropId: aiResult.canonicalCropId,
+      canonicalDiseaseId: aiResult.canonicalDiseaseId,
+      classMappingStatus: aiResult.classMappingStatus,
+      classMetadata: aiResult.classMetadata,
+      possibleDiseaseName: aiResult.possibleDiseaseName,
+      cropSelection: aiResult.cropSelection,
       predictedClass: aiResult.predictedClass,
+      predictionStatus: aiResult.predictionStatus,
       detectionStatus: aiResult.detectionStatus,
+      calibratedConfidence: aiResult.calibratedConfidence,
+      confidenceThreshold: aiResult.confidenceThreshold,
+      calibrationStatus: aiResult.calibrationStatus,
       diseaseInfo: aiResult.diseaseInfo,
+      riskAssessment: aiResult.riskAssessment,
+      organicTreatments: aiResult.organicTreatments,
+      chemicalRecommendations: aiResult.chemicalRecommendations,
+      pesticidePrices: aiResult.pesticidePrices,
+      pesticidePriceStatus: aiResult.pesticidePriceStatus,
+      pesticidePriceMessage: aiResult.pesticidePriceMessage,
       lang: req.body.lang || 'en'
     });
 
@@ -126,10 +178,25 @@ async function uploadCropImage(req, res) {
     const response = {
       disease: aiResult.disease,
       crop: aiResult.crop,
+      cropId: aiResult.cropId,
+      diseaseId: aiResult.diseaseId,
+      canonicalCropId: aiResult.canonicalCropId,
+      canonicalDiseaseId: aiResult.canonicalDiseaseId,
+      classMappingStatus: aiResult.classMappingStatus,
+      classMetadata: aiResult.classMetadata,
+      possibleDiseaseName: aiResult.possibleDiseaseName,
+      cropSelection: aiResult.cropSelection,
       predictedClass: aiResult.predictedClass,
+      predictionStatus: aiResult.predictionStatus,
       detectionStatus: aiResult.detectionStatus,
       topPrediction: aiResult.topPrediction,
       diseaseInfo: aiResult.diseaseInfo,
+      riskAssessment: aiResult.riskAssessment,
+      organicTreatments: aiResult.organicTreatments,
+      chemicalRecommendations: aiResult.chemicalRecommendations,
+      pesticidePrices: aiResult.pesticidePrices,
+      pesticidePriceStatus: aiResult.pesticidePriceStatus,
+      pesticidePriceMessage: aiResult.pesticidePriceMessage,
       severity: aiResult.severity,
       treatments: aiResult.treatments,
       pesticides: normalizePesticides(aiResult.pesticides),
@@ -137,10 +204,16 @@ async function uploadCropImage(req, res) {
       weatherForecast: aiResult.weatherForecast,
       voiceText: aiResult.voiceText,
       confidence: aiResult.confidence,
+      calibratedConfidence: aiResult.calibratedConfidence,
+      confidenceThreshold: aiResult.confidenceThreshold,
+      calibrationStatus: aiResult.calibrationStatus,
       scanId: scan._id
     };
 
-    res.json(response);
+    const localizedResponse = await localizeScanResponse(response, String(req.body.lang || 'en'));
+    localizedResponse.lang = String(req.body.lang || 'en');
+    localizedResponse.contentLanguage = String(req.body.lang || 'en');
+    res.json(localizedResponse);
   } catch (err) {
     console.error('Upload error:', {
       message: err.message,
@@ -150,6 +223,187 @@ async function uploadCropImage(req, res) {
     });
     res.status(500).json({ message: 'Image processing failed. Please try another image.' });
   }
+}
+
+async function translateUserText(req, res) {
+  const lang = typeof req.body?.lang === 'string' ? req.body.lang : 'en';
+  const source = typeof req.body?.source === 'string' ? req.body.source : 'en';
+  const input = req.body?.text;
+  if (typeof input !== 'string' && !Array.isArray(input)) {
+    return res.status(400).json({ message: 'text must be a string or an array of strings' });
+  }
+
+  try {
+    if (Array.isArray(input)) {
+      const texts = await Promise.all(input.map(value =>
+        typeof value === 'string' ? translateText(value, lang, source) : ''
+      ));
+      return res.json({ lang, translations: texts });
+    }
+    return res.json({ lang, translatedText: await translateText(input, lang, source) });
+  } catch (error) {
+    console.warn('Dynamic translation request failed:', error.message);
+    if (Array.isArray(input)) {
+      return res.json({
+        lang,
+        translations: input.map(value => typeof value === 'string' ? value : '')
+      });
+    }
+    return res.json({ lang, translatedText: input });
+  }
+}
+
+async function transcribeSpeech(req, res) {
+  const file = req.file;
+  if (!file) return res.status(400).json({ message: 'Audio recording is required.' });
+  if (!file.size || !file.buffer?.length) {
+    return res.status(400).json({ message: 'Audio recording is empty.' });
+  }
+
+  const autoDetect = req.body?.autoDetect === 'true';
+  const language = req.body?.language;
+  if (!autoDetect && !sarvamSpeechService.languageCodes[language]) {
+    return res.status(400).json({ message: 'A supported language is required for speech recognition.' });
+  }
+
+  try {
+    const transcription = await sarvamSpeechService.transcribeAudio(file, autoDetect ? 'unknown' : language);
+    return res.json(transcription);
+  } catch (error) {
+    console.warn('Sarvam speech recognition failed:', error.response?.status || error.message);
+    return res.status(error.status || 503).json({
+      message: error.status === 503
+        ? error.message
+        : 'Speech recognition is temporarily unavailable. You can still type your question.'
+    });
+  }
+}
+
+async function synthesizeSpeech(req, res) {
+  const { text, language } = req.body || {};
+  if (typeof text !== 'string' || !text.trim() || text.length > 2500) {
+    return res.status(400).json({ message: 'Speech text must contain between 1 and 2500 characters.' });
+  }
+  if (!sarvamSpeechService.languageCodes[language]) {
+    return res.status(422).json({ message: 'Speech synthesis is not available for the selected language.' });
+  }
+
+  try {
+    return res.json(await sarvamSpeechService.synthesizeSpeech(text, language));
+  } catch (error) {
+    console.warn('Sarvam speech synthesis failed:', error.response?.status || error.message);
+    return res.status(error.status || 503).json({
+      message: error.status === 503
+        ? error.message
+        : 'Speech playback is temporarily unavailable.'
+    });
+  }
+}
+
+function isAuthorizedPriceAdministrator(req) {
+const configuredToken = process.env.PESTICIDE_PRICE_ADMIN_TOKEN;
+const provided = req.get('authorization') || '';
+if (!configuredToken || configuredToken.length < 32 || !provided.startsWith('Bearer ')) return false;
+const candidate = Buffer.from(provided.slice(7));
+const expected = Buffer.from(configuredToken);
+return candidate.length === expected.length && crypto.timingSafeEqual(candidate, expected);
+}
+
+async function getPesticidePrices(req, res) {
+const filters = {};
+for (const key of ['productId', 'state', 'district', 'town']) {
+  if (req.query[key] !== undefined) {
+    if (typeof req.query[key] !== 'string' || !req.query[key].trim()) {
+      return res.status(400).json({ message: `Invalid ${key} filter` });
+      }
+    filters[key] = req.query[key].trim();
+    }
+}
+
+const listings = await pesticidePriceService.listPesticidePrices(filters);
+const hasCurrentPrices = listings.some(item => !item.stale && item.price);
+res.json({
+  pricing_status: hasCurrentPrices ? 'available' : 'unavailable',
+  location_specific: Boolean(filters.state && filters.district && filters.town),
+  listings: listings.slice(0, 100),
+  message: hasCurrentPrices
+    ? null
+    : 'Current market price unavailable. Check with a licensed agricultural retailer.'
+});
+}
+
+async function createPesticidePrice(req, res) {
+if (!process.env.PESTICIDE_PRICE_ADMIN_TOKEN || process.env.PESTICIDE_PRICE_ADMIN_TOKEN.length < 32) {
+  return res.status(503).json({ message: 'Administrator pricing is not configured.' });
+}
+if (!isAuthorizedPriceAdministrator(req)) {
+  return res.status(401).json({ message: 'Administrator authorization required.' });
+}
+
+const result = await pesticidePriceService.createPesticidePrice({
+  ...req.body,
+  sourceType: 'administrator'
+});
+if (result.error) {
+  return res.status(400).json({ message: result.error });
+  }
+res.status(201).json({ listing: result.listing });
+}
+
+async function updatePesticidePrice(req, res) {
+if (!process.env.PESTICIDE_PRICE_ADMIN_TOKEN || process.env.PESTICIDE_PRICE_ADMIN_TOKEN.length < 32) {
+  return res.status(503).json({ message: 'Administrator pricing is not configured.' });
+}
+if (!isAuthorizedPriceAdministrator(req)) {
+  return res.status(401).json({ message: 'Administrator authorization required.' });
+}
+
+const result = await pesticidePriceService.updatePesticidePrice(req.params.id, {
+  ...req.body,
+  sourceType: 'administrator'
+});
+if (result.error) {
+  const status = result.error === 'Price listing not found' ? 404 : 400;
+  return res.status(status).json({ message: result.error });
+}
+res.json({ listing: result.listing });
+}
+
+async function listPesticideProducts(req, res) {
+if (!process.env.PESTICIDE_PRICE_ADMIN_TOKEN || process.env.PESTICIDE_PRICE_ADMIN_TOKEN.length < 32) {
+  return res.status(503).json({ message: 'Administrator pesticide catalogue is not configured.' });
+}
+if (!isAuthorizedPriceAdministrator(req)) {
+  return res.status(401).json({ message: 'Administrator authorization required.' });
+}
+const products = await pesticideCatalogService.listPesticideProducts();
+res.json({ products });
+}
+
+async function createPesticideProduct(req, res) {
+if (!process.env.PESTICIDE_PRICE_ADMIN_TOKEN || process.env.PESTICIDE_PRICE_ADMIN_TOKEN.length < 32) {
+  return res.status(503).json({ message: 'Administrator pesticide catalogue is not configured.' });
+}
+if (!isAuthorizedPriceAdministrator(req)) {
+  return res.status(401).json({ message: 'Administrator authorization required.' });
+}
+const result = await pesticideCatalogService.createPesticideProduct(req.body);
+if (result.error) return res.status(400).json({ message: result.error });
+res.status(201).json({ product: result.product });
+}
+
+async function updatePesticideProduct(req, res) {
+if (!process.env.PESTICIDE_PRICE_ADMIN_TOKEN || process.env.PESTICIDE_PRICE_ADMIN_TOKEN.length < 32) {
+  return res.status(503).json({ message: 'Administrator pesticide catalogue is not configured.' });
+}
+if (!isAuthorizedPriceAdministrator(req)) {
+  return res.status(401).json({ message: 'Administrator authorization required.' });
+}
+const result = await pesticideCatalogService.updatePesticideProduct(req.params.productId, req.body);
+if (result.error) {
+  return res.status(result.error === 'Pesticide product not found' ? 404 : 400).json({ message: result.error });
+}
+res.json({ product: result.product });
 }
 
 async function getHistory(req, res) {
@@ -167,13 +421,27 @@ async function getHistory(req, res) {
       id: it._id,
       disease: it.disease,
       crop: it.crop,
+      cropId: it.cropId,
+      diseaseId: it.diseaseId,
+      possibleDiseaseName: it.possibleDiseaseName,
+      cropSelection: it.cropSelection,
       predictedClass: it.predictedClass,
+      predictionStatus: it.predictionStatus,
       detectionStatus: it.detectionStatus,
       diseaseInfo: it.diseaseInfo,
       confidence: it.confidence,
+      calibratedConfidence: it.calibratedConfidence,
+      confidenceThreshold: it.confidenceThreshold,
+      calibrationStatus: it.calibrationStatus,
       severity: it.severity,
       treatments: (it.treatments || []).slice(0, 2),
       pesticides: it.pesticides,
+      riskAssessment: it.riskAssessment,
+      organicTreatments: it.organicTreatments,
+      chemicalRecommendations: it.chemicalRecommendations,
+      pesticidePrices: it.pesticidePrices,
+      pesticidePriceStatus: it.pesticidePriceStatus,
+      pesticidePriceMessage: it.pesticidePriceMessage,
       imagePath: it.imagePath,
       date: it.createdAt
     }));
@@ -185,7 +453,16 @@ async function getHistory(req, res) {
 }
 
 async function health(req, res) {
-  res.json({ status: 'ok', message: 'API healthy' });
+  const diseaseService = await getDiseaseServiceHealth();
+  res.json({
+    status: 'ok',
+    message: 'API healthy',
+    diseaseService: {
+      available: diseaseService.available,
+      modelAvailable: diseaseService.modelAvailable,
+      statusCode: diseaseService.status
+    }
+  });
 }
 
 function calculateDistanceKm(lat1, lon1, lat2, lon2) {
@@ -221,12 +498,16 @@ async function assistantReply(req, res) {
 
     const context = {
       disease: disease || stored.disease,
-      severity: stored.severity || 'medium',
+      severity: stored.severity || 'unassessed',
       treatments: stored.treatments || [],
       pesticides: stored.pesticides || {},
       affordableAlternatives: stored.affordableAlternatives || [],
       weatherForecast: stored.weatherForecast || {},
       confidence: stored.confidence || 0.5,
+      riskAssessment: stored.riskAssessment,
+      organicTreatments: stored.organicTreatments,
+      chemicalRecommendations: stored.chemicalRecommendations,
+      pesticidePrices: stored.pesticidePrices || [],
       scanId: scanId || stored._id,
       crop,
       lat,
@@ -377,4 +658,24 @@ async function getGovernmentSchemes(req, res) {
   }
 }
 
-module.exports = { uploadCropImage, getHistory, health, assistantReply, getChatHistory, getUserChatHistory, getNearbyShops, getGovernmentSchemes, predictCrop, getCropModelInfo };
+module.exports = {
+  uploadCropImage,
+  getHistory,
+  health,
+  assistantReply,
+  translateUserText,
+  transcribeSpeech,
+  synthesizeSpeech,
+  getChatHistory,
+  getUserChatHistory,
+  getNearbyShops,
+  getGovernmentSchemes,
+  predictCrop,
+  getCropModelInfo,
+  getPesticidePrices,
+  createPesticidePrice,
+  updatePesticidePrice,
+  listPesticideProducts,
+  createPesticideProduct,
+  updatePesticideProduct
+};

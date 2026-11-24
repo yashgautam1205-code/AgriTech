@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
+import { translateDynamicText } from '../translationService'
 
 export default function AssistantChat({ result, coords, onClose, langStrings, speak, userId, lang }) {
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
+  const [recording, setRecording] = useState(false)
+  const [autoDetectLanguage, setAutoDetectLanguage] = useState(false)
+  const [voiceError, setVoiceError] = useState('')
   const listRef = useRef()
+  const recorderRef = useRef(null)
+  const audioStreamRef = useRef(null)
+  const recordingTimerRef = useRef(null)
 
   const API_BASE = import.meta.env.VITE_API_BASE || ''
 
@@ -45,6 +52,12 @@ export default function AssistantChat({ result, coords, onClose, langStrings, sp
     if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight
   }, [messages])
 
+  useEffect(() => () => {
+    if (recordingTimerRef.current) window.clearTimeout(recordingTimerRef.current)
+    if (recorderRef.current?.state === 'recording') recorderRef.current.stop()
+    audioStreamRef.current?.getTracks().forEach(track => track.stop())
+  }, [])
+
   async function sendQuestion(q) {
     if (!q || !result) return
     setLoading(true)
@@ -63,11 +76,13 @@ export default function AssistantChat({ result, coords, onClose, langStrings, sp
       }
       const res = await axios.post(`${API_BASE}/api/assistant`, payload)
       const data = res.data
-      const botMsg = { from: 'bot', text: data.answer || JSON.stringify(data) }
+      const answer = data.answer || JSON.stringify(data)
+      const translatedAnswer = await translateDynamicText(answer, lang || 'en')
+      const botMsg = { from: 'bot', text: translatedAnswer }
       setMessages(m => [...m, botMsg])
     } catch (err) {
       console.error('assistant error', err)
-      setMessages(m => [...m, { from: 'bot', text: 'Sorry, could not reach assistant right now.' }])
+      setMessages(m => [...m, { from: 'bot', text: langStrings.assistantError }])
     } finally {
       setLoading(false)
       setInput('')
@@ -91,6 +106,102 @@ export default function AssistantChat({ result, coords, onClose, langStrings, sp
     e.preventDefault()
     if (!input.trim()) return
     sendQuestion(input.trim())
+  }
+
+  function startBrowserVoiceInput() {
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition
+    if (!Recognition) {
+      setVoiceError(langStrings.speechRecognitionUnavailable)
+      return
+    }
+    const recognition = new Recognition()
+    recognition.lang = autoDetectLanguage ? '' : ({
+      en: 'en-IN', hi: 'hi-IN', kn: 'kn-IN', ta: 'ta-IN', te: 'te-IN',
+      ml: 'ml-IN', mr: 'mr-IN', bn: 'bn-IN', gu: 'gu-IN', pa: 'pa-IN'
+    }[lang] || 'en-IN')
+    recognition.interimResults = false
+    recognition.onstart = () => setRecording(true)
+    recognition.onend = () => setRecording(false)
+    recognition.onerror = () => {
+      setRecording(false)
+      setVoiceError(langStrings.speechInputFailed)
+    }
+    recognition.onresult = event => {
+      const transcript = event.results?.[0]?.[0]?.transcript
+      if (transcript) {
+        setInput(transcript)
+        setVoiceError('')
+      }
+    }
+    recognition.start()
+  }
+
+  async function startVoiceInput() {
+    setVoiceError('')
+    if (recorderRef.current?.state === 'recording') {
+      window.clearTimeout(recordingTimerRef.current)
+      recorderRef.current.stop()
+      return
+    }
+    if (!navigator.mediaDevices?.getUserMedia || typeof window.MediaRecorder === 'undefined') {
+      startBrowserVoiceInput()
+      return
+    }
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      audioStreamRef.current = stream
+      const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus']
+        .find(type => window.MediaRecorder.isTypeSupported(type))
+      const recorder = new window.MediaRecorder(stream, mimeType ? { mimeType } : undefined)
+      const chunks = []
+      recorderRef.current = recorder
+      recorder.ondataavailable = event => {
+        if (event.data?.size) chunks.push(event.data)
+      }
+      recorder.onerror = () => {
+        setRecording(false)
+        setVoiceError(langStrings.speechInputFailed)
+        stream.getTracks().forEach(track => track.stop())
+      }
+      recorder.onstop = async () => {
+        setRecording(false)
+        stream.getTracks().forEach(track => track.stop())
+        audioStreamRef.current = null
+        if (!chunks.length) return
+
+        const audio = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' })
+        const formData = new FormData()
+        const extension = audio.type.includes('ogg') ? 'ogg' : audio.type.includes('mp4') ? 'mp4' : 'webm'
+        formData.append('audio', audio, `question.${extension}`)
+        formData.append('language', lang || 'en')
+        formData.append('autoDetect', String(autoDetectLanguage))
+        setLoading(true)
+        try {
+          const response = await axios.post(`${API_BASE}/api/speech/transcribe`, formData, {
+            timeout: 35000
+          })
+          if (response.data?.transcript) {
+            setInput(response.data.transcript)
+          } else {
+            setVoiceError(langStrings.speechInputFailed)
+          }
+        } catch (error) {
+          console.warn('Sarvam speech recognition failed:', error.response?.status || error.message)
+          startBrowserVoiceInput()
+        } finally {
+          setLoading(false)
+        }
+      }
+      recorder.start()
+      setRecording(true)
+      recordingTimerRef.current = window.setTimeout(() => {
+        if (recorder.state === 'recording') recorder.stop()
+      }, 28000)
+    } catch (error) {
+      console.warn('Microphone recording unavailable:', error.message)
+      startBrowserVoiceInput()
+    }
   }
 
   return (
@@ -119,9 +230,21 @@ export default function AssistantChat({ result, coords, onClose, langStrings, sp
         </div>
         <form onSubmit={onSend} className="flex gap-2 items-center">
           <input value={input} onChange={e => setInput(e.target.value)} placeholder={langStrings.askPlaceholder || 'Ask: why, what to do, spray time...'} className="flex-1 p-2 border rounded" />
+          <button type="button" onClick={startVoiceInput} disabled={loading} className="bg-rose-100 text-slate-900 px-3 py-2 rounded" aria-label={langStrings.askVoice}>
+            {recording ? langStrings.stopRecording : langStrings.startRecording}
+          </button>
           <button type="submit" disabled={loading} className="bg-blue-600 text-white px-4 rounded">{langStrings.send || 'Send'}</button>
           <button type="button" onClick={exportMessages} className="bg-gray-200 text-gray-800 px-3 py-1 rounded">{langStrings.export || 'Export'}</button>
         </form>
+        <label className="mt-2 flex items-center gap-2 text-xs text-slate-600">
+          <input
+            type="checkbox"
+            checked={autoDetectLanguage}
+            onChange={event => setAutoDetectLanguage(event.target.checked)}
+          />
+          {langStrings.automaticLanguageDetection}
+        </label>
+        {voiceError && <p className="mt-1 text-xs text-rose-700" role="status">{voiceError}</p>}
       </div>
     </div>
   )

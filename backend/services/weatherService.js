@@ -23,8 +23,9 @@ const weatherCodeMap = {
   99: 'Thunderstorm with heavy hail'
 };
 
-function weatherAdvice(condition) {
-  if (/rain|drizzle|shower|thunderstorm/i.test(condition)) {
+function weatherAdvice(condition, precipitationMm) {
+  if ((Number.isFinite(precipitationMm) && precipitationMm > 0) ||
+      /rain|drizzle|shower|thunderstorm/i.test(condition)) {
     return 'Avoid spraying during rain; check the product label and local extension guidance.'
   }
   if (/snow|fog|overcast/i.test(condition)) {
@@ -33,15 +34,24 @@ function weatherAdvice(condition) {
   return 'Check the product label and local conditions before considering treatment.'
 }
 
-function formatDay(dateString, timezone) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { weekday: 'long', timeZone: timezone });
+function formatDay(dateString) {
+  const date = new Date(`${dateString}T12:00:00Z`);
+  if (!Number.isFinite(date.getTime())) return String(dateString);
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC'
+  });
 }
 
 function unavailableForecast(reason) {
   return {
     status: 'unavailable',
+    informationStatus: 'SOURCE_UNAVAILABLE',
     source: 'Open-Meteo',
+    fetchedAt: null,
     summary: reason,
     forecast: []
   };
@@ -50,7 +60,10 @@ function unavailableForecast(reason) {
 async function fetchWeatherForecast(lat, lon, httpClient = axios) {
   if (!Number.isFinite(lat) || lat < -90 || lat > 90 ||
       !Number.isFinite(lon) || lon < -180 || lon > 180) {
-    return unavailableForecast('Location was not provided; live weather is unavailable.');
+    return {
+      ...unavailableForecast('Location was not provided; live weather is unavailable.'),
+      informationStatus: 'NOT_AVAILABLE'
+    };
   }
 
   try {
@@ -59,7 +72,7 @@ async function fetchWeatherForecast(lat, lon, httpClient = axios) {
       params: {
         latitude: lat,
         longitude: lon,
-        daily: 'weather_code,temperature_2m_max,temperature_2m_min',
+        daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum',
         forecast_days: 3,
         timezone: 'auto'
       }
@@ -75,18 +88,25 @@ async function fetchWeatherForecast(lat, lon, httpClient = axios) {
     const forecast = days.slice(0, 3).map((day, index) => {
       const code = daily.weather_code?.[index];
       const condition = weatherCodeMap[code] || 'Unknown';
+      const precipitationMm = Number.isFinite(daily.precipitation_sum?.[index])
+        ? daily.precipitation_sum[index]
+        : null;
       return {
-        day: formatDay(day, data.timezone || 'UTC'),
+        day: formatDay(day),
         condition,
         tempMin: daily.temperature_2m_min?.[index] ?? null,
         tempMax: daily.temperature_2m_max?.[index] ?? null,
-        advice: weatherAdvice(condition)
+        precipitationMm,
+        advice: weatherAdvice(condition, precipitationMm)
       };
     });
 
     return {
       status: 'available',
+      informationStatus: 'AVAILABLE',
       source: 'Open-Meteo',
+      fetchedAt: new Date().toISOString(),
+      timezone: data.timezone || 'UTC',
       summary: `Live Open-Meteo forecast loaded for ${lat.toFixed(2)}, ${lon.toFixed(2)}.`,
       forecast
     };
