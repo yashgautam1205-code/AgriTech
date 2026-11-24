@@ -1,0 +1,508 @@
+{
+  "model": "RandomForestClassifier",
+  "dataset": "ml_service\\data\\crop\\Crop_recommendation.csv",
+  "dataset_license": "Apache 2.0",
+  "dataset_rows": 2200,
+  "class_distribution": {
+    "apple": 100,
+    "banana": 100,
+    "blackgram": 100,
+    "chickpea": 100,
+    "coconut": 100,
+    "coffee": 100,
+    "cotton": 100,
+    "grapes": 100,
+    "jute": 100,
+    "kidneybeans": 100,
+    "lentil": 100,
+    "maize": 100,
+    "mango": 100,
+    "mothbeans": 100,
+    "mungbean": 100,
+    "muskmelon": 100,
+    "orange": 100,
+    "papaya": 100,
+    "pigeonpeas": 100,
+    "pomegranate": 100,
+    "rice": 100,
+    "watermelon": 100
+  },
+  "features": [
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "ph",
+    "rainfall"
+  ],
+  "target": "label",
+  "split": {
+    "train": 1540,
+    "validation": 330,
+    "independent_test": 330,
+    "random_seed": 42,
+    "stratified": true,
+    "scope": "Dataset-level row split; source-level independence is unverified."
+  },
+  "validation": {
+    "accuracy": 0.990909090909091
+  },
+  "independent_test": {
+    "accuracy": 1.0,
+    "classification_report": {
+      "apple": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "banana": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "blackgram": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "chickpea": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "coconut": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "coffee": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "cotton": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "grapes": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "jute": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "kidneybeans": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "lentil": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "maize": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "mango": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "mothbeans": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "mungbean": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "muskmelon": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "orange": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "papaya": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "pigeonpeas": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "pomegranate": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "rice": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "watermelon": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 330.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 330.0
+      }
+    }
+  },
+  "latest_verified_dataset_level_evaluation": {
+    "evaluation_only": true,
+    "saved_model_modified": false,
+    "scope": "Dataset-level evaluation only; not field-trial accuracy or real-world validation.",
+    "original_row_split": {
+      "accuracy": 1.0,
+      "description": "Re-evaluation of the existing serialized model on the seed-42 330-row test split. Rows were held out from fitting, but sample provenance is unavailable."
+    },
+    "five_fold_stratified_group_k_fold": {
+      "grouping_key": "Exact feature vector across N, P, K, temperature, humidity, ph, rainfall.",
+      "unique_groups": 2200,
+      "rows": 2200,
+      "duplicates_across_groups": 0,
+      "train_rows_per_fold": 1760,
+      "test_rows_per_fold": 440,
+      "classes_per_fold": {
+        "train": 22,
+        "test": 22
+      },
+      "fold_sizes": [
+        {
+          "train": 1760,
+          "test": 440,
+          "train_classes": 22,
+          "test_classes": 22
+        },
+        {
+          "train": 1760,
+          "test": 440,
+          "train_classes": 22,
+          "test_classes": 22
+        },
+        {
+          "train": 1760,
+          "test": 440,
+          "train_classes": 22,
+          "test_classes": 22
+        },
+        {
+          "train": 1760,
+          "test": 440,
+          "train_classes": 22,
+          "test_classes": 22
+        },
+        {
+          "train": 1760,
+          "test": 440,
+          "train_classes": 22,
+          "test_classes": 22
+        }
+      ],
+      "random_state": 2026,
+      "fold_accuracies": [
+        0.9954545454545455,
+        0.9954545454545455,
+        0.9931818181818182,
+        0.9977272727272727,
+        0.990909090909091
+      ],
+      "mean_fold_accuracy": 0.9945454545454545,
+      "out_of_fold_accuracy": 0.9945454545454545,
+      "macro_avg": {
+        "precision": 0.9947010443717997,
+        "recall": 0.9945454545454545,
+        "f1-score": 0.9945421675061535,
+        "support": 2200.0
+      },
+      "weighted_avg": {
+        "precision": 0.9947010443717995,
+        "recall": 0.9945454545454545,
+        "f1-score": 0.9945421675061534,
+        "support": 2200.0
+      },
+      "per_class": {
+        "apple": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "banana": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "blackgram": {
+          "precision": 1.0,
+          "recall": 0.99,
+          "f1-score": 0.9949748743718593,
+          "support": 100.0
+        },
+        "chickpea": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "coconut": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "coffee": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "cotton": {
+          "precision": 0.9900990099009901,
+          "recall": 1.0,
+          "f1-score": 0.9950248756218906,
+          "support": 100.0
+        },
+        "grapes": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "jute": {
+          "precision": 0.9339622641509434,
+          "recall": 0.99,
+          "f1-score": 0.9611650485436893,
+          "support": 100.0
+        },
+        "kidneybeans": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "lentil": {
+          "precision": 0.99,
+          "recall": 0.99,
+          "f1-score": 0.99,
+          "support": 100.0
+        },
+        "maize": {
+          "precision": 0.99,
+          "recall": 0.99,
+          "f1-score": 0.99,
+          "support": 100.0
+        },
+        "mango": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "mothbeans": {
+          "precision": 0.99,
+          "recall": 0.99,
+          "f1-score": 0.99,
+          "support": 100.0
+        },
+        "mungbean": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "muskmelon": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "orange": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "papaya": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "pigeonpeas": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "pomegranate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "rice": {
+          "precision": 0.9893617021276596,
+          "recall": 0.93,
+          "f1-score": 0.9587628865979382,
+          "support": 100.0
+        },
+        "watermelon": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "apple",
+          "banana",
+          "blackgram",
+          "chickpea",
+          "coconut",
+          "coffee",
+          "cotton",
+          "grapes",
+          "jute",
+          "kidneybeans",
+          "lentil",
+          "maize",
+          "mango",
+          "mothbeans",
+          "mungbean",
+          "muskmelon",
+          "orange",
+          "papaya",
+          "pigeonpeas",
+          "pomegranate",
+          "rice",
+          "watermelon"
+        ],
+        "diagonal_correct_counts": {
+          "apple": 100,
+          "banana": 100,
+          "blackgram": 99,
+          "chickpea": 100,
+          "coconut": 100,
+          "coffee": 100,
+          "cotton": 100,
+          "grapes": 100,
+          "jute": 99,
+          "kidneybeans": 100,
+          "lentil": 99,
+          "maize": 99,
+          "mango": 100,
+          "mothbeans": 99,
+          "mungbean": 100,
+          "muskmelon": 100,
+          "orange": 100,
+          "papaya": 100,
+          "pigeonpeas": 100,
+          "pomegranate": 100,
+          "rice": 93,
+          "watermelon": 100
+        },
+        "off_diagonal_counts": [
+          {
+            "actual": "blackgram",
+            "predicted": "maize",
+            "count": 1
+          },
+          {
+            "actual": "jute",
+            "predicted": "rice",
+            "count": 1
+          },
+          {
+            "actual": "lentil",
+            "predicted": "mothbeans",
+            "count": 1
+          },
+          {
+            "actual": "maize",
+            "predicted": "cotton",
+            "count": 1
+          },
+          {
+            "actual": "mothbeans",
+            "predicted": "lentil",
+            "count": 1
+          },
+          {
+            "actual": "rice",
+            "predicted": "jute",
+            "count": 7
+          }
+        ]
+      }
+    },
+    "method_notes": [
+      "Grouping uses exact feature-vector equality because the source file has no sample or provenance identifiers.",
+      "The 2200 rows contain 2200 unique feature vectors. Exact-vector grouping does not establish independence of upstream samples.",
+      "Each fold uses a temporary clone of the saved pipeline; preprocessing is fitted only on that fold's training rows.",
+      "The publisher describes the dataset as augmented/assembled from rainfall, climate and fertilizer data. The timing and provenance of that process are undocumented."
+    ],
+    "limitations": [
+      "No source IDs, farm/site, season, or collection-event metadata are available for source-grouped evaluation.",
+      "An independent source-level or field-trial test set is absent; these results are not field-trial accuracy or real-world validation.",
+      "High dataset-level scores may reflect the dataset's constructed class/feature patterns and do not establish agronomic performance on farms."
+    ]
+  },
+  "limitations": [
+    "The dataset is an augmented tabular India-focused collection, not a live field trial.",
+    "Weather and soil results from outside the training data may be out of distribution.",
+    "The model predicts suitability from a fixed feature set and cannot replace agronomist judgment."
+  ]
+}

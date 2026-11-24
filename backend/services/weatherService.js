@@ -25,12 +25,12 @@ const weatherCodeMap = {
 
 function weatherAdvice(condition) {
   if (/rain|drizzle|shower|thunderstorm/i.test(condition)) {
-    return 'Avoid spraying during rain, wait for a dry window.'
+    return 'Avoid spraying during rain; check the product label and local extension guidance.'
   }
   if (/snow|fog|overcast/i.test(condition)) {
-    return 'Keep the field ventilated and wait for better weather before treatment.'
+    return 'Check local conditions and product-label weather restrictions before treatment.'
   }
-  return 'Good day for treatment; spray in the morning if possible.'
+  return 'Check the product label and local conditions before considering treatment.'
 }
 
 function formatDay(dateString, timezone) {
@@ -38,25 +38,42 @@ function formatDay(dateString, timezone) {
   return date.toLocaleDateString('en-US', { weekday: 'long', timeZone: timezone });
 }
 
-async function fetchWeatherForecast(lat, lon) {
-  const defaultCoords = { lat: 12.9716, lon: 77.5946 };
-  const latitude = Number.isFinite(lat) ? lat : defaultCoords.lat;
-  const longitude = Number.isFinite(lon) ? lon : defaultCoords.lon;
+function unavailableForecast(reason) {
+  return {
+    status: 'unavailable',
+    source: 'Open-Meteo',
+    summary: reason,
+    forecast: []
+  };
+}
+
+async function fetchWeatherForecast(lat, lon, httpClient = axios) {
+  if (!Number.isFinite(lat) || lat < -90 || lat > 90 ||
+      !Number.isFinite(lon) || lon < -180 || lon > 180) {
+    return unavailableForecast('Location was not provided; live weather is unavailable.');
+  }
 
   try {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
-
-    const response = await axios.get(url, { timeout: 5000 });
+    const response = await httpClient.get('https://api.open-meteo.com/v1/forecast', {
+      timeout: 5000,
+      params: {
+        latitude: lat,
+        longitude: lon,
+        daily: 'weather_code,temperature_2m_max,temperature_2m_min',
+        forecast_days: 3,
+        timezone: 'auto'
+      }
+    });
     const data = response.data;
     const daily = data.daily || {};
     const days = daily.time || [];
 
     if (!days.length) {
-      return buildFallbackForecast(latitude, longitude);
+      return unavailableForecast('Weather provider returned no forecast.');
     }
 
     const forecast = days.slice(0, 3).map((day, index) => {
-      const code = daily.weathercode?.[index];
+      const code = daily.weather_code?.[index];
       const condition = weatherCodeMap[code] || 'Unknown';
       return {
         day: formatDay(day, data.timezone || 'UTC'),
@@ -68,36 +85,15 @@ async function fetchWeatherForecast(lat, lon) {
     });
 
     return {
-      summary: `Weather forecast loaded for ${latitude.toFixed(2)}, ${longitude.toFixed(2)}.`,
+      status: 'available',
+      source: 'Open-Meteo',
+      summary: `Live Open-Meteo forecast loaded for ${lat.toFixed(2)}, ${lon.toFixed(2)}.`,
       forecast
     };
   } catch (err) {
-    console.warn('Weather API error (continuing with fallback forecast):', err.message);
-    return buildFallbackForecast(latitude, longitude);
+    console.warn('Weather API unavailable:', err.code || err.message);
+    return unavailableForecast('Live weather is unavailable; no forecast was substituted.');
   }
-}
-
-function buildFallbackForecast(latitude, longitude) {
-  const today = new Date();
-  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const forecasts = [0, 1, 2].map((offset) => {
-    const date = new Date(today);
-    date.setDate(today.getDate() + offset);
-    const dayName = dayNames[date.getDay()];
-    const condition = offset === 0 ? 'Partly cloudy' : offset === 1 ? 'Light rain' : 'Sunny';
-    return {
-      day: dayName,
-      condition,
-      tempMin: 20 + offset * 1.5,
-      tempMax: 28 + offset * 1.5,
-      advice: weatherAdvice(condition)
-    };
-  });
-
-  return {
-    summary: `Weather service unavailable; using a general forecast for ${latitude.toFixed(2)}, ${longitude.toFixed(2)}.`,
-    forecast: forecasts
-  };
 }
 
 module.exports = { fetchWeatherForecast };

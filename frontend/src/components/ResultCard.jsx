@@ -20,25 +20,66 @@ export default function ResultCard({ result, langStrings, onSpeak, onChat, onOpe
       )}
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-bold">{result.disease}</h3>
-        <SeverityPill severity={result.severity} isDark={isDark} />
+        {result.confidence != null && (
+          <span className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800">
+            Confidence: {(result.confidence * 100).toFixed(1)}%
+          </span>
+        )}
+        {result.severity && result.severity !== 'unassessed' && <SeverityPill severity={result.severity} isDark={isDark} />}
       </div>
-      <div>
+      {result.detectionStatus === 'uncertain' && (
+        <div className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900" role="status">
+          The model is uncertain. Top match: {result.crop} — {result.topPrediction?.split('___')[1]?.replace(/_/g, ' ')}. Seek local confirmation.
+        </div>
+      )}
+      {result.diseaseInfo && (
+        <div className="space-y-3 rounded-xl border border-slate-200 p-3">
+          <p>{result.diseaseInfo.description}</p>
+          <div>
+            <h4 className="font-semibold">Symptoms and limitations</h4>
+            <ul className="list-disc ml-5">
+              {result.diseaseInfo.symptoms.map((item, index) => <li key={index}>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold">Treatment guidance</h4>
+            <ul className="list-disc ml-5">
+              {result.diseaseInfo.treatments.map((item, index) => <li key={index}>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold">Prevention</h4>
+            <ul className="list-disc ml-5">
+              {result.diseaseInfo.preventiveMeasures.map((item, index) => <li key={index}>{item}</li>)}
+            </ul>
+          </div>
+          <div className="flex flex-wrap gap-3 text-sm">
+            {result.diseaseInfo.references.map(reference => (
+              <a key={reference.url} href={reference.url} target="_blank" rel="noreferrer" className="text-blue-700 underline">
+                {reference.title}
+              </a>
+            ))}
+          </div>
+          <p className="text-xs text-slate-500">{result.diseaseInfo.guidanceDisclaimer}</p>
+        </div>
+      )}
+      {(result.treatments || []).length > 0 && !result.diseaseInfo && <div>
         <h4 className="font-semibold">{langStrings.treatments}:</h4>
         <ul className={`list-disc ml-5 ${isDark ? 'text-slate-200' : ''}`}>
           {result.treatments.map((t, i) => (
             <li key={i}>{t}</li>
           ))}
         </ul>
-      </div>
-      <div>
+      </div>}
+      {(result.pesticides?.organic || []).length > 0 && <div>
         <h4 className="font-semibold">{langStrings.organicLabel}:</h4>
         <div className="flex gap-2 flex-wrap">
           {(result.pesticides?.organic || []).map((p, i) => (
             <div key={i} className={`${isDark ? 'bg-emerald-900 text-emerald-100' : 'bg-green-100'} px-3 py-1 rounded`}>{p}</div>
           ))}
         </div>
-      </div>
-      <div>
+      </div>}
+      {(result.pesticides?.chemical || []).length > 0 && <div>
         <h4 className="font-semibold">{langStrings.chemicalLabel}:</h4>
         <div className="flex gap-2 flex-wrap">
           {(result.pesticides?.chemical || []).map((p, i) => {
@@ -52,7 +93,7 @@ export default function ResultCard({ result, langStrings, onSpeak, onChat, onOpe
             )
           })}
         </div>
-      </div>
+      </div>}
       {result.affordableAlternatives && result.affordableAlternatives.length > 0 && (
         <div>
           <h4 className="font-semibold">{langStrings.affordableAlternativesLabel}:</h4>

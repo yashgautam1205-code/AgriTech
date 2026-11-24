@@ -4,6 +4,7 @@ import axios from 'axios'
 export default function CameraUpload({ onResult, langStrings, coords, userId, lang }) {
   const fileRef = useRef()
   const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   async function handleFile(e) {
     const file = e.target.files[0]
@@ -16,6 +17,16 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
   }
 
   async function uploadFile(file) {
+    setErrorMessage('')
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+      setErrorMessage('Choose a JPEG, PNG, or WebP leaf image.')
+      return
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      setErrorMessage('Image must be 10 MB or smaller.')
+      return
+    }
+
     setLoading(true)
     try {
       const form = new FormData()
@@ -36,24 +47,19 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
         throw new Error('MixedContent: cannot request http resource from https page. Use an https backend or set VITE_API_BASE to an https URL.')
       }
 
-      const res = await axios.post(uploadUrl, form)
+      const res = await axios.post(uploadUrl, form, { timeout: 45000 })
       // provide a client-side preview URL so the result image appears crisp
       const previewUrl = URL.createObjectURL(file)
       onResult({ ...res.data, previewUrl })
     } catch (err) {
-      console.error(err)
-      // Show detailed error so user/developer can see server status and body
       const status = err?.response?.status
       const data = err?.response?.data
-      const msg = data?.message || data || err.message || 'Upload failed'
-      console.error('Upload error details:', { status, data })
-
-      // Network error (no response) vs server error
-      if (!err.response) {
-        alert(`Upload failed: Network error. Check that the backend is reachable from this device and that the upload URL is correct (VITE_API_BASE).\n\nDetails: ${err.message}`)
-      } else {
-        alert(`Upload failed${status ? ' (status ' + status + ')' : ''}: ${JSON.stringify(msg)}`)
-      }
+      setErrorMessage(
+        data?.message ||
+        (status === 503 || status === 504
+          ? 'Disease identification is unavailable right now. Please try again later.'
+          : 'Upload failed. Check your connection and try a supported leaf image.')
+      )
       if (fileRef.current) {
         fileRef.current.value = ''
       }
@@ -69,7 +75,7 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
         <input
           ref={fileRef}
           type="file"
-          accept="image/*"
+          accept="image/jpeg,image/png,image/webp"
           capture="environment"
           onChange={handleFile}
           className="w-full"
@@ -78,12 +84,14 @@ export default function CameraUpload({ onResult, langStrings, coords, userId, la
       </label>
       <button
         onClick={() => fileRef.current && fileRef.current.click()}
+        disabled={loading}
         className="w-full bg-green-600 text-white py-3 rounded-lg text-lg font-semibold"
         data-testid="scan-button"
       >
         {langStrings.scanButton}
       </button>
-      {loading && <div className="text-center">Uploading...</div>}
+      {loading && <div className="text-center" role="status">Uploading and identifying the leaf image...</div>}
+      {errorMessage && <div className="rounded-lg border border-red-300 bg-red-50 p-3 text-sm text-red-800" role="alert">{errorMessage}</div>}
     </div>
   )
 }

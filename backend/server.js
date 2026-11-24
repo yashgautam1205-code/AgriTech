@@ -38,6 +38,10 @@ connectDB()
 
 app.use('/api', scanRoutes);
 
+app.get('/', (req, res) => {
+  res.json({ message: 'AI Crop Doctor backend is running' });
+});
+
 app.use((req, res) => {
   res.status(404).json({ message: 'Resource not found' });
 });
@@ -50,7 +54,14 @@ app.use((err, req, res, next) => {
   }
 
   if (err && err.name === 'MulterError') {
+    if (err.code === 'LIMIT_FILE_SIZE') {
+      return res.status(413).json({ message: 'Image must be 10 MB or smaller.' });
+    }
     return res.status(400).json({ message: err.message, error: err.code });
+  }
+
+  if (err && err.code === 'UNSUPPORTED_IMAGE_TYPE') {
+    return res.status(415).json({ message: 'Upload a JPEG, PNG, or WebP image.' });
   }
 
   if (err && err.type === 'entity.parse.failed') {
@@ -65,10 +76,6 @@ app.use((err, req, res, next) => {
     message: err.message || 'Server error',
     error: process.env.NODE_ENV === 'development' ? err.stack : undefined
   });
-});
-
-app.get('/', (req, res) => {
-  res.json({ message: 'AI Crop Doctor backend is running' });
 });
 
 const PORT = process.env.PORT || 4000;

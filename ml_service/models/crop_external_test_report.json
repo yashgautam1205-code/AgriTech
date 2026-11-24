@@ -1,0 +1,300 @@
+{
+  "report_version": "1.0",
+  "generated_on": "2026-11-23",
+  "evaluation_status": "not_evaluated_no_qualified_external_dataset",
+  "hackathon_requirement_status": "PARTIAL",
+  "reason": "No candidate reviewed met all source-independence, feature-unit, and target-label compatibility requirements. No external predictions or metrics were generated.",
+  "model": {
+    "artifact": "ml_service/models/crop_suitability.joblib",
+    "sha256_before_and_after_audit": "521571C952060145443803C1FE31C2EC531C1F4139EADA5CB95CAB59A94FBA5C",
+    "modified_or_retrained": false,
+    "model_type": "RandomForestClassifier",
+    "pipeline_steps": [
+      "preprocess",
+      "classifier"
+    ],
+    "feature_order": [
+      "N",
+      "P",
+      "K",
+      "temperature",
+      "humidity",
+      "ph",
+      "rainfall"
+    ],
+    "classes": [
+      "apple",
+      "banana",
+      "blackgram",
+      "chickpea",
+      "coconut",
+      "coffee",
+      "cotton",
+      "grapes",
+      "jute",
+      "kidneybeans",
+      "lentil",
+      "maize",
+      "mango",
+      "mothbeans",
+      "mungbean",
+      "muskmelon",
+      "orange",
+      "papaya",
+      "pigeonpeas",
+      "pomegranate",
+      "rice",
+      "watermelon"
+    ]
+  },
+  "training_dataset": {
+    "name": "Crop Recommendation Dataset",
+    "publisher": "Atharva Ingle on Kaggle",
+    "source_url": "https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset",
+    "version": 1,
+    "license": "Apache 2.0, as declared by the publisher",
+    "rows": 2200,
+    "classes": 22,
+    "rows_per_class": 100,
+    "publisher_provenance_note": "The dataset page says the data was built by augmenting rainfall, climate, and fertilizer data available for India. It does not provide row-level source identifiers, augmentation lineage, or a full collection protocol.",
+    "feature_ranges_observed": {
+      "N": [0.0, 140.0],
+      "P": [5.0, 145.0],
+      "K": [5.0, 205.0],
+      "temperature": [8.825674745, 43.67549305],
+      "humidity": [14.25803981, 99.98187601],
+      "ph": [3.504752314, 9.93509073],
+      "rainfall": [20.21126747, 298.5601175]
+    },
+    "feature_definitions": {
+      "N": "Nitrogen content ratio; source does not specify a physical unit.",
+      "P": "Phosphorus content ratio; source does not specify a physical unit.",
+      "K": "Potassium content ratio; source does not specify a physical unit.",
+      "temperature": "Degrees Celsius; temporal/measurement protocol is not specified.",
+      "humidity": "Relative humidity percent.",
+      "ph": "Soil pH.",
+      "rainfall": "Millimeters; accumulation period is not specified."
+    },
+    "target_semantics": "Crop label presented as a recommended/suitable crop."
+  },
+  "candidate_dataset_assessments": [
+    {
+      "name": "crops-npk data set",
+      "publisher": "javakhan on Kaggle",
+      "source_url": "https://www.kaggle.com/datasets/javakhan/crops-npk-data-set",
+      "version": 1,
+      "published_or_updated": "2025-02-15",
+      "license": "MIT, as declared by the publisher",
+      "rows_inspected": 20000,
+      "class_distribution": {
+        "Wheat": 3390,
+        "Potato": 3362,
+        "Maize": 3352,
+        "Tomato": 3344,
+        "Sugarcane": 3284,
+        "Rice": 3268
+      },
+      "missing_values": 0,
+      "duplicate_full_rows": 0,
+      "exact_feature_vector_overlap_with_training": 0,
+      "exact_labeled_row_overlap_with_training": 0,
+      "feature_description": {
+        "Nitrogen": "mg/kg according to publisher",
+        "Phosphorus": "mg/kg according to publisher",
+        "Potassium": "mg/kg according to publisher",
+        "Temperature": "degrees Celsius; publisher describes atmospheric temperature",
+        "Humidity": "percent",
+        "pH_Value": "soil pH",
+        "Rainfall": "annual millimeters according to publisher"
+      },
+      "candidate_observed_ranges": {
+        "N": [5.0060128668, 149.9987851834],
+        "P": [5.0004826629, 89.9990857713],
+        "K": [10.000672163, 99.9964801688],
+        "temperature": [10.0037603017, 44.997406604],
+        "humidity": [30.0022972991, 99.9923459632],
+        "ph": [4.5000819287, 8.4999144884],
+        "rainfall": [20.0189905666, 399.9749153153]
+      },
+      "raw_feature_distribution_comparison": {
+        "N": {
+          "training_mean": 50.5518181818,
+          "candidate_mean": 77.216964972,
+          "training_std": 36.9173338338,
+          "candidate_std": 41.8576633455,
+          "candidate_rows_outside_training_observed_min_max": 1355
+        },
+        "P": {
+          "training_mean": 53.3627272727,
+          "candidate_mean": 47.4820700235,
+          "training_std": 32.9858827386,
+          "candidate_std": 24.5875061959,
+          "candidate_rows_outside_training_observed_min_max": 0
+        },
+        "K": {
+          "training_mean": 48.1490909091,
+          "candidate_mean": 55.1629556281,
+          "training_std": 50.6479305467,
+          "candidate_std": 25.9690909923,
+          "candidate_rows_outside_training_observed_min_max": 0
+        },
+        "temperature": {
+          "training_mean": 25.6162438518,
+          "candidate_mean": 27.4207171978,
+          "training_std": 5.0637486,
+          "candidate_std": 10.0101443769,
+          "candidate_rows_outside_training_observed_min_max": 725
+        },
+        "humidity": {
+          "training_mean": 71.4817792178,
+          "candidate_mean": 64.897753475,
+          "training_std": 22.2638115898,
+          "candidate_std": 20.2006869782,
+          "candidate_rows_outside_training_observed_min_max": 9
+        },
+        "ph": {
+          "training_mean": 6.4694800653,
+          "candidate_mean": 6.4961257476,
+          "training_std": 0.773937688,
+          "candidate_std": 1.1557496091,
+          "candidate_rows_outside_training_observed_min_max": 0
+        },
+        "rainfall": {
+          "training_mean": 103.4636554158,
+          "candidate_mean": 211.1240015489,
+          "training_std": 54.9583885249,
+          "candidate_std": 109.724973187,
+          "candidate_rows_outside_training_observed_min_max": 5361
+        }
+      },
+      "target_description": "Crop type grown, with soil type and variety columns.",
+      "rejection_reasons": [
+        "The publisher claims sensor/real-world data but does not identify a source institution, locations, dates, sampling protocol, sensor calibration, or row provenance; independence cannot be verified.",
+        "N/P/K are specified in mg/kg, while the training source specifies nutrient ratios without a unit or conversion basis.",
+        "The candidate describes annual rainfall while the training source does not specify the rainfall accumulation period.",
+        "Observed crop-grown labels are not demonstrated to mean crop suitability/recommendation.",
+        "Only Maize and Rice map to model classes: 6620 rows. Wheat, Potato, Tomato, and Sugarcane are unsupported: 13380 rows."
+      ],
+      "distribution_interpretation": "Candidate crop counts are nearly even, but source/sampling provenance is not documented. Raw feature marginal comparisons and counts outside the training CSV's observed min/max are descriptive only; unresolved measurement units and periods prevent treating them as validated covariate-shift estimates.",
+      "accepted_for_evaluation": false
+    },
+    {
+      "name": "Crop Recommendation Dataset mirror",
+      "publisher": "Abhishek Kumar on Kaggle (aksahaha)",
+      "source_url": "https://www.kaggle.com/datasets/aksahaha/crop-recommendation",
+      "version": 1,
+      "license": "Data files © Original Authors, as declared by the publisher",
+      "rows_inspected": 2200,
+      "exact_feature_and_label_rows_matching_training": 1474,
+      "supported_class_count": 22,
+      "rejection_reasons": [
+        "1474 of 2200 feature-and-label rows exactly match the training CSV, directly disproving independence for those records.",
+        "The remaining differing rows have no independent collection provenance, so they cannot be treated as a held-out external source."
+      ],
+      "accepted_for_evaluation": false
+    },
+    {
+      "name": "Crop Recommendation Dataset mirror",
+      "publisher": "Varshita Nalluri on Kaggle",
+      "source_url": "https://www.kaggle.com/datasets/varshitanalluri/crop-recommendation-dataset",
+      "version": 1,
+      "license": "MIT, as declared by the publisher",
+      "rows_inspected": 2200,
+      "exact_feature_and_label_rows_matching_training": 1474,
+      "supported_class_count": 22,
+      "rejection_reasons": [
+        "1474 of 2200 feature-and-label rows exactly match the training CSV, directly disproving independence for those records.",
+        "The remaining differing rows have no independent collection provenance, so they cannot be treated as a held-out external source."
+      ],
+      "accepted_for_evaluation": false
+    },
+    {
+      "name": "NPK Soil Nutrient Dataset on Horticulture Land",
+      "publisher": "Muhammad Arya Diwa on Kaggle",
+      "source_url": "https://www.kaggle.com/datasets/muhammadaryadiwa/npk-soil-nutrient-dataset-on-horticulture-land",
+      "version": 1,
+      "license": "Other (specified in description); permission is not sufficiently clear from the dataset metadata",
+      "publisher_claimed_location": "Horticulture lands in Padang, West Sumatra, Indonesia",
+      "rejection_reasons": [
+        "The described features use soil temperature and soil moisture/humidity rather than the model's ambient temperature and relative humidity.",
+        "Rainfall is absent.",
+        "The described Chili, Cucumber, and Bok Choy labels are unsupported by the model and are not documented as suitability labels.",
+        "The license is not an explicit reusable license in the dataset metadata."
+      ],
+      "accepted_for_evaluation": false
+    },
+    {
+      "name": "Crop Yield and Environmental Factors (2014-2023)",
+      "publisher": "MadhanKumar on Kaggle",
+      "source_url": "https://www.kaggle.com/datasets/madhankumar789/crop-yield-and-environmental-factors-2014-2023",
+      "version": 1,
+      "license": "CC BY-SA 4.0, as declared by the publisher",
+      "rejection_reasons": [
+        "The publisher explicitly describes this dataset as synthetic; synthetic test records are disallowed for this task."
+      ],
+      "accepted_for_evaluation": false
+    }
+  ],
+  "evaluation_counts": {
+    "qualified_external_datasets": 0,
+    "candidate_rows_profiled_in_detail": 20000,
+    "candidate_rows_submitted_to_model": 0,
+    "samples_evaluated": 0,
+    "candidate_rows_not_used": 20000,
+    "candidate_rows_not_used_note": "All rows in the detailed candidate were excluded because the dataset as a whole failed provenance and semantic compatibility checks. The 6620 rows with model-supported crop names are not a valid subset for scoring because the dataset's target meaning and units remain unverified.",
+    "unsupported_labels_in_detailed_candidate": 13380
+  },
+  "compatibility_assessment": {
+    "status": "not_established",
+    "feature_names": "Names can be mapped, but name matching alone does not establish semantic or unit compatibility.",
+    "feature_units": "N/P/K unit mismatch; rainfall period undefined in training source and annual in candidate.",
+    "temperature_and_humidity": "Candidate claims atmospheric temperature and humidity percent, but its source methodology is not independently documented.",
+    "target_labels": "Candidate says crop grown; training target is crop suitability/recommendation. Equivalence is not established.",
+    "unsupported_candidate_labels": [
+      "Wheat",
+      "Potato",
+      "Tomato",
+      "Sugarcane"
+    ],
+    "supported_candidate_labels": [
+      "Maize",
+      "Rice"
+    ],
+    "no_silent_conversions_or_label_forcing": true
+  },
+  "overlap_audit": {
+    "detailed_candidate": "javakhan/crops-npk-data-set",
+    "exact_feature_vector_matches": 0,
+    "exact_labeled_row_matches": 0,
+    "duplicate_rows_within_candidate": 0,
+    "interpretation": "Exact-value non-overlap is not proof of source independence. Provenance is insufficient, and unresolved unit/target semantics disqualify the data regardless of this check. Near-duplicate assessment was not used as a substitute for source provenance."
+  },
+  "comparison_to_existing_dataset_level_results": {
+    "original_row_split_accuracy": 1.0,
+    "five_fold_stratified_group_k_fold_accuracy": 0.9945454545454545,
+    "scope": "These are the existing training-dataset results, not external test results."
+  },
+  "metrics": {
+    "accuracy": null,
+    "macro_precision": null,
+    "macro_recall": null,
+    "macro_f1": null,
+    "weighted_precision": null,
+    "weighted_recall": null,
+    "weighted_f1": null,
+    "reason": "No qualified, semantically compatible external test samples were available; metric calculation would be invalid."
+  },
+  "per_class_metrics": null,
+  "confusion_matrix": {
+    "generated": false,
+    "path": null,
+    "reason": "No predictions were generated for an accepted external dataset."
+  },
+  "limitations": [
+    "No independently sourced dataset with verifiable provenance, compatible physical units, and crop-suitability target semantics was identified.",
+    "The Kaggle training dataset itself is described as augmented/assembled and lacks row-level source IDs.",
+    "Exact feature-vector grouping in existing cross-validation is not source-independent validation.",
+    "No external accuracy, precision, recall, F1, per-class results, or confusion matrix can be claimed.",
+    "The existing grouped cross-validation and original row-split metrics remain dataset-level only; there is no farm/field validation."
+  ]
+}

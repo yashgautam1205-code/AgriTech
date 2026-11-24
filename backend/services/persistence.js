@@ -186,7 +186,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 async function findNearbyShops(lat, lon, radius = 15, sellsChemical = true) {
   await ensureFiles();
   const shopsWithDistance = shopsCache
-    .filter(shop => sellsChemical ? shop.sellsChemical : true)
+    .filter(shop => shop.verified === true && (sellsChemical ? shop.sellsChemical : true))
     .map(shop => ({
       ...shop,
       distance: calculateDistance(lat, lon, shop.lat, shop.lon)
